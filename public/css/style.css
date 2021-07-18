@@ -1,0 +1,62 @@
+/* navbar changement des couleurs */
+.navbar {
+  background-color: #f9efbc;
+}
+
+.navbar-default {
+  /* Couleur de fond de la barre de navigation */
+  background-color: #f9efbc;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 1);
+}
+
+/* Barre de liens ver pages principales */
+.icon-link {
+  margin: 50px 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 10%;
+  text-align: center;
+}
+
+.icon-link img {
+  height: 60px;
+  margin-top: 20px;
+}
+
+.biberon {
+  background-color: #ff7979;
+}
+
+.couche {
+  background-color: #badc58;
+}
+
+.dodo {
+  background-color: #7ed6df;
+}
+
+.statistique {
+  background-color: #ffbe76;
+}
+/* footer  */
+footer {
+  background-color: black;
+  color: white;
+  height: 20vh;
+}
+
+/* Page évènement */
+.event-section h6 {
+  background-color: #f9efbc;
+  padding: 20px;
+}
+
+/* Bouttons */
+.btn-primary {
+  color: black;
+  background-color: #f1e085;
+  border-color: #f1e085;
+}
