@@ -1,6 +1,94 @@
+body {
+  background-color: #f2f3f3;
+}
+p {
+  font-size: 14px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #424242;
+}
+
+h2 {
+  background-color: #f9efbc;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.fa-check {
+  color: green;
+}
+.fa-clock {
+  color: rgb(184, 184, 184);
+}
+
+.base {
+  background-color: #f9efbc;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 28%);
+  border-radius: 5%;
+}
+
+.color-table {
+  box-shadow: 0 4px 8px rgb(0 0 0 / 28%);
+  border-radius: 5%;
+  background-color: #ffff;
+}
+
+.section-info img {
+  height: 200px;
+}
+
+.section-info {
+  background-color: #f1fafe;
+}
+
+.section-profil-bebe {
+  background-color: #f1e085;
+  padding: 50px;
+  margin-left: 30px;
+}
+
+.section-profil-bebe img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+@media (max-width: 700px) {
+  .section-profil-bebe {
+    padding: 50px 10px;
+    margin-left: 10px;
+  }
+  .section-info {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1400px) {
+  .section-info img {
+    height: 120px;
+  }
+}
+
+/* Page évènement */
+.event-section h6 {
+  background-color: #f9efbc;
+  padding: 20px;
+}
+
+.event-section {
+  background-color: white;
+}
+
 /* navbar changement des couleurs */
 .navbar {
   background-color: #f9efbc;
+  box-shadow: 0 0 4px rgb(0 0 0 / 14%), 0 4px 8px rgb(0 0 0 / 28%);
 }
 
 .navbar-default {
@@ -26,6 +114,10 @@
   margin-top: 20px;
 }
 
+.icon-link:hover {
+  background-color: #fbdf49;
+}
+
 .biberon {
   background-color: #ff7979;
 }
@@ -43,15 +135,9 @@
 }
 /* footer  */
 footer {
-  background-color: black;
+  background-color: #424242;
   color: white;
   height: 20vh;
-}
-
-/* Page évènement */
-.event-section h6 {
-  background-color: #f9efbc;
-  padding: 20px;
 }
 
 /* Bouttons */
@@ -59,4 +145,20 @@ footer {
   color: black;
   background-color: #f1e085;
   border-color: #f1e085;
+}
+
+.btn-primary:hover {
+  background-color: gray;
+}
+
+@media (max-width: 700px) {
+  .icon-link img {
+    height: 30px;
+    width: 30px;
+  }
+  .icon-link {
+    width: 80px;
+    height: 80px;
+    margin: 50px 5px;
+  }
 }
