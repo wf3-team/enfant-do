@@ -140,6 +140,14 @@ footer {
   height: 20vh;
 }
 
+footer p {
+  color: white;
+}
+
+.footer-link:hover {
+  color: #f1e085;
+}
+
 /* Bouttons */
 .btn-primary {
   color: black;
