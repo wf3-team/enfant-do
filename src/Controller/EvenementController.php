@@ -5,13 +5,14 @@ namespace App\Controller;
 use App\Entity\Evenement;
 use App\Form\EvenementType;
 use App\Repository\EvenementRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/evenement")
+ * @Route("/")
  */
 class EvenementController extends AbstractController
 {
@@ -20,21 +21,79 @@ class EvenementController extends AbstractController
      */
     public function index(EvenementRepository $evenementRepository): Response
     {
+        // champs de l'entité ajout catégory 
+        // formulaire de création. Sélection de la possibilité.
+        // $conseils = nom du Repo->findBy([
+            // 'evenement' => "evenement"
+        //]);
+
+        $elements = $evenementRepository->findAll();
+
+        foreach($elements as $element) {
+            // Extraire le jour et mois de $dateElement
+            $dateElement = $element->getHeureDebut();
+            $dateConvert = $dateElement->format('Y-m-d');
+            // Trouver le jour actuel dans une variable
+            $dateNow = new \DateTime('now');
+            $dateNowConvert = $dateNow->format('Y-m-d');
+            
+            $isToday = false;
+            // Comparaison de ces variables dans le if
+            // Rajoute 
+            if($dateConvert == $dateNowConvert) {
+                $isToday = true;
+            }
+        }
         return $this->render('evenement/index.html.twig', [
-            'evenements' => $evenementRepository->findAll(),
+            'evenements' => $elements,
+            'isToday' => $isToday
         ]);
     }
 
     /**
      * @Route("/new", name="evenement_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    /**
+     * @Route("/sommeil/ajouter", name="evenement_sommeil", methods={"GET","POST"})
+     */
+    public function new(Request $request, UserRepository $utilisateurRepo): Response
     {
         $evenement = new Evenement();
         $form = $this->createForm(EvenementType::class, $evenement);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+           
+              // getUser info de la session :
+              // $utilisateur = $this->getUser();
+  
+              $utilisateur = $utilisateurRepo->findOneBy([
+                  'pseudo' => 'maman'
+              ]);
+   
+              // Avec l'ajout de la connexion utilisateur :
+              // $bebe = $utilisateurRepo->findOneBy([
+              //     'bebe' => $utilisateur
+              // ]);
+  
+              // $bebe = $bebeRepo->findOneBy([
+              //     'prenom' => 'lolo'
+              // ]);
+  
+              $bebe = $utilisateur->getBebe();
+              $date = new \DateTime('now');
+               // Convertir la date en string 
+            //   $date = new \DateTime('@'.strtotime('now'));
+          
+              // Remplir l'instance event avec tous les champs évènement :
+              $evenement
+                  ->setUser($utilisateur)
+                  ->setBebe($bebe)
+                  ->setHeureDebut($date)
+
+
+                ;
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($evenement);
             $entityManager->flush();
