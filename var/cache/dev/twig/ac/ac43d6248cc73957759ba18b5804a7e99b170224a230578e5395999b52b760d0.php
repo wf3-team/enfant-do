@@ -33,7 +33,7 @@ class __TwigTemplate_6bd93412658c514eeb5437e8b29b1fde2089b868583da7f805ce69f4328
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "layout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_6bd93412658c514eeb5437e8b29b1fde2089b868583da7f805ce69f4328
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "evenement/new.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "evenement/new.html.twig", 1);
+        $this->parent = $this->loadTemplate("layout.html.twig", "evenement/new.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -65,7 +65,7 @@ class __TwigTemplate_6bd93412658c514eeb5437e8b29b1fde2089b868583da7f805ce69f4328
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "New Evenement";
+        $this->displayParentBlock("title", $context, $blocks);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,18 +85,13 @@ class __TwigTemplate_6bd93412658c514eeb5437e8b29b1fde2089b868583da7f805ce69f4328
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Evenement</h1>
-
+        echo "
     ";
-        // line 8
+        // line 7
         echo twig_include($this->env, $context, "evenement/_form.html.twig");
         echo "
 
-    <a href=\"";
-        // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("evenement_index");
-        echo "\">back to list</a>
-";
+    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -117,21 +112,20 @@ class __TwigTemplate_6bd93412658c514eeb5437e8b29b1fde2089b868583da7f805ce69f4328
 
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'layout.html.twig' %}
 
-{% block title %}New Evenement{% endblock %}
+{% block title %}{{parent()}}{% endblock %}
 
 {% block body %}
-    <h1>Create new Evenement</h1>
 
     {{ include('evenement/_form.html.twig') }}
 
-    <a href=\"{{ path('evenement_index') }}\">back to list</a>
+    {# <a href=\"{{ path('evenement_index') }}\">back to list</a> #}
 {% endblock %}
 ", "evenement/new.html.twig", "/Users/carolinezaini/Desktop/enfant-do/templates/evenement/new.html.twig");
     }

@@ -155,8 +155,14 @@ footer p {
   border-color: #f1e085;
 }
 
-.btn-primary:hover {
-  background-color: gray;
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  color: black;
+  background-color: #ffbe76;
+  border-color: #ffbe76; /*set the color you want here*/
 }
 
 @media (max-width: 700px) {
