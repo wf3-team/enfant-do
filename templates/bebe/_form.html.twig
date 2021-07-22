@@ -1,0 +1,14 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+{{ form_start(form) }}
+
+    <h1> Inscription </h1>
+
+    <h2> Bébé </h2> 
+    {{ form_widget(form) }}
+    <button class="btn btn-warning">{{ button_label|default('Valider') }}</button>
+
+{{ form_end(form) }}
+{% endblock %}
+

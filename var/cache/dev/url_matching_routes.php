@@ -13,6 +13,12 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/bebe' => [[['_route' => 'bebe_index', '_controller' => 'App\\Controller\\BebeController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/bebe/inscription' => [[['_route' => 'bebe_new', '_controller' => 'App\\Controller\\BebeController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/connexion' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
+        '/deconnexion' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
+        '/' => [[['_route' => 'user_index', '_controller' => 'App\\Controller\\UserController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/inscription' => [[['_route' => 'user_new', '_controller' => 'App\\Controller\\UserController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -29,8 +35,17 @@ return [
                         .')'
                         .'|(*:124)'
                     .')'
-                    .'|error/(\\d+)(?:\\.([^/]++))?(*:159)'
                 .')'
+                .'|/bebe/([^/]++)(?'
+                    .'|(*:151)'
+                    .'|/edit(*:164)'
+                    .'|(*:172)'
+                .')'
+                .'|/([^/]++)(?'
+                    .'|/edit(*:198)'
+                    .'|(*:206)'
+                .')'
+                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:243)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -40,7 +55,12 @@ return [
         101 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         114 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         124 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        159 => [
+        151 => [[['_route' => 'bebe_show', '_controller' => 'App\\Controller\\BebeController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        164 => [[['_route' => 'bebe_edit', '_controller' => 'App\\Controller\\BebeController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        172 => [[['_route' => 'bebe_delete', '_controller' => 'App\\Controller\\BebeController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        198 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        206 => [[['_route' => 'user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        243 => [
             [['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
