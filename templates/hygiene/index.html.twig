@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hygiene index{% endblock %}
+
+{% block body %}
+    <h1>Hygiene index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Couche_urine</th>
+                <th>Couche_selle</th>
+                <th>Bain</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for hygiene in hygienes %}
+            <tr>
+                <td>{{ hygiene.id }}</td>
+                <td>{{ hygiene.coucheUrine ? 'Yes' : 'No' }}</td>
+                <td>{{ hygiene.coucheSelle ? 'Yes' : 'No' }}</td>
+                <td>{{ hygiene.bain ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('hygiene_show', {'id': hygiene.id}) }}">show</a>
+                    <a href="{{ path('hygiene_edit', {'id': hygiene.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('hygiene_new') }}">Create new</a>
+{% endblock %}
