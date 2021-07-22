@@ -2,13 +2,21 @@
 
 namespace App\Controller;
 
+use App\Entity\Bebe;
+use App\Entity\Evenement;
 use App\Entity\Repas;
 use App\Form\RepasType;
+use App\Repository\BebeRepository;
 use App\Repository\RepasRepository;
+use App\Repository\UserRepository;
+use App\Repository\UtilisateurRepository;
+use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * @Route("/repas")
@@ -26,20 +34,56 @@ class RepasController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="repas_new", methods={"GET","POST"})
+     * @Route("/ajouter", name="repas_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, UserRepository $utilisateurRepo): Response
     {
         $repa = new Repas();
         $form = $this->createForm(RepasType::class, $repa);
         $form->handleRequest($request);
 
+        // dd(new \DateTime("now"));
+        // dd(new \DateTime('@'.strtotime('now')));
+
         if ($form->isSubmitted() && $form->isValid()) {
+            
+             // création d'évènement et le lier au repas
+            $event = new Evenement();
+            // getUser info de la session
+            // $utilisateur = $this->getUser();
+
+            $utilisateur = $utilisateurRepo->findOneBy([
+                'pseudo' => 'maman'
+            ]);
+ 
+            // Avec l'ajout de la connexion utilisateur :
+            // $bebe = $utilisateurRepo->findOneBy([
+            //     'bebe' => $utilisateur
+            // ]);
+
+            $bebe = $utilisateur->getBebe();
+
+             // Convertir la date et la mettre à l'heure française dans le fichier twig.yaml
+            // $date = new \DateTime('@'.strtotime('now'));
+            $date = new \DateTime('now');
+            
+            // Remplir l'instance event avec tous les champs évènement :
+            $event
+                ->setUser($utilisateur)
+                ->setBebe($bebe)
+                ->setRepas($repa)
+                ->setDodo(false)
+                ->setHeureDebut($date)
+                // ->setHygiene() //pas besoin car il peut être NULL
+                // ->setHeureFin() //pas besoin car il peut être NULL  
+            ;
+          
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($repa);
+            $entityManager->persist($event);
             $entityManager->flush();
 
-            return $this->redirectToRoute('repas_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('evenement_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('repas/new.html.twig', [
@@ -92,3 +136,6 @@ class RepasController extends AbstractController
         return $this->redirectToRoute('repas_index', [], Response::HTTP_SEE_OTHER);
     }
 }
+
+
+ 

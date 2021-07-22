@@ -1,4 +1,86 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<div class="container">
+    <div class="mb-5 retour-accueil">
+        <a href="{{path('evenement_index')}}"><i class="fas fa-arrow-left"></i> Retour à la page d'accueil</a>
+    </div>  
+
+    <h2>Gestion des repas</h2>
+    {{ form_start(form) }}
+
+    <div class="event-section row d-flex flex-row justify-content-center mb-5 pt-5 pb-5">
+
+        {# Biberon #}
+        <div class="col-md-4 col-7 me-3 mb-2 color-table">
+            <h6 class="text-center mt-2">Biberon</h6>
+                <table class="table text-center">
+                <tbody>
+                        <tr>
+                            <td>{{ form_widget(form.biberon) }}</td>    
+                        </tr>
+                        <tr>
+                            <td>Quantité (en ml) :{{ form_widget(form.quantite_ml) }}</td>
+                        </tr>
+                </tbody>
+                </table>
+        </div>
+        {# Diversification #}
+        <div class="col-md-5 col-7 me-3 mb-2 color-table">
+            <h6 class="text-center mt-2">Diversification</h6>
+                <table class="table text-center">
+                <tbody>
+                        <tr>
+                            <td>{{ form_widget(form.puree) }}</td>  
+                            <td>{{ form_widget(form.compote) }}</td> 
+                            <td>{{ form_widget(form.yaourt) }}</td>   
+                        </tr>
+                
+                            <td>Quantité (en pot) : {{ form_widget(form.quantite_pot) }}</td>
+            
+                </tbody>
+                </table>
+        </div>
+        <div>{{form_widget(form.enregistrer)}}</div>
+        {# Fin de la row #}
+        </div>
+
+            
+
+    {{ form_end(form) }}
+
+    {# information #}
+        <h2>Conseils autour de bébé</h2>
+        <div class="section-info">
+        
+            <div class="row d-flex justify-content-center pt-4 pb-4 mb-5">
+                <div class="col-3">
+                    <img class="me-2 w-75" src="{{ asset('image/repas/biberon2.jpg')}}" alt="rust-texture">
+                </div>
+                <div class="col-9">
+                <h4>Autour du biberon</h4>
+                        <p>Pour un enfant né à terme et de poids de naissance moyen, vous donnerez un biberon toutes les 3 heures environ, sachant que l’intervalle entre deux tétées peut osciller entre 2h30 et 4 heures. La quantité de lait proposée le jour de la naissance est de 10 à 30 ml par biberon.
+                        Plus le bébé prend, plus on espace la tétée suivante. 
+                        Gardez bien à l’esprit cependant que vous n’avez pas besoin de surveiller votre montre ni de respecter un intervalle strict entre deux biberons. Soyez plutôt attentive aux manifestations de faim de votre enfant à mesure que vous faites connaissance l’un avec l’autre : lorsque votre bébé bouge, présente des mouvements de succion, vous pouvez lui proposer un biberon.</p>
+                </div>
+            </div>
+
+            <div class="row pb-4 ps-4 pe-4 mb-5">
+               
+                <div class="col-9">
+                <h4>Diversification :</h4>
+                    <p>la diversification alimentaire consiste à introduire des aliments autres que le lait (aliments solides) dans l'alimentation du nourrisson allaité ou recevant du lait pour nourrissons. Elle conduit progressivement 
+                    à une alimentation familiale vers l’âge de 1 
+                    à 2 ans.</p>
+                </div>
+                 <div class="col-3">
+                    <img class="me-2" src="{{ asset('image/repas/diversification3.jpg')}}" alt="rust-texture">
+                </div>
+            </div>
+
+
+        </div>
+
+{# Fin div container #}
+</div>
+{% endblock %}

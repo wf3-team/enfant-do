@@ -1,39 +1,232 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block title %}Evenement index{% endblock %}
+{% block title %}{{parent()}}{% endblock %}
 
-{% block body %}
-    <h1>Evenement index</h1>
+{% block content %}
+    <p class="mt-5 mb-5">L'enfantDo est fait pour vous aider dans les tâches qui concerne votre bébé. Grâce à la gestion de bébé, vous pouvez voir toutes les informations qui concerne bébé et ainsi mieux vous organiser.</p>
+    <h2>Gestion de bébé</h2>
+    <h6 class="mt-4">{{ "now" | date('d/m/Y à H:i', "Europe/Paris" ) }}</h6>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Dodo</th>
-                <th>Heure_debut</th>
-                <th>Heure_fin</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for evenement in evenements %}
-            <tr>
-                <td>{{ evenement.id }}</td>
-                <td>{{ evenement.dodo ? 'Yes' : 'No' }}</td>
-                <td>{{ evenement.heureDebut ? evenement.heureDebut|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ evenement.heureFin ? evenement.heureFin|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('evenement_show', {'id': evenement.id}) }}">show</a>
-                    <a href="{{ path('evenement_edit', {'id': evenement.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    {# {% if isToday %} #}
+    
 
-    <a href="{{ path('evenement_new') }}">Create new</a>
+    <div class="event-section row d-flex justify-content-center mb-5 pt-4 pb-4">
+    {# edition #}
+        <div class="col-md-1">
+        </div>
+        {# Tableau heure #}
+        <div class="col-md-1 me-3 col-2 mb-2 base">
+        <h6 class="text-center mt-2">Heure</h6>
+            <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>Début</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for evenement in evenements %}
+                    <tr>
+                         <td>{{ evenement.heureDebut ? evenement.heureDebut|date('H:i') : '' }}</td>
+                         
+                    </tr>
+                {% endfor %}
+            </tbody>
+                
+            </table>
+        </div>
+
+    {# Tableau repas #}
+        {# Tableau biberon #}
+        <div class="col-md-1 me-3 col-3 mb-2 color-table">
+        <h6 class="text-center mt-2">Biberon</h6>
+            <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>Quantité</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for evenement in evenements %}
+                    <tr>
+                        <td>
+                        {% if evenement.repas is null %}
+                            <i class="far fa-clock"></i>
+                        {% else %}
+                        {{evenement.repas.quantiteMl ? evenement.repas.quantiteMl : '-'}}
+                        {% endif %}
+                        
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+                
+            </table>
+        </div>
+        {# Tableau diversification #}
+        <div class="col-md-3 col-5 me-3 mb-2 color-table">
+        <h6 class="text-center mt-2">Diversification</h6>
+            <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Quantité (pot)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for evenement in evenements %}
+                    <tr>
+                        <td>
+                        {% if evenement.repas is null %}
+                            <i class="far fa-clock"></i>
+                        {% elseif evenement.repas.puree %}
+                            Purée
+                        {% elseif evenement.repas.compote %}
+                            Compote
+                        {% elseif evenement.repas.Yaourt %}
+                            Yaourt
+                        {% else %}
+                            <i class="far fa-clock"></i>
+                        {% endif %}
+                        </td>
+                        <td>
+                        {% if evenement.repas is null %}
+                            <i class="far fa-clock"></i>
+                        {% elseif evenement.repas.quantitepot %}
+                             {{evenement.repas.quantitepot}}
+                        {% else %}
+                            <i class="far fa-clock"></i>
+                        {% endif %}
+                        </td>
+                           
+                    
+                    </tr>
+                {% endfor %}
+            </tbody>   
+            </table>
+        </div>
+        {# Tableau hygiène #}
+        <div class="col-md-1 me-3 mb-2 col-3 color-table">
+        <h6 class="text-center mt-2">Couche</h6>
+            <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for evenement in evenements %}
+                    <tr>
+                        <td>
+                        {% if evenement.hygiene is null %}
+                             <i class="far fa-clock"></i>
+                        {% elseif evenement.hygiene.coucheUrine %}
+                            Urine
+                        {% elseif evenement.hygiene.coucheSelle %}
+                            Selle
+                        {% else %}
+                            <i class="far fa-clock"></i>
+                        {% endif %} 
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>   
+            </table>
+        </div>
+        {# Tableau bain #}
+        <div class="col-md-1 me-3 mb-2 col-3 color-table">
+        <h6 class="text-center mt-2">Bain</h6>
+            <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>Prise</th>
+                </tr>
+            </thead>
+            <tbody>
+               {% for evenement in evenements %}
+                    <tr>
+                        <td>
+                        {% if evenement.hygiene is null %}
+                            <i class="far fa-clock"></i>
+                        {% elseif evenement.hygiene.bain %}
+                            <i class="fas fa-check"></i>
+
+                        {% else %}
+                            <i class="far fa-clock"></i>
+                        {% endif %} 
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>   
+            </table>
+        </div>
+        {# Tableau dodo #}
+        <div class="col-md-2 me-3 mb-2 col-4 color-table">
+        <h6 class="text-center mt-2">Sommeil</h6>
+            <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>Début</th>
+                    <th>Fin</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for evenement in evenements %}
+                    <tr>
+                        <td>
+                            {% if evenement.dodo %}
+                                <i class="fas fa-check"></i>
+                            {% else %}
+                                <i class="far fa-clock"></i>
+                            {% endif %}
+                        </td> 
+                        <td>
+                            {% if evenement.heureFin %}
+                                {{evenement.heureFin|date('H:i')}}
+                            {% else %}
+                                <i class="far fa-clock"></i>
+                            {% endif %}
+                        </td>
+                        <td><a href="{{ path('evenement_edit', {'id': evenement.id}) }}"><i class="fas fa-feather"></i></a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>   
+            </table>
+        </div>
+
+    {# end div row #}
+    </div> 
+    {# {% else %}
+    <p>Veuillez rentrer de nouvelles informations</p> 
+{% endif %}  #}
+
+
+    
+
+    {# information #}
+    <h2>Conseils autour de bébé</h2>
+    <div class="section-info row d-flex pt-4 pb-4 mb-5">
+        <div class="col-md-3">
+            <img class="me-2" src="{{ asset('image/dodo/photo-dodo2.jpg')}}" alt="rust-texture">
+        </div>
+        <div class="col-9">
+        <h4>Conseil d’ Eté !</h4>
+            <p>Bébé et la chaleur : le mot d’ordre est « ombre et hydratation ».  
+                Habillez bébé légèrement, ne le mettez jamais au soleil. Prévoyez de l’eau, tant qu’il en voudra. Si vous lui donnez du lait, attention à ne pas conserver celui-ci trop longtemps dans un biberon hors du frigo. Un brumisateur d’eau sera un accessoire très utile, pour bébé comme pour maman.
+
+                Bébé et les petites bêtes : loin des villes, les insectes sont en leur royaume. 
+                Pensez aux accessoires (moustiquaires, prises insecticides) pour la nuit. Attention aux crèmes antimoustiques pour adultes, pas toujours adaptées pour bébé. Attention à la curiosité de bébé envers les insectes piquants, ceux-ci n’aiment pas être attrapés.</p>
+        </div>
+    </div>
+             
+           
+
+
+    
+                    {# <a href="{{ path('evenement_show', {'id': evenement.id}) }}">show</a>
+                    <a href="{{ path('evenement_edit', {'id': evenement.id}) }}">edit</a> #}
+           
+
+    {# <a href="{{ path('evenement_new') }}">Create new</a> #}
 {% endblock %}
+

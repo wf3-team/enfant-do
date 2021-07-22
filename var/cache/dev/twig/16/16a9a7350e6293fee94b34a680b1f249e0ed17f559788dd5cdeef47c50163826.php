@@ -124,37 +124,21 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
         <div class=\"d-flex flex-row justify-content-center\">
             <div class=\"icon-link biberon\">
-                <a href=\"";
-        // line 57
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("repas_new");
-        echo "\"><img class=\"text-center\" src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-biberon.png"), "html", null, true);
-        echo "\" alt=\"rust-texture\">
-            </a><p>Repas</p></div>
+                ";
+        // line 58
+        echo "            </a><p>Repas</p></div>
             <div class=\"icon-link couche\">
-                <a href=\"";
-        // line 60
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("hygiene_new");
-        echo "\"><img src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-couche.png"), "html", null, true);
-        echo "\" alt=\"rust-texture\">
-            </a><p>Hygiène</p></div>
+                ";
+        // line 61
+        echo "            </a><p>Hygiène</p></div>
             <div class=\"icon-link dodo\">
-                <a href=\"";
-        // line 63
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("evenement_sommeil");
-        echo "\"><img src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-dodo.png"), "html", null, true);
-        echo "\" alt=\"rust-texture\">
-            </a><p>Sommeil</p></div>
+                ";
+        // line 64
+        echo "            </a><p>Sommeil</p></div>
             <div class=\"icon-link statistique\">
-                <a href=\"";
-        // line 66
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conseil");
-        echo "\"><img src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-statistique.png"), "html", null, true);
-        echo "\" alt=\"rust-texture\">
-            </a><p>Conseils</p></div>
+                ";
+        // line 67
+        echo "            </a><p>Conseils</p></div>
 
             <div class=\"section-profil-bebe d-flex\">
                 <img class=\"me-2\" src=\"";
@@ -260,7 +244,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
     public function getDebugInfo()
     {
-        return array (  242 => 85,  240 => 84,  230 => 83,  194 => 96,  181 => 85,  179 => 83,  176 => 82,  162 => 70,  153 => 66,  145 => 63,  137 => 60,  129 => 57,  123 => 53,  81 => 13,  77 => 11,  74 => 9,  72 => 7,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  226 => 85,  224 => 84,  214 => 83,  178 => 96,  165 => 85,  163 => 83,  160 => 82,  146 => 70,  141 => 67,  137 => 64,  133 => 61,  129 => 58,  123 => 53,  81 => 13,  77 => 11,  74 => 9,  72 => 7,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -321,16 +305,16 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
         <div class=\"d-flex flex-row justify-content-center\">
             <div class=\"icon-link biberon\">
-                <a href=\"{{path('repas_new')}}\"><img class=\"text-center\" src=\"{{ asset('image/icon/icon-biberon.png')}}\" alt=\"rust-texture\">
+                {# <a href=\"{{path('repas_new')}}\"><img class=\"text-center\" src=\"{{ asset('image/icon/icon-biberon.png')}}\" alt=\"rust-texture\"> #}
             </a><p>Repas</p></div>
             <div class=\"icon-link couche\">
-                <a href=\"{{path('hygiene_new')}}\"><img src=\"{{ asset('image/icon/icon-couche.png')}}\" alt=\"rust-texture\">
+                {# <a href=\"{{path('hygiene_new')}}\"><img src=\"{{ asset('image/icon/icon-couche.png')}}\" alt=\"rust-texture\"> #}
             </a><p>Hygiène</p></div>
             <div class=\"icon-link dodo\">
-                <a href=\"{{path('evenement_sommeil')}}\"><img src=\"{{ asset('image/icon/icon-dodo.png')}}\" alt=\"rust-texture\">
+                {# <a href=\"{{path('evenement_sommeil')}}\"><img src=\"{{ asset('image/icon/icon-dodo.png')}}\" alt=\"rust-texture\"> #}
             </a><p>Sommeil</p></div>
             <div class=\"icon-link statistique\">
-                <a href=\"{{path('conseil')}}\"><img src=\"{{ asset('image/icon/icon-statistique.png')}}\" alt=\"rust-texture\">
+                {# <a href=\"{{path('conseil')}}\"><img src=\"{{ asset('image/icon/icon-statistique.png')}}\" alt=\"rust-texture\"> #}
             </a><p>Conseils</p></div>
 
             <div class=\"section-profil-bebe d-flex\">
