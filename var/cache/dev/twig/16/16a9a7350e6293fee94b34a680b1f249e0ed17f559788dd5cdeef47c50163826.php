@@ -76,10 +76,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
         // line 11
         echo "       <nav class=\"navbar navbar-expand-lg navbar-light\">
             <div class=\"container-fluid\">
-                <a class=\"navbar-brand\" href=\"";
-        // line 13
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("evenement_index");
-        echo "\">L'Enfant Do</a>
+                <a class=\"navbar-brand\" href=\"#\">L'Enfant Do</a>
                     <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                         <span class=\"navbar-toggler-icon\"></span>
                     </button>
@@ -91,23 +88,60 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
                             <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"#\">Contact</a>
                             </li>
-                            <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\">Inscription</a>
-                            </li>
-                            <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\">Connexion</a>
-                            </li>
-                            <li class=\"nav-item dropdown\">
-                            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                                Personne connectée
-                            </a>
-                                <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                                    <li><a class=\"dropdown-item\" href=\"#\">Gérer mon profil</a></li>
-                                    <li><a class=\"dropdown-item\" href=\"#\">Gérer le profil de bébé</a></li>
-                                    <li><hr class=\"dropdown-divider\"></li>
-                                    <li><a class=\"dropdown-item\" href=\"#\">Inscrire une autre personne</a></li>
-                                </ul>
-                            </li>
+";
+        // line 25
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            echo " ";
+            // line 26
+            echo "
+                        <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"";
+            // line 28
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\">Déconnexion</a>
+                        </li>
+
+                        ";
+        } else {
+            // line 32
+            echo "                        <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"";
+            // line 33
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_new");
+            echo "\">Inscription</a>
+                        </li>
+
+                        <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"";
+            // line 37
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\">Connexion</a>
+                        </li>
+                        ";
+        }
+        // line 40
+        echo "
+                        
+                        ";
+        // line 42
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 43
+            echo "                        <li class=\"nav-item dropdown\">
+                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+                            Profil
+                        </a>
+                            <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                                <li><a class=\"dropdown-item\" href=\"#\">Gérer mon profil</a></li>
+                                <li><a class=\"dropdown-item\" href=\"#\">Gérer le profil de bébé</a></li>
+                                <li><hr class=\"dropdown-divider\"></li>
+                                <li><a class=\"dropdown-item\" href=\"#\">Inscrire une autre personne</a></li>
+                            </ul>
+                        </li>
+                        ";
+        }
+        // line 55
+        echo "
+
                         </ul>
                     </div>
             </div>
@@ -119,30 +153,46 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
         <div class=\"row\">    
 
         ";
-        // line 53
+        // line 68
         echo "
 
         <div class=\"d-flex flex-row justify-content-center\">
             <div class=\"icon-link biberon\">
-                ";
-        // line 58
-        echo "            </a><p>Repas</p></div>
+                <a href=\"";
+        // line 72
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("repas_new");
+        echo "\"><img class=\"text-center\" src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-biberon.png"), "html", null, true);
+        echo "\" alt=\"rust-texture\">
+            </a><p>Repas</p></div>
             <div class=\"icon-link couche\">
-                ";
-        // line 61
-        echo "            </a><p>Hygiène</p></div>
+                <a href=\"";
+        // line 75
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("hygiene_new");
+        echo "\"><img src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-couche.png"), "html", null, true);
+        echo "\" alt=\"rust-texture\">
+            </a><p>Hygiène</p></div>
             <div class=\"icon-link dodo\">
-                ";
-        // line 64
-        echo "            </a><p>Sommeil</p></div>
+                <a href=\"";
+        // line 78
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("evenement_sommeil");
+        echo "\"><img src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-dodo.png"), "html", null, true);
+        echo "\" alt=\"rust-texture\">
+            </a><p>Sommeil</p></div>
             <div class=\"icon-link statistique\">
-                ";
-        // line 67
-        echo "            </a><p>Conseils</p></div>
+                <a href=\"";
+        // line 81
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conseil");
+        echo "\"><img src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-statistique.png"), "html", null, true);
+        echo "\" alt=\"rust-texture\">
+            </a><p>Conseils</p></div>
 
             <div class=\"section-profil-bebe d-flex\">
                 <img class=\"me-2\" src=\"";
-        // line 70
+        // line 85
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/repas/diversification1.jpg"), "html", null, true);
         echo "\" alt=\"rust-texture\">
                 <div class=\"d-flex flex-column\">
@@ -156,12 +206,12 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
         </div>
     ";
-        // line 82
+        // line 97
         echo "    </div> 
         ";
-        // line 83
+        // line 98
         $this->displayBlock('content', $context, $blocks);
-        // line 85
+        // line 100
         echo " 
    
     </main>
@@ -174,7 +224,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
         <div class=\"copyright d-flex justify-content-center\">
             <p class=\"mt-3 mb-1\">
                 &copy;EnfantDo 2021 - ";
-        // line 96
+        // line 111
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "Y"), "html", null, true);
         echo " all right reserved 
             </p>
@@ -210,7 +260,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
     }
 
-    // line 83
+    // line 98
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -220,9 +270,9 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 84
+        // line 99
         echo "            ";
-        // line 85
+        // line 100
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -244,7 +294,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
     public function getDebugInfo()
     {
-        return array (  226 => 85,  224 => 84,  214 => 83,  178 => 96,  165 => 85,  163 => 83,  160 => 82,  146 => 70,  141 => 67,  137 => 64,  133 => 61,  129 => 58,  123 => 53,  81 => 13,  77 => 11,  74 => 9,  72 => 7,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  276 => 100,  274 => 99,  264 => 98,  228 => 111,  215 => 100,  213 => 98,  210 => 97,  196 => 85,  187 => 81,  179 => 78,  171 => 75,  163 => 72,  157 => 68,  143 => 55,  129 => 43,  127 => 42,  123 => 40,  117 => 37,  110 => 33,  107 => 32,  100 => 28,  96 => 26,  93 => 25,  77 => 11,  74 => 9,  72 => 7,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -261,7 +311,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
     {# Intégration de la nav Bootstrap : #}
        <nav class=\"navbar navbar-expand-lg navbar-light\">
             <div class=\"container-fluid\">
-                <a class=\"navbar-brand\" href=\"{{path('evenement_index')}}\">L'Enfant Do</a>
+                <a class=\"navbar-brand\" href=\"#\">L'Enfant Do</a>
                     <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                         <span class=\"navbar-toggler-icon\"></span>
                     </button>
@@ -273,23 +323,38 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
                             <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"#\">Contact</a>
                             </li>
-                            <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\">Inscription</a>
-                            </li>
-                            <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\">Connexion</a>
-                            </li>
-                            <li class=\"nav-item dropdown\">
-                            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                                Personne connectée
-                            </a>
-                                <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                                    <li><a class=\"dropdown-item\" href=\"#\">Gérer mon profil</a></li>
-                                    <li><a class=\"dropdown-item\" href=\"#\">Gérer le profil de bébé</a></li>
-                                    <li><hr class=\"dropdown-divider\"></li>
-                                    <li><a class=\"dropdown-item\" href=\"#\">Inscrire une autre personne</a></li>
-                                </ul>
-                            </li>
+{% if is_granted(\"IS_AUTHENTICATED_FULLY\") %} {# signifie que l'utilisateur est authentifié est connecté #}
+
+                        <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"{{ path(\"app_logout\") }}\">Déconnexion</a>
+                        </li>
+
+                        {% else %}
+                        <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"{{ path(\"user_new\") }}\">Inscription</a>
+                        </li>
+
+                        <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"{{ path(\"app_login\") }}\">Connexion</a>
+                        </li>
+                        {% endif %}
+
+                        
+                        {% if is_granted(\"IS_AUTHENTICATED_FULLY\") %}
+                        <li class=\"nav-item dropdown\">
+                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+                            Profil
+                        </a>
+                            <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                                <li><a class=\"dropdown-item\" href=\"#\">Gérer mon profil</a></li>
+                                <li><a class=\"dropdown-item\" href=\"#\">Gérer le profil de bébé</a></li>
+                                <li><hr class=\"dropdown-divider\"></li>
+                                <li><a class=\"dropdown-item\" href=\"#\">Inscrire une autre personne</a></li>
+                            </ul>
+                        </li>
+                        {% endif %}
+
+
                         </ul>
                     </div>
             </div>
@@ -305,16 +370,16 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
         <div class=\"d-flex flex-row justify-content-center\">
             <div class=\"icon-link biberon\">
-                {# <a href=\"{{path('repas_new')}}\"><img class=\"text-center\" src=\"{{ asset('image/icon/icon-biberon.png')}}\" alt=\"rust-texture\"> #}
+                <a href=\"{{path('repas_new')}}\"><img class=\"text-center\" src=\"{{ asset('image/icon/icon-biberon.png')}}\" alt=\"rust-texture\">
             </a><p>Repas</p></div>
             <div class=\"icon-link couche\">
-                {# <a href=\"{{path('hygiene_new')}}\"><img src=\"{{ asset('image/icon/icon-couche.png')}}\" alt=\"rust-texture\"> #}
+                <a href=\"{{path('hygiene_new')}}\"><img src=\"{{ asset('image/icon/icon-couche.png')}}\" alt=\"rust-texture\">
             </a><p>Hygiène</p></div>
             <div class=\"icon-link dodo\">
-                {# <a href=\"{{path('evenement_sommeil')}}\"><img src=\"{{ asset('image/icon/icon-dodo.png')}}\" alt=\"rust-texture\"> #}
+                <a href=\"{{path('evenement_sommeil')}}\"><img src=\"{{ asset('image/icon/icon-dodo.png')}}\" alt=\"rust-texture\">
             </a><p>Sommeil</p></div>
             <div class=\"icon-link statistique\">
-                {# <a href=\"{{path('conseil')}}\"><img src=\"{{ asset('image/icon/icon-statistique.png')}}\" alt=\"rust-texture\"> #}
+                <a href=\"{{path('conseil')}}\"><img src=\"{{ asset('image/icon/icon-statistique.png')}}\" alt=\"rust-texture\">
             </a><p>Conseils</p></div>
 
             <div class=\"section-profil-bebe d-flex\">

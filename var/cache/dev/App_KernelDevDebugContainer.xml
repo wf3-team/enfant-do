@@ -331,6 +331,13 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\BebeController" class="App\Controller\BebeController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\BebeController"/>
+      </call>
+    </service>
     <service id="App\Controller\ConseilController" class="App\Controller\ConseilController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -366,6 +373,16 @@
         <argument type="service" id=".service_locator.W9y3dzm.App\Controller\SecurityController"/>
       </call>
     </service>
+    <service id="App\Controller\UserController" class="App\Controller\UserController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\UserController"/>
+      </call>
+    </service>
+    <service id="App\Form\BebeType" class="App\Form\BebeType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\EvenementType" class="App\Form\EvenementType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -373,6 +390,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\RepasType" class="App\Form\RepasType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Repository\BebeRepository" class="App\Repository\BebeRepository" autowire="true" autoconfigure="true">
@@ -979,9 +999,11 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\BebeType</argument>
         <argument>App\Form\EvenementType</argument>
         <argument>App\Form\HygieneType</argument>
         <argument>App\Form\RepasType</argument>
+        <argument>App\Form\UserType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -1387,7 +1409,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.La5crBq"/>
+      <argument type="service" id=".service_locator.SefwX09"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5614,6 +5636,9 @@
       </call>
     </service>
     <service id="twig.missing_extension_suggestor" class="Twig\Extra\TwigExtraBundle\MissingExtensionSuggestor"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BebeController" class="App\Controller\BebeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BebeController" class="App\Controller\BebeController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\BebeController" class="App\Controller\BebeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ConseilController" class="App\Controller\ConseilController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ConseilController" class="App\Controller\ConseilController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ConseilController" class="App\Controller\ConseilController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5629,12 +5654,19 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\BebeType" class="App\Form\BebeType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\BebeType" class="App\Form\BebeType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EvenementType" class="App\Form\EvenementType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\EvenementType" class="App\Form\EvenementType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\HygieneType" class="App\Form\HygieneType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\HygieneType" class="App\Form\HygieneType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RepasType" class="App\Form\RepasType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RepasType" class="App\Form\RepasType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BebeRepository" class="App\Repository\BebeRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\BebeRepository" class="App\Repository\BebeRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ConseilRepository" class="App\Repository\ConseilRepository" autowire="true" abstract="true"/>
@@ -5962,6 +5994,25 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
+    <service id=".service_locator.GfSyruw" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="bebeRepository" type="service_closure" id="App\Repository\BebeRepository"/>
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator..Ae5NXw" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.utDPBgJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="bebe" type="service_closure" id=".errored..service_locator.utDPBgJ.App\Entity\Bebe"/>
+      </argument>
+    </service>
     <service id=".service_locator.LEE18h1" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6023,9 +6074,26 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.PqbvsZz" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.pwZ6MTM" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="passwordEncoder" type="service_closure" id="security.user_password_encoder.generic"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ch4Jgvl" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="user" type="service_closure" id=".errored..service_locator.ch4Jgvl.App\Entity\User"/>
+      </argument>
+    </service>
+    <service id=".service_locator.SwElVPY" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="App\Controller\BebeController::delete" type="service_closure" id=".service_locator.utDPBgJ"/>
+        <argument key="App\Controller\BebeController::edit" type="service_closure" id=".service_locator.utDPBgJ"/>
+        <argument key="App\Controller\BebeController::index" type="service_closure" id=".service_locator.GfSyruw"/>
+        <argument key="App\Controller\BebeController::new" type="service_closure" id=".service_locator..Ae5NXw"/>
+        <argument key="App\Controller\BebeController::show" type="service_closure" id=".service_locator.utDPBgJ"/>
         <argument key="App\Controller\ConseilController::index" type="service_closure" id=".service_locator.LEE18h1"/>
         <argument key="App\Controller\EvenementController::delete" type="service_closure" id=".service_locator.m32XZm7"/>
         <argument key="App\Controller\EvenementController::edit" type="service_closure" id=".service_locator.m32XZm7"/>
@@ -6043,12 +6111,21 @@
         <argument key="App\Controller\RepasController::new" type="service_closure" id=".service_locator.samqw1C"/>
         <argument key="App\Controller\RepasController::show" type="service_closure" id=".service_locator.DxReJxZ"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.UDgw6Ol"/>
+        <argument key="App\Controller\UserController::delete" type="service_closure" id=".service_locator.ch4Jgvl"/>
+        <argument key="App\Controller\UserController::edit" type="service_closure" id=".service_locator.ch4Jgvl"/>
+        <argument key="App\Controller\UserController::index" type="service_closure" id=".service_locator..Ae5NXw"/>
+        <argument key="App\Controller\UserController::new" type="service_closure" id=".service_locator.pwZ6MTM"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::terminate" type="service_closure" id=".service_locator.KfwZsne"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.KfwZsne"/>
+        <argument key="App\Controller\BebeController:delete" type="service_closure" id=".service_locator.utDPBgJ"/>
+        <argument key="App\Controller\BebeController:edit" type="service_closure" id=".service_locator.utDPBgJ"/>
+        <argument key="App\Controller\BebeController:index" type="service_closure" id=".service_locator.GfSyruw"/>
+        <argument key="App\Controller\BebeController:new" type="service_closure" id=".service_locator..Ae5NXw"/>
+        <argument key="App\Controller\BebeController:show" type="service_closure" id=".service_locator.utDPBgJ"/>
         <argument key="App\Controller\ConseilController:index" type="service_closure" id=".service_locator.LEE18h1"/>
         <argument key="App\Controller\EvenementController:delete" type="service_closure" id=".service_locator.m32XZm7"/>
         <argument key="App\Controller\EvenementController:edit" type="service_closure" id=".service_locator.m32XZm7"/>
@@ -6066,6 +6143,10 @@
         <argument key="App\Controller\RepasController:new" type="service_closure" id=".service_locator.samqw1C"/>
         <argument key="App\Controller\RepasController:show" type="service_closure" id=".service_locator.DxReJxZ"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.UDgw6Ol"/>
+        <argument key="App\Controller\UserController:delete" type="service_closure" id=".service_locator.ch4Jgvl"/>
+        <argument key="App\Controller\UserController:edit" type="service_closure" id=".service_locator.ch4Jgvl"/>
+        <argument key="App\Controller\UserController:index" type="service_closure" id=".service_locator..Ae5NXw"/>
+        <argument key="App\Controller\UserController:new" type="service_closure" id=".service_locator.pwZ6MTM"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:terminate" type="service_closure" id=".service_locator.KfwZsne"/>
@@ -6130,12 +6211,14 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.La5crBq" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.SefwX09" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\BebeType" type="service_closure" id="App\Form\BebeType"/>
         <argument key="App\Form\EvenementType" type="service_closure" id="App\Form\EvenementType"/>
         <argument key="App\Form\HygieneType" type="service_closure" id="App\Form\HygieneType"/>
         <argument key="App\Form\RepasType" type="service_closure" id="App\Form\RepasType"/>
+        <argument key="App\Form\UserType" type="service_closure" id="App\Form\UserType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service_closure" id="form.type.color"/>
@@ -6404,6 +6487,12 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.W9y3dzm.App\Controller\BebeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\BebeController"/>
+      <argument>App\Controller\BebeController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.W9y3dzm" method="withContext"/>
+    </service>
     <service id=".service_locator.W9y3dzm.App\Controller\ConseilController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ConseilController"/>
       <argument>App\Controller\ConseilController</argument>
@@ -6431,6 +6520,12 @@
     <service id=".service_locator.W9y3dzm.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
       <argument>App\Controller\SecurityController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.W9y3dzm" method="withContext"/>
+    </service>
+    <service id=".service_locator.W9y3dzm.App\Controller\UserController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\UserController"/>
+      <argument>App\Controller\UserController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.W9y3dzm" method="withContext"/>
     </service>
@@ -6548,12 +6643,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.PqbvsZz"/>
+      <argument type="service" id=".service_locator.SwElVPY"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.PqbvsZz"/>
+      <argument type="service" id=".service_locator.SwElVPY"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6571,9 +6666,11 @@
     </service>
     <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
+    <service id=".errored..service_locator.utDPBgJ.App\Entity\Bebe" class="App\Entity\Bebe"/>
     <service id=".errored..service_locator.m32XZm7.App\Entity\Evenement" class="App\Entity\Evenement"/>
     <service id=".errored..service_locator.1lN00u6.App\Entity\Hygiene" class="App\Entity\Hygiene"/>
     <service id=".errored..service_locator.DxReJxZ.App\Entity\Repas" class="App\Entity\Repas"/>
+    <service id=".errored..service_locator.ch4Jgvl.App\Entity\User" class="App\Entity\User"/>
     <service id=".service_locator.XXv1IfR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7467,7 +7564,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.0GV1BZZ" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.PqbvsZz"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.SwElVPY"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -7508,6 +7605,9 @@
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator._5g_Wvc" alias=".service_locator.KfwZsne"/>
     <service id=".service_locator.JBAFp66" alias=".service_locator.KfbR3DY"/>
+    <service id=".service_locator.6041pVQ" alias=".service_locator.GfSyruw"/>
+    <service id=".service_locator.8PQa8Mp" alias=".service_locator..Ae5NXw"/>
+    <service id=".service_locator.k0Ye9DT" alias=".service_locator.utDPBgJ"/>
     <service id=".service_locator.vqq6v3." alias=".service_locator.LEE18h1"/>
     <service id=".service_locator.LsQ64rG" alias=".service_locator.7sw9MSK"/>
     <service id=".service_locator.XE__UBz" alias=".service_locator.samqw1C"/>
@@ -7518,6 +7618,8 @@
     <service id=".service_locator.4JCwQ.C" alias=".service_locator.3aTd9kz"/>
     <service id=".service_locator.Md_e4wG" alias=".service_locator.DxReJxZ"/>
     <service id=".service_locator.kXCVHeG" alias=".service_locator.UDgw6Ol"/>
+    <service id=".service_locator.F2VpVm6" alias=".service_locator.pwZ6MTM"/>
+    <service id=".service_locator.NFoOWn0" alias=".service_locator.ch4Jgvl"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.anofQPJ"/>
     <service id=".service_locator.NK827YO" alias=".service_locator.W9y3dzm"/>
   </services>

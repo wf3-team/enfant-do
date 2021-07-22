@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Bebe{% endblock %}
+
+{% block body %}
+    <h1>Bebe</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bebe.id }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ bebe.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Date_naissance</th>
+                <td>{{ bebe.dateNaissance ? bebe.dateNaissance|date('d-m-Y') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Poids (en kg) :</th>
+                <td>{{ bebe.poids }}</td>
+            </tr>
+            <tr>
+                <th>Taille (en cm) :</th>
+                <td>{{ bebe.taille }}</td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td>{{ bebe.genre }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('bebe_index') }}">back to list</a>
+
+    <a href="{{ path('bebe_edit', {'id': bebe.id}) }}">edit</a>
+
+    {{ include('bebe/_delete_form.html.twig') }}
+{% endblock %}
