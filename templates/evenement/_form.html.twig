@@ -23,17 +23,6 @@
             </table>
     </div>
 
-    {# heure_début #}
-    {# <div class="col-md-3 col-5 me-3 mb-2 color-table">
-        <h6 class="text-center mt-2">Heure début</h6>
-            <table class="table text-center">
-            <tbody>
-                    <tr>
-                         <td>{{ form_widget(form.heure_debut) }}</td>    
-                    </tr>
-            </tbody>
-            </table>
-    </div> #}
      {# heure_fin #}
     <div class="col-md-3 col-5 me-3 mb-2 color-table">
         <h6 class="text-center mt-2">Heure de fin</h6>
@@ -59,10 +48,11 @@
                 <img class="me-2" src="{{ asset('image/dodo/photo-dodo1.jpg')}}" alt="rust-texture">
             </div>
             <div class="col-9">
-            <h4>Quand fera t-il ses nuits ?</h4>
-                <p>Pour « faire ses nuits » et rester 5 ou 6 heures d’affilée sans boire, votre bébé doit pouvoir faire des réserves d’énergie. Il doit aussi pouvoir régler son horloge biologique, c’est-à-dire les variations de température de son corps, son système cardiovasculaire et ses cycles hormonaux.
-                Chaque nouveau-né apprend à faire ses nuits à son rythme, tout comme il apprendra un jour à ramper et à marcher. Vous pouvez seulement l’aider.
-                À l’âge de 2 mois (8 semaines), seul 1 bébé sur 4 fait « ses nuits », c’est-à-dire qu’il dort au moins 5 ou 6 heures de suite entre 11 h du soir et 8 h du matin. À 4 mois, 3 bébés sur 4 le font. À 10 mois, c’est 90 % des bébés qui font leurs nuits.</p>
+
+            {% for conseil in conseils %}
+                <h4>{{conseil.nom}}</h4>
+                <p>{{conseil.description}}</p>
+            {% endfor %}
             </div>
         </div> 
 </div>

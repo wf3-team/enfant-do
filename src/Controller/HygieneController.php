@@ -6,6 +6,7 @@ use App\Entity\Evenement;
 use App\Entity\Hygiene;
 use App\Form\HygieneType;
 use App\Repository\BebeRepository;
+use App\Repository\ConseilRepository;
 use App\Repository\HygieneRepository;
 use App\Repository\UserRepository;
 use App\Repository\UtilisateurRepository;
@@ -32,8 +33,12 @@ class HygieneController extends AbstractController
     /**
      * @Route("/ajouter", name="hygiene_new", methods={"GET","POST"})
      */
-    public function new(Request $request, BebeRepository $bebeRepo, UserRepository $utilisateurRepo): Response
+    public function new(Request $request, ConseilRepository $conseilRepo): Response
     {
+        $conseils = $conseilRepo->findBy([
+            'nom' => "Hygiene"
+        ]);
+
         $hygiene = new Hygiene();
         $form = $this->createForm(HygieneType::class, $hygiene);
         $form->handleRequest($request);
@@ -84,6 +89,7 @@ class HygieneController extends AbstractController
 
         return $this->renderForm('hygiene/new.html.twig', [
             'hygiene' => $hygiene,
+            'conseils' => $conseils,
             'form' => $form,
         ]);
     }

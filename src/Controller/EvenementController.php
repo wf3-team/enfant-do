@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Evenement;
 use App\Form\EvenementType;
+use App\Repository\ConseilRepository;
 use App\Repository\EvenementRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,13 +20,12 @@ class EvenementController extends AbstractController
     /**
      * @Route("/", name="evenement_index", methods={"GET"})
      */
-    public function index(EvenementRepository $evenementRepository): Response
+    public function index(EvenementRepository $evenementRepository, ConseilRepository $conseilRepo): Response
     {
-        // champs de l'entité ajout catégory 
-        // formulaire de création. Sélection de la possibilité.
-        // $conseils = nom du Repo->findBy([
-            // 'evenement' => "evenement"
-        //]);
+        
+        $conseils = $conseilRepo->findBy([
+            'nom' => "Conseil d'été !"
+        ]);
 
         $elements = $evenementRepository->findAll();
 
@@ -33,6 +33,7 @@ class EvenementController extends AbstractController
             // Extraire le jour et mois de $dateElement
             $dateElement = $element->getHeureDebut();
             $dateConvert = $dateElement->format('Y-m-d');
+            // dd($dateConvert);
             // Trouver le jour actuel dans une variable
             $dateNow = new \DateTime('now');
             $dateNowConvert = $dateNow->format('Y-m-d');
@@ -46,7 +47,8 @@ class EvenementController extends AbstractController
         }
         return $this->render('evenement/index.html.twig', [
             'evenements' => $elements,
-            // 'isToday' => $isToday
+            'isToday' => $isToday,
+            'conseils' => $conseils
         ]);
     }
 
@@ -56,8 +58,12 @@ class EvenementController extends AbstractController
     /**
      * @Route("/sommeil/ajouter", name="evenement_sommeil", methods={"GET","POST"})
      */
-    public function new(Request $request, UserRepository $utilisateurRepo): Response
+    public function new(Request $request, ConseilRepository $conseilRepo): Response
     {
+        $conseils = $conseilRepo->findBy([
+            'nom' => "Quand fera t-il ses nuits ?"
+        ]);
+
         $evenement = new Evenement();
         $form = $this->createForm(EvenementType::class, $evenement);
         $form->handleRequest($request);
@@ -90,8 +96,6 @@ class EvenementController extends AbstractController
                   ->setUser($utilisateur)
                   ->setBebe($bebe)
                   ->setHeureDebut($date)
-
-
                 ;
 
             $entityManager = $this->getDoctrine()->getManager();
@@ -103,6 +107,7 @@ class EvenementController extends AbstractController
 
         return $this->renderForm('evenement/new.html.twig', [
             'evenement' => $evenement,
+            'conseils' => $conseils,
             'form' => $form,
         ]);
     }

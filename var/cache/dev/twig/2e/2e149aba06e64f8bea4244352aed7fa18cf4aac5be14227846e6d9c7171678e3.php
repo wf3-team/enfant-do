@@ -97,20 +97,16 @@ class __TwigTemplate_54feed1bd68e55589522c3aed3aea74184702afe076a770222a5fdc2812
             </table>
     </div>
 
-    ";
+     ";
         // line 27
-        echo "    ";
-        // line 37
-        echo "     ";
-        // line 38
         echo "    <div class=\"col-md-3 col-5 me-3 mb-2 color-table\">
         <h6 class=\"text-center mt-2\">Heure de fin</h6>
             <table class=\"table text-center\">
             <tbody>
                     <tr>
                          <td>";
-        // line 43
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 43, $this->source); })()), "heure_fin", [], "any", false, false, false, 43), 'widget');
+        // line 32
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 32, $this->source); })()), "heure_fin", [], "any", false, false, false, 32), 'widget');
         echo "</td>    
                     </tr>
             </tbody>
@@ -119,32 +115,48 @@ class __TwigTemplate_54feed1bd68e55589522c3aed3aea74184702afe076a770222a5fdc2812
     
     
    <div>";
-        // line 50
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 50, $this->source); })()), "enregistrer", [], "any", false, false, false, 50), 'widget');
+        // line 39
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 39, $this->source); })()), "enregistrer", [], "any", false, false, false, 39), 'widget');
         echo "</div>
 </div> 
 ";
-        // line 52
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 52, $this->source); })()), 'form_end');
+        // line 41
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 41, $this->source); })()), 'form_end');
         echo "
 
 
 ";
-        // line 56
+        // line 45
         echo "        <h2>Conseils autour de bébé</h2>
         <div class=\"section-info d-flex row pt-4 pb-4 mb-5\">
             <div class=\"col-3\">
                 <img class=\"me-2\" src=\"";
-        // line 59
+        // line 48
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/dodo/photo-dodo1.jpg"), "html", null, true);
         echo "\" alt=\"rust-texture\">
             </div>
             <div class=\"col-9\">
-            <h4>Quand fera t-il ses nuits ?</h4>
-                <p>Pour « faire ses nuits » et rester 5 ou 6 heures d’affilée sans boire, votre bébé doit pouvoir faire des réserves d’énergie. Il doit aussi pouvoir régler son horloge biologique, c’est-à-dire les variations de température de son corps, son système cardiovasculaire et ses cycles hormonaux.
-                Chaque nouveau-né apprend à faire ses nuits à son rythme, tout comme il apprendra un jour à ramper et à marcher. Vous pouvez seulement l’aider.
-                À l’âge de 2 mois (8 semaines), seul 1 bébé sur 4 fait « ses nuits », c’est-à-dire qu’il dort au moins 5 ou 6 heures de suite entre 11 h du soir et 8 h du matin. À 4 mois, 3 bébés sur 4 le font. À 10 mois, c’est 90 % des bébés qui font leurs nuits.</p>
-            </div>
+
+            ";
+        // line 52
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["conseils"]) || array_key_exists("conseils", $context) ? $context["conseils"] : (function () { throw new RuntimeError('Variable "conseils" does not exist.', 52, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["conseil"]) {
+            // line 53
+            echo "                <h4>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "nom", [], "any", false, false, false, 53), "html", null, true);
+            echo "</h4>
+                <p>";
+            // line 54
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "description", [], "any", false, false, false, 54), "html", null, true);
+            echo "</p>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['conseil'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 56
+        echo "            </div>
         </div> 
 </div>
 
@@ -170,7 +182,7 @@ class __TwigTemplate_54feed1bd68e55589522c3aed3aea74184702afe076a770222a5fdc2812
 
     public function getDebugInfo()
     {
-        return array (  139 => 59,  134 => 56,  128 => 52,  123 => 50,  113 => 43,  106 => 38,  104 => 37,  102 => 27,  94 => 20,  92 => 19,  85 => 14,  79 => 10,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  159 => 56,  151 => 54,  146 => 53,  142 => 52,  135 => 48,  130 => 45,  124 => 41,  119 => 39,  109 => 32,  102 => 27,  94 => 20,  92 => 19,  85 => 14,  79 => 10,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -200,17 +212,6 @@ class __TwigTemplate_54feed1bd68e55589522c3aed3aea74184702afe076a770222a5fdc2812
             </table>
     </div>
 
-    {# heure_début #}
-    {# <div class=\"col-md-3 col-5 me-3 mb-2 color-table\">
-        <h6 class=\"text-center mt-2\">Heure début</h6>
-            <table class=\"table text-center\">
-            <tbody>
-                    <tr>
-                         <td>{{ form_widget(form.heure_debut) }}</td>    
-                    </tr>
-            </tbody>
-            </table>
-    </div> #}
      {# heure_fin #}
     <div class=\"col-md-3 col-5 me-3 mb-2 color-table\">
         <h6 class=\"text-center mt-2\">Heure de fin</h6>
@@ -236,10 +237,11 @@ class __TwigTemplate_54feed1bd68e55589522c3aed3aea74184702afe076a770222a5fdc2812
                 <img class=\"me-2\" src=\"{{ asset('image/dodo/photo-dodo1.jpg')}}\" alt=\"rust-texture\">
             </div>
             <div class=\"col-9\">
-            <h4>Quand fera t-il ses nuits ?</h4>
-                <p>Pour « faire ses nuits » et rester 5 ou 6 heures d’affilée sans boire, votre bébé doit pouvoir faire des réserves d’énergie. Il doit aussi pouvoir régler son horloge biologique, c’est-à-dire les variations de température de son corps, son système cardiovasculaire et ses cycles hormonaux.
-                Chaque nouveau-né apprend à faire ses nuits à son rythme, tout comme il apprendra un jour à ramper et à marcher. Vous pouvez seulement l’aider.
-                À l’âge de 2 mois (8 semaines), seul 1 bébé sur 4 fait « ses nuits », c’est-à-dire qu’il dort au moins 5 ou 6 heures de suite entre 11 h du soir et 8 h du matin. À 4 mois, 3 bébés sur 4 le font. À 10 mois, c’est 90 % des bébés qui font leurs nuits.</p>
+
+            {% for conseil in conseils %}
+                <h4>{{conseil.nom}}</h4>
+                <p>{{conseil.description}}</p>
+            {% endfor %}
             </div>
         </div> 
 </div>

@@ -7,6 +7,7 @@ use App\Entity\Evenement;
 use App\Entity\Repas;
 use App\Form\RepasType;
 use App\Repository\BebeRepository;
+use App\Repository\ConseilRepository;
 use App\Repository\RepasRepository;
 use App\Repository\UserRepository;
 use App\Repository\UtilisateurRepository;
@@ -36,8 +37,16 @@ class RepasController extends AbstractController
     /**
      * @Route("/ajouter", name="repas_new", methods={"GET","POST"})
      */
-    public function new(Request $request, UserRepository $utilisateurRepo): Response
+    public function new(Request $request, ConseilRepository $conseilRepo): Response
     {
+        $conseilsBiberon = $conseilRepo->findBy([
+            'nom' => "Autour du biberon"
+        ]);
+
+        $conseilsDivers = $conseilRepo->findBy([
+            'nom' => "Diversification"
+        ]);
+
         $repa = new Repas();
         $form = $this->createForm(RepasType::class, $repa);
         $form->handleRequest($request);
@@ -88,6 +97,8 @@ class RepasController extends AbstractController
 
         return $this->renderForm('repas/new.html.twig', [
             'repa' => $repa,
+            'conseilsBiberon' => $conseilsBiberon,
+            'conseilsDivers' => $conseilsDivers,
             'form' => $form,
         ]);
     }

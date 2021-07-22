@@ -49,12 +49,10 @@
             <img class="me-2" src="{{ asset('image/hygiene/photo-hygiène2.png')}}" alt="rust-texture">
         </div>
         <div class="col-9">
-        <h4>Changer la couche de bébé pour la première fois</h4>
-            <p>… Bébé doit être changé aussi souvent qu’il en a besoin !
-
-            N’attendez pas que votre bébé pleure pour changer la couche. En effet, certains bébés ne sont pas gênés par une couche souillée et ne pleurent pas. Pensez donc à vérifier fréquemment l’état de la couche (toutes les 2 à 3 heures maximum).
-
-            Sachez que changer la couche de bébé fréquemment est la meilleure prévention contre les irritations et les rougeurs, les urines et les selles étant agressives pour la peau sensible de bébé. Changez la couche dès que nécessaire est essentiel pour préserver la peau de bébé de l’érythème fessier !</p>
+        {% for conseil in conseils %}
+            <h4>{{conseil.nom}}</h4>
+            <p>{{conseil.description}}</p>
+        {% endfor %}
         </div>
     </div>
 </div>

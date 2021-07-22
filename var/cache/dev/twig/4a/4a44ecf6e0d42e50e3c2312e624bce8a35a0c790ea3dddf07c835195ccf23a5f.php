@@ -140,13 +140,26 @@ class __TwigTemplate_e55ebc0ed2e0cef9ae0cbadadf012c72a3d57b6e6352c6c819026eaadf8
         echo "\" alt=\"rust-texture\">
         </div>
         <div class=\"col-9\">
-        <h4>Changer la couche de bébé pour la première fois</h4>
-            <p>… Bébé doit être changé aussi souvent qu’il en a besoin !
-
-            N’attendez pas que votre bébé pleure pour changer la couche. En effet, certains bébés ne sont pas gênés par une couche souillée et ne pleurent pas. Pensez donc à vérifier fréquemment l’état de la couche (toutes les 2 à 3 heures maximum).
-
-            Sachez que changer la couche de bébé fréquemment est la meilleure prévention contre les irritations et les rougeurs, les urines et les selles étant agressives pour la peau sensible de bébé. Changez la couche dès que nécessaire est essentiel pour préserver la peau de bébé de l’érythème fessier !</p>
-        </div>
+        ";
+        // line 52
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["conseils"]) || array_key_exists("conseils", $context) ? $context["conseils"] : (function () { throw new RuntimeError('Variable "conseils" does not exist.', 52, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["conseil"]) {
+            // line 53
+            echo "            <h4>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "nom", [], "any", false, false, false, 53), "html", null, true);
+            echo "</h4>
+            <p>";
+            // line 54
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "description", [], "any", false, false, false, 54), "html", null, true);
+            echo "</p>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['conseil'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 56
+        echo "        </div>
     </div>
 </div>
 ";
@@ -170,7 +183,7 @@ class __TwigTemplate_e55ebc0ed2e0cef9ae0cbadadf012c72a3d57b6e6352c6c819026eaadf8
 
     public function getDebugInfo()
     {
-        return array (  139 => 49,  134 => 46,  129 => 43,  121 => 38,  112 => 32,  105 => 27,  96 => 20,  92 => 19,  85 => 14,  79 => 10,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  162 => 56,  154 => 54,  149 => 53,  145 => 52,  139 => 49,  134 => 46,  129 => 43,  121 => 38,  112 => 32,  105 => 27,  96 => 20,  92 => 19,  85 => 14,  79 => 10,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -226,12 +239,10 @@ class __TwigTemplate_e55ebc0ed2e0cef9ae0cbadadf012c72a3d57b6e6352c6c819026eaadf8
             <img class=\"me-2\" src=\"{{ asset('image/hygiene/photo-hygiène2.png')}}\" alt=\"rust-texture\">
         </div>
         <div class=\"col-9\">
-        <h4>Changer la couche de bébé pour la première fois</h4>
-            <p>… Bébé doit être changé aussi souvent qu’il en a besoin !
-
-            N’attendez pas que votre bébé pleure pour changer la couche. En effet, certains bébés ne sont pas gênés par une couche souillée et ne pleurent pas. Pensez donc à vérifier fréquemment l’état de la couche (toutes les 2 à 3 heures maximum).
-
-            Sachez que changer la couche de bébé fréquemment est la meilleure prévention contre les irritations et les rougeurs, les urines et les selles étant agressives pour la peau sensible de bébé. Changez la couche dès que nécessaire est essentiel pour préserver la peau de bébé de l’érythème fessier !</p>
+        {% for conseil in conseils %}
+            <h4>{{conseil.nom}}</h4>
+            <p>{{conseil.description}}</p>
+        {% endfor %}
         </div>
     </div>
 </div>

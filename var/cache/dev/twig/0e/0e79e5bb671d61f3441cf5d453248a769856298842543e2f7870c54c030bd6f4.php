@@ -56,18 +56,18 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
         // line 8
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 28
+        // line 30
         echo "
         ";
-        // line 29
+        // line 31
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 40
+        // line 42
         echo "    </head>
     <body>
         ";
-        // line 42
+        // line 44
         $this->displayBlock('body', $context, $blocks);
-        // line 43
+        // line 45
         echo "    </body>
 </html>
 
@@ -137,6 +137,11 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
         echo "            <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
             <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
             <link href=\"https://fonts.googleapis.com/css2?family=Pacifico&display=swap\" rel=\"stylesheet\">
+
+            <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"";
+        // line 28
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/favicon.ico"), "html", null, true);
+        echo "\"/>
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -146,7 +151,7 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
 
     }
 
-    // line 29
+    // line 31
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -156,9 +161,9 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 30
+        // line 32
         echo "            ";
-        // line 31
+        // line 33
         echo "            <script src=\"https://polyfill.io/v3/polyfill.min.js?features=default\"></script>
             <script type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
             <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>
@@ -176,7 +181,7 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
 
     }
 
-    // line 42
+    // line 44
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -201,7 +206,7 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
 
     public function getDebugInfo()
     {
-        return array (  180 => 42,  162 => 31,  160 => 30,  150 => 29,  137 => 24,  133 => 21,  128 => 18,  123 => 17,  115 => 10,  113 => 9,  103 => 8,  84 => 5,  71 => 43,  69 => 42,  65 => 40,  63 => 29,  60 => 28,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  185 => 44,  167 => 33,  165 => 32,  155 => 31,  143 => 28,  137 => 24,  133 => 21,  128 => 18,  123 => 17,  115 => 10,  113 => 9,  103 => 8,  84 => 5,  71 => 45,  69 => 44,  65 => 42,  63 => 31,  60 => 30,  57 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -232,6 +237,8 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
             <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
             <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
             <link href=\"https://fonts.googleapis.com/css2?family=Pacifico&display=swap\" rel=\"stylesheet\">
+
+            <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"{{ asset('/favicon.ico') }}\"/>
         {% endblock %}
 
         {% block javascripts %}

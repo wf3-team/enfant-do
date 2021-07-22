@@ -58,20 +58,22 @@
                     <img class="me-2 w-75" src="{{ asset('image/repas/biberon2.jpg')}}" alt="rust-texture">
                 </div>
                 <div class="col-9">
-                <h4>Autour du biberon</h4>
-                        <p>Pour un enfant né à terme et de poids de naissance moyen, vous donnerez un biberon toutes les 3 heures environ, sachant que l’intervalle entre deux tétées peut osciller entre 2h30 et 4 heures. La quantité de lait proposée le jour de la naissance est de 10 à 30 ml par biberon.
-                        Plus le bébé prend, plus on espace la tétée suivante. 
-                        Gardez bien à l’esprit cependant que vous n’avez pas besoin de surveiller votre montre ni de respecter un intervalle strict entre deux biberons. Soyez plutôt attentive aux manifestations de faim de votre enfant à mesure que vous faites connaissance l’un avec l’autre : lorsque votre bébé bouge, présente des mouvements de succion, vous pouvez lui proposer un biberon.</p>
+
+                {% for conseil in conseilsBiberon %}
+                    <h4>{{conseil.nom}}</h4>
+                    <p>{{conseil.description}}}}</p>
+                {% endfor %}
+                        
                 </div>
             </div>
 
             <div class="row pb-4 ps-4 pe-4 mb-5">
                
                 <div class="col-9">
-                <h4>Diversification :</h4>
-                    <p>la diversification alimentaire consiste à introduire des aliments autres que le lait (aliments solides) dans l'alimentation du nourrisson allaité ou recevant du lait pour nourrissons. Elle conduit progressivement 
-                    à une alimentation familiale vers l’âge de 1 
-                    à 2 ans.</p>
+                {% for conseil in conseilsDivers %}
+                    <h4>{{conseil.nom}}</h4>
+                    <p>{{conseil.description}}</p>
+                {% endfor %}
                 </div>
                  <div class="col-3">
                     <img class="me-2" src="{{ asset('image/repas/diversification3.jpg')}}" alt="rust-texture">

@@ -159,24 +159,56 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
         echo "\" alt=\"rust-texture\">
                 </div>
                 <div class=\"col-9\">
-                <h4>Autour du biberon</h4>
-                        <p>Pour un enfant né à terme et de poids de naissance moyen, vous donnerez un biberon toutes les 3 heures environ, sachant que l’intervalle entre deux tétées peut osciller entre 2h30 et 4 heures. La quantité de lait proposée le jour de la naissance est de 10 à 30 ml par biberon.
-                        Plus le bébé prend, plus on espace la tétée suivante. 
-                        Gardez bien à l’esprit cependant que vous n’avez pas besoin de surveiller votre montre ni de respecter un intervalle strict entre deux biberons. Soyez plutôt attentive aux manifestations de faim de votre enfant à mesure que vous faites connaissance l’un avec l’autre : lorsque votre bébé bouge, présente des mouvements de succion, vous pouvez lui proposer un biberon.</p>
+
+                ";
+        // line 62
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["conseilsBiberon"]) || array_key_exists("conseilsBiberon", $context) ? $context["conseilsBiberon"] : (function () { throw new RuntimeError('Variable "conseilsBiberon" does not exist.', 62, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["conseil"]) {
+            // line 63
+            echo "                    <h4>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "nom", [], "any", false, false, false, 63), "html", null, true);
+            echo "</h4>
+                    <p>";
+            // line 64
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "description", [], "any", false, false, false, 64), "html", null, true);
+            echo "}}</p>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['conseil'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 66
+        echo "                        
                 </div>
             </div>
 
             <div class=\"row pb-4 ps-4 pe-4 mb-5\">
                
                 <div class=\"col-9\">
-                <h4>Diversification :</h4>
-                    <p>la diversification alimentaire consiste à introduire des aliments autres que le lait (aliments solides) dans l'alimentation du nourrisson allaité ou recevant du lait pour nourrissons. Elle conduit progressivement 
-                    à une alimentation familiale vers l’âge de 1 
-                    à 2 ans.</p>
-                </div>
+                ";
+        // line 73
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["conseilsDivers"]) || array_key_exists("conseilsDivers", $context) ? $context["conseilsDivers"] : (function () { throw new RuntimeError('Variable "conseilsDivers" does not exist.', 73, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["conseil"]) {
+            // line 74
+            echo "                    <h4>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "nom", [], "any", false, false, false, 74), "html", null, true);
+            echo "</h4>
+                    <p>";
+            // line 75
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "description", [], "any", false, false, false, 75), "html", null, true);
+            echo "</p>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['conseil'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 77
+        echo "                </div>
                  <div class=\"col-3\">
                     <img class=\"me-2\" src=\"";
-        // line 77
+        // line 79
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/repas/diversification3.jpg"), "html", null, true);
         echo "\" alt=\"rust-texture\">
                 </div>
@@ -186,7 +218,7 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
         </div>
 
 ";
-        // line 85
+        // line 87
         echo "</div>
 ";
         
@@ -209,7 +241,7 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
 
     public function getDebugInfo()
     {
-        return array (  190 => 85,  180 => 77,  158 => 58,  151 => 53,  146 => 50,  140 => 46,  136 => 44,  128 => 39,  122 => 36,  118 => 35,  114 => 34,  107 => 29,  99 => 23,  93 => 20,  86 => 15,  79 => 10,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  222 => 87,  212 => 79,  208 => 77,  200 => 75,  195 => 74,  191 => 73,  182 => 66,  174 => 64,  169 => 63,  165 => 62,  158 => 58,  151 => 53,  146 => 50,  140 => 46,  136 => 44,  128 => 39,  122 => 36,  118 => 35,  114 => 34,  107 => 29,  99 => 23,  93 => 20,  86 => 15,  79 => 10,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -274,20 +306,22 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
                     <img class=\"me-2 w-75\" src=\"{{ asset('image/repas/biberon2.jpg')}}\" alt=\"rust-texture\">
                 </div>
                 <div class=\"col-9\">
-                <h4>Autour du biberon</h4>
-                        <p>Pour un enfant né à terme et de poids de naissance moyen, vous donnerez un biberon toutes les 3 heures environ, sachant que l’intervalle entre deux tétées peut osciller entre 2h30 et 4 heures. La quantité de lait proposée le jour de la naissance est de 10 à 30 ml par biberon.
-                        Plus le bébé prend, plus on espace la tétée suivante. 
-                        Gardez bien à l’esprit cependant que vous n’avez pas besoin de surveiller votre montre ni de respecter un intervalle strict entre deux biberons. Soyez plutôt attentive aux manifestations de faim de votre enfant à mesure que vous faites connaissance l’un avec l’autre : lorsque votre bébé bouge, présente des mouvements de succion, vous pouvez lui proposer un biberon.</p>
+
+                {% for conseil in conseilsBiberon %}
+                    <h4>{{conseil.nom}}</h4>
+                    <p>{{conseil.description}}}}</p>
+                {% endfor %}
+                        
                 </div>
             </div>
 
             <div class=\"row pb-4 ps-4 pe-4 mb-5\">
                
                 <div class=\"col-9\">
-                <h4>Diversification :</h4>
-                    <p>la diversification alimentaire consiste à introduire des aliments autres que le lait (aliments solides) dans l'alimentation du nourrisson allaité ou recevant du lait pour nourrissons. Elle conduit progressivement 
-                    à une alimentation familiale vers l’âge de 1 
-                    à 2 ans.</p>
+                {% for conseil in conseilsDivers %}
+                    <h4>{{conseil.nom}}</h4>
+                    <p>{{conseil.description}}</p>
+                {% endfor %}
                 </div>
                  <div class=\"col-3\">
                     <img class=\"me-2\" src=\"{{ asset('image/repas/diversification3.jpg')}}\" alt=\"rust-texture\">
