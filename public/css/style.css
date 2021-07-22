@@ -25,6 +25,9 @@ h2 {
 .fa-clock {
   color: rgb(184, 184, 184);
 }
+.gras {
+  font-weight: bold;
+}
 
 .base {
   background-color: #f9efbc;
