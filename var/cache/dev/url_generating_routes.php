@@ -14,6 +14,7 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
+    'conseil' => [[], ['_controller' => 'App\\Controller\\ConseilController::index'], [], [['text', '/conseil']], [], []],
     'evenement_index' => [[], ['_controller' => 'App\\Controller\\EvenementController::index'], [], [['text', '/']], [], []],
     'evenement_sommeil' => [[], ['_controller' => 'App\\Controller\\EvenementController::new'], [], [['text', '/sommeil/ajouter']], [], []],
     'evenement_show' => [['id'], ['_controller' => 'App\\Controller\\EvenementController::show'], [], [['variable', '/', '[^/]++', 'id', true]], [], []],
