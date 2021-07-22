@@ -20,7 +20,7 @@ return [
     'evenement_edit' => [['id'], ['_controller' => 'App\\Controller\\EvenementController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true]], [], []],
     'evenement_delete' => [['id'], ['_controller' => 'App\\Controller\\EvenementController::delete'], [], [['variable', '/', '[^/]++', 'id', true]], [], []],
     'hygiene_index' => [[], ['_controller' => 'App\\Controller\\HygieneController::index'], [], [['text', '/hygiene/']], [], []],
-    'hygiene_new' => [[], ['_controller' => 'App\\Controller\\HygieneController::new'], [], [['text', '/hygiene/new']], [], []],
+    'hygiene_new' => [[], ['_controller' => 'App\\Controller\\HygieneController::new'], [], [['text', '/hygiene/ajouter']], [], []],
     'hygiene_show' => [['id'], ['_controller' => 'App\\Controller\\HygieneController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/hygiene']], [], []],
     'hygiene_edit' => [['id'], ['_controller' => 'App\\Controller\\HygieneController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/hygiene']], [], []],
     'hygiene_delete' => [['id'], ['_controller' => 'App\\Controller\\HygieneController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/hygiene']], [], []],

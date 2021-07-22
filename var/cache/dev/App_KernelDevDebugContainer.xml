@@ -5976,6 +5976,13 @@
         <argument key="hygieneRepository" type="service_closure" id="App\Repository\HygieneRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.byMuCeF" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="bebeRepo" type="service_closure" id="App\Repository\BebeRepository"/>
+        <argument key="utilisateurRepo" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.1lN00u6" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6000,7 +6007,7 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.uGlQzbB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.VmlY8I4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\EvenementController::delete" type="service_closure" id=".service_locator.m32XZm7"/>
@@ -6011,6 +6018,7 @@
         <argument key="App\Controller\HygieneController::delete" type="service_closure" id=".service_locator.1lN00u6"/>
         <argument key="App\Controller\HygieneController::edit" type="service_closure" id=".service_locator.1lN00u6"/>
         <argument key="App\Controller\HygieneController::index" type="service_closure" id=".service_locator.cY634EW"/>
+        <argument key="App\Controller\HygieneController::new" type="service_closure" id=".service_locator.byMuCeF"/>
         <argument key="App\Controller\HygieneController::show" type="service_closure" id=".service_locator.1lN00u6"/>
         <argument key="App\Controller\RepasController::delete" type="service_closure" id=".service_locator.DxReJxZ"/>
         <argument key="App\Controller\RepasController::edit" type="service_closure" id=".service_locator.DxReJxZ"/>
@@ -6032,6 +6040,7 @@
         <argument key="App\Controller\HygieneController:delete" type="service_closure" id=".service_locator.1lN00u6"/>
         <argument key="App\Controller\HygieneController:edit" type="service_closure" id=".service_locator.1lN00u6"/>
         <argument key="App\Controller\HygieneController:index" type="service_closure" id=".service_locator.cY634EW"/>
+        <argument key="App\Controller\HygieneController:new" type="service_closure" id=".service_locator.byMuCeF"/>
         <argument key="App\Controller\HygieneController:show" type="service_closure" id=".service_locator.1lN00u6"/>
         <argument key="App\Controller\RepasController:delete" type="service_closure" id=".service_locator.DxReJxZ"/>
         <argument key="App\Controller\RepasController:edit" type="service_closure" id=".service_locator.DxReJxZ"/>
@@ -6515,12 +6524,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.uGlQzbB"/>
+      <argument type="service" id=".service_locator.VmlY8I4"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.uGlQzbB"/>
+      <argument type="service" id=".service_locator.VmlY8I4"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -7434,7 +7443,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.0GV1BZZ" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.uGlQzbB"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.VmlY8I4"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -7479,6 +7488,7 @@
     <service id=".service_locator.XE__UBz" alias=".service_locator.samqw1C"/>
     <service id=".service_locator.d4hz2r0" alias=".service_locator.m32XZm7"/>
     <service id=".service_locator.DBiR7X0" alias=".service_locator.cY634EW"/>
+    <service id=".service_locator.RYyfwfo" alias=".service_locator.byMuCeF"/>
     <service id=".service_locator.YXWH0hU" alias=".service_locator.1lN00u6"/>
     <service id=".service_locator.4JCwQ.C" alias=".service_locator.3aTd9kz"/>
     <service id=".service_locator.Md_e4wG" alias=".service_locator.DxReJxZ"/>

@@ -65,7 +65,7 @@ class __TwigTemplate_db66f89c2fc701fff7f6779b2201b45becd3b5d6ab13613dec69822abd9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "New Repas";
+        $this->displayParentBlock("title", $context, $blocks);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,17 +85,9 @@ class __TwigTemplate_db66f89c2fc701fff7f6779b2201b45becd3b5d6ab13613dec69822abd9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Repas</h1>
-
-    ";
-        // line 8
+        echo "    ";
         echo twig_include($this->env, $context, "repas/_form.html.twig");
         echo "
-
-    <a href=\"";
-        // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("repas_index");
-        echo "\">back to list</a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -117,21 +109,17 @@ class __TwigTemplate_db66f89c2fc701fff7f6779b2201b45becd3b5d6ab13613dec69822abd9
 
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}New Repas{% endblock %}
+{% block title %}{{parent()}}{% endblock %}
 
 {% block body %}
-    <h1>Create new Repas</h1>
-
     {{ include('repas/_form.html.twig') }}
-
-    <a href=\"{{ path('repas_index') }}\">back to list</a>
 {% endblock %}
 ", "repas/new.html.twig", "/Users/carolinezaini/Desktop/enfant-do/templates/repas/new.html.twig");
     }

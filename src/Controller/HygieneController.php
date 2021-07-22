@@ -2,9 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\Evenement;
 use App\Entity\Hygiene;
 use App\Form\HygieneType;
+use App\Repository\BebeRepository;
 use App\Repository\HygieneRepository;
+use App\Repository\UserRepository;
+use App\Repository\UtilisateurRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,20 +30,56 @@ class HygieneController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="hygiene_new", methods={"GET","POST"})
+     * @Route("/ajouter", name="hygiene_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, BebeRepository $bebeRepo, UserRepository $utilisateurRepo): Response
     {
         $hygiene = new Hygiene();
         $form = $this->createForm(HygieneType::class, $hygiene);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+             // création d'évènement et le lier au repas
+             $event = new Evenement();
+             // getUser info de la session
+             // $utilisateur = $this->getUser();
+ 
+             $utilisateur = $utilisateurRepo->findOneBy([
+                 'pseudo' => 'maman'
+             ]);
+  
+             // Avec l'ajout de la connexion utilisateur :
+             // $bebe = $utilisateurRepo->findOneBy([
+             //     'bebe' => $utilisateur
+             // ]);
+ 
+             // $bebe = $bebeRepo->findOneBy([
+             //     'prenom' => 'lolo'
+             // ]);
+ 
+             $bebe = $utilisateur->getBebe();
+ 
+              // Convertir la date en string 
+            //  $date = new \DateTime('@'.strtotime('now'));
+            $date = new \DateTime('now');
+
+             $event
+                ->setUser($utilisateur)
+                ->setBebe($bebe)
+                ->setDodo(false)
+                ->setHygiene($hygiene)
+                ->setHeureDebut($date)
+                // ->setRepas($hygiene) //pas besoin car il peut être NULL
+                // ->setHeureFin() //pas besoin car il peut être NULL  
+            ;
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($hygiene);
+            $entityManager->persist($event);
             $entityManager->flush();
 
-            return $this->redirectToRoute('hygiene_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('evenement_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('hygiene/new.html.twig', [

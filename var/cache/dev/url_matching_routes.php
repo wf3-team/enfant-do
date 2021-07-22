@@ -15,7 +15,7 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'evenement_index', '_controller' => 'App\\Controller\\EvenementController::index'], null, ['GET' => 0], null, false, false, null]],
         '/sommeil/ajouter' => [[['_route' => 'evenement_sommeil', '_controller' => 'App\\Controller\\EvenementController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/hygiene/new' => [[['_route' => 'hygiene_new', '_controller' => 'App\\Controller\\HygieneController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/hygiene/ajouter' => [[['_route' => 'hygiene_new', '_controller' => 'App\\Controller\\HygieneController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/repas/ajouter' => [[['_route' => 'repas_new', '_controller' => 'App\\Controller\\RepasController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
     ],
     [ // $regexpList
