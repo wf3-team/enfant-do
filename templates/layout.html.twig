@@ -8,76 +8,114 @@
         #}
 
     {# Intégration de la nav Bootstrap : #}
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">L'Enfant Do</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Actualités</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Inscription</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Connexion</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Personne connectée
-                        </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Gérer mon profil</a></li>
-                                <li><a class="dropdown-item" href="#">Gérer le profil de bébé</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Inscrire une autre personne</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-        </div>
-    </nav>
+       <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{path('evenement_index')}}">L'Enfant Do</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Actualités</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Inscription</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Connexion</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Personne connectée
+                            </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Gérer mon profil</a></li>
+                                    <li><a class="dropdown-item" href="#">Gérer le profil de bébé</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Inscrire une autre personne</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </nav>
     </header>
-    
-    <main class="container">
+    <div class="container">
+    <main>
+
+        <div class="row">    
 
         {# Liens #}
-        <div class="d-flex justify-content-center">
+
+
+        <div class="d-flex flex-row justify-content-center">
             <div class="icon-link biberon">
-                <a href=""><img class="text-center" src="{{ asset('image/icon/icon-biberon.png')}}" alt="rust-texture">
-            </a></div>
+                <a href="{{path('repas_new')}}"><img class="text-center" src="{{ asset('image/icon/icon-biberon.png')}}" alt="rust-texture">
+            </a><p>Repas</p></div>
             <div class="icon-link couche">
-                <a href=""><img src="{{ asset('image/icon/icon-couche.png')}}" alt="rust-texture">
-            </a></div>
+                <a href="{{path('hygiene_new')}}"><img src="{{ asset('image/icon/icon-couche.png')}}" alt="rust-texture">
+            </a><p>Hygiène</p></div>
             <div class="icon-link dodo">
-                <a href=""><img src="{{ asset('image/icon/icon-dodo.png')}}" alt="rust-texture">
-            </a></div>
+                <a href="{{path('evenement_sommeil')}}"><img src="{{ asset('image/icon/icon-dodo.png')}}" alt="rust-texture">
+            </a><p>Sommeil</p></div>
             <div class="icon-link statistique">
-                <a href=""><img src="{{ asset('image/icon/icon-statistique.png')}}" alt="rust-texture">
-            </a></div>
+                <a href="{{path('conseil')}}"><img src="{{ asset('image/icon/icon-statistique.png')}}" alt="rust-texture">
+            </a><p>Conseils</p></div>
+
+            <div class="section-profil-bebe d-flex">
+                <img class="me-2" src="{{ asset('image/repas/diversification1.jpg')}}" alt="rust-texture">
+                <div class="d-flex flex-column">
+                    <h4>Prénom</h4>
+                    <h6>Age</h6>
+                    <h6>Date de naissance</h6>
+
+                </div>
+                
+            </div>
+
         </div>
-    <main class="container">
+    {# end row #}
+    </div> 
         {% block content %}
             {# c'est ici que viendra s'inserer le contenu propre à chaque page  #}
         {% endblock %} 
+   
     </main>
-
+</div>
 
     
     <footer>
-        {# <img src="{{ asset('image/footer.jpeg')}}" alt="footer rust-texture"> #}
-
-        <div class="copyright">
-            <p>
+        <div class="container">
+        
+        <div class="copyright d-flex justify-content-center">
+            <p class="mt-3 mb-1">
                 &copy;EnfantDo 2021 - {{"now" | date("Y") }} all right reserved 
             </p>
         </div>
+        <hr>
+        <div class="row d-flex">
+
+            <div class="col-md-5 col-5">
+                <p>Suivez-nous</p>
+                <div class="d-flex flex-row">
+                    <a href=""><p class="me-2 footer-link">Twitter</p></a>
+                    <a href=""><p class="me-2 footer-link">Facebook</p></a>
+                    <a href=""><p p class="footer-link">Instagram</p></a>
+                </div>
+            </div>
+            <div class="col-md-7 col-4">
+                <p>L'Enfant Do</p>
+                <p>10 rue des alouettes</p>
+                <p>750015 Paris</p>
+        
+            </div>
+        
+        </div>
+    </div>
     </footer>
 
 {% endblock %}
