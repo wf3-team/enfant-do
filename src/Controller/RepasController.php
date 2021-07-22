@@ -50,11 +50,11 @@ class RepasController extends AbstractController
              // création d'évènement et le lier au repas
             $event = new Evenement();
             // getUser info de la session
-            // $utilisateur = $this->getUser();
+            $utilisateur = $this->getUser();
 
-            $utilisateur = $utilisateurRepo->findOneBy([
-                'pseudo' => 'maman'
-            ]);
+            // $utilisateur = $utilisateurRepo->findOneBy([
+            //     'pseudo' => 'maman'
+            // ]);
  
             // Avec l'ajout de la connexion utilisateur :
             // $bebe = $utilisateurRepo->findOneBy([
