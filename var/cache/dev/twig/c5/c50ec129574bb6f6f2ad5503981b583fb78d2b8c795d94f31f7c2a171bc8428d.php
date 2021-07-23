@@ -101,7 +101,7 @@ class __TwigTemplate_55f0d335e286f06bebbbc2d4f523581dd901b1ba35e35300329a2474951
 
     <h1 class=\"h3 mb-3 font-weight-normal\">Connexion</h1>
 
-    <h3> Parent </h3>
+
     <label for=\"inputEmail\">Email</label>
     <input type=\"email\" value=\"";
         // line 17
@@ -164,7 +164,7 @@ class __TwigTemplate_55f0d335e286f06bebbbc2d4f523581dd901b1ba35e35300329a2474951
 
     <h1 class=\"h3 mb-3 font-weight-normal\">Connexion</h1>
 
-    <h3> Parent </h3>
+
     <label for=\"inputEmail\">Email</label>
     <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
     <label for=\"inputPassword\">Mot de passe</label>
