@@ -29,7 +29,6 @@ return [
     'hygiene_show' => [['id'], ['_controller' => 'App\\Controller\\HygieneController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/hygiene']], [], []],
     'hygiene_edit' => [['id'], ['_controller' => 'App\\Controller\\HygieneController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/hygiene']], [], []],
     'hygiene_delete' => [['id'], ['_controller' => 'App\\Controller\\HygieneController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/hygiene']], [], []],
-    'repas_index' => [[], ['_controller' => 'App\\Controller\\RepasController::index'], [], [['text', '/repas/']], [], []],
     'repas_new' => [[], ['_controller' => 'App\\Controller\\RepasController::new'], [], [['text', '/repas/ajouter']], [], []],
     'repas_show' => [['id'], ['_controller' => 'App\\Controller\\RepasController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/repas']], [], []],
     'repas_edit' => [['id'], ['_controller' => 'App\\Controller\\RepasController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/repas']], [], []],

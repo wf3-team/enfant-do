@@ -27,18 +27,19 @@ class RepasController extends AbstractController
     /**
      * @Route("/", name="repas_index", methods={"GET"})
      */
-    public function index(RepasRepository $repasRepository): Response
-    {
-        return $this->render('repas/index.html.twig', [
-            'repas' => $repasRepository->findAll(),
-        ]);
-    }
+    // public function index(RepasRepository $repasRepository): Response
+    // {
+    //     return $this->render('repas/index.html.twig', [
+    //         'repas' => $repasRepository->findAll(),
+    //     ]);
+    // }
 
     /**
      * @Route("/ajouter", name="repas_new", methods={"GET","POST"})
      */
     public function new(Request $request, ConseilRepository $conseilRepo): Response
     {
+        // Récupération des conseils
         $conseilsBiberon = $conseilRepo->findBy([
             'nom' => "Autour du biberon"
         ]);
@@ -51,29 +52,36 @@ class RepasController extends AbstractController
         $form = $this->createForm(RepasType::class, $repa);
         $form->handleRequest($request);
 
-        // dd(new \DateTime("now"));
-        // dd(new \DateTime('@'.strtotime('now')));
+        $utilisateur = $this->getUser();
+        
+        if($utilisateur) {
+            $pseudo = $utilisateur->getPseudo();
+            $bebe = $utilisateur->getBebe();
+            // Calcul de l'age 
+            $dateNaissance = $bebe->getDateNaissance();
+            $dateNow = new \DateTime('now');
+            $age = date_diff($dateNow, $dateNaissance)->m;
+
+            $prenom = $bebe->getPrenom();
+
+        } else {
+            $age = 0;
+            $bebe = "mumu";
+            $prenom = "Le prénom de bébé";
+            $dateNaissance = 0;
+            $pseudo = "";
+        }
 
         if ($form->isSubmitted() && $form->isValid()) {
             
-             // création d'évènement et le lier au repas
+            // création d'évènement et le lier au repas
             $event = new Evenement();
             // getUser info de la session
-            $utilisateur = $this->getUser();
+            // $utilisateur = $this->getUser();
 
-            // $utilisateur = $utilisateurRepo->findOneBy([
-            //     'pseudo' => 'maman'
-            // ]);
- 
-            // Avec l'ajout de la connexion utilisateur :
-            // $bebe = $utilisateurRepo->findOneBy([
-            //     'bebe' => $utilisateur
-            // ]);
+            // $bebe = $utilisateur->getBebe();
 
-            $bebe = $utilisateur->getBebe();
-
-             // Convertir la date et la mettre à l'heure française dans le fichier twig.yaml
-            // $date = new \DateTime('@'.strtotime('now'));
+            // Convertir la date et la mettre à l'heure française dans le fichier twig.yaml
             $date = new \DateTime('now');
             
             // Remplir l'instance event avec tous les champs évènement :
@@ -100,6 +108,10 @@ class RepasController extends AbstractController
             'conseilsBiberon' => $conseilsBiberon,
             'conseilsDivers' => $conseilsDivers,
             'form' => $form,
+            'prenom' => $prenom,
+            'dateNaissance' => $dateNaissance,
+            'age' => $age,
+            'pseudo' => $pseudo
         ]);
     }
 

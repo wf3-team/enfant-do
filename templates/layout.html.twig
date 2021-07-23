@@ -2,6 +2,7 @@
 
 
 {% block body %}
+   
     <header>
     {# Intégration des images, il faut installer : composer require symfony/asset #}
         {# <img src="{{ asset('image/header.jpeg')}}" alt="rust-texture"> 
@@ -51,6 +52,12 @@
                                 <li><a class="dropdown-item" href="#">Inscrire une autre personne</a></li>
                             </ul>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Bonjour {{pseudo}}</a>
+                        </li>
+                
+
                         {% endif %}
 
 
@@ -84,10 +91,17 @@
             <div class="section-profil-bebe d-flex">
                 <img class="me-2" src="{{ asset('image/repas/diversification1.jpg')}}" alt="rust-texture">
                 <div class="d-flex flex-column">
-                    <h4>Prénom</h4>
-                    <h6>Age</h6>
-                    <h6>Date de naissance</h6>
 
+            {# Informations du bébé #}
+                {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                        <h4>{{prenom}}</h4>
+                        <h6>Date de naissance :</h6>
+                        <h6>{{dateNaissance| date('d/m/Y')}}</h6>
+                        <h5>{{age}} mois</h5>
+                {% endif %}
+                
+                
+                    
                 </div>
                 
             </div>

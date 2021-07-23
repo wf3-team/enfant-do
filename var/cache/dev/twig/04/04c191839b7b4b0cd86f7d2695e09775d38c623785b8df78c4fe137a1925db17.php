@@ -98,16 +98,18 @@ class __TwigTemplate_927be46647b739e204eb2d2162dc199f3a9ebcf64fa3cb127f02a366129
 
    
     ";
-        // line 16
-        echo "
+        // line 15
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 16
+            echo "
     <div class=\"event-section row d-flex justify-content-center mb-5 pt-4 pb-4\">
     ";
-        // line 19
-        echo "        <div class=\"col-md-1\">
+            // line 19
+            echo "        <div class=\"col-md-1\">
         </div>
         ";
-        // line 22
-        echo "        <div class=\"col-md-1 me-3 col-2 mb-2 base\">
+            // line 22
+            echo "        <div class=\"col-md-1 me-3 col-2 mb-2 base\">
         <h6 class=\"text-center mt-2\">Heure</h6>
             <table class=\"table text-center\">
             <thead>
@@ -117,34 +119,34 @@ class __TwigTemplate_927be46647b739e204eb2d2162dc199f3a9ebcf64fa3cb127f02a366129
             </thead>
             <tbody>
                 ";
-        // line 31
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["evenements"]) || array_key_exists("evenements", $context) ? $context["evenements"] : (function () { throw new RuntimeError('Variable "evenements" does not exist.', 31, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["evenement"]) {
-            // line 32
-            echo "                    <tr>
+            // line 31
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["evenements"]) || array_key_exists("evenements", $context) ? $context["evenements"] : (function () { throw new RuntimeError('Variable "evenements" does not exist.', 31, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["evenement"]) {
+                // line 32
+                echo "                    <tr>
                          <td>";
-            // line 33
-            ((twig_get_attribute($this->env, $this->source, $context["evenement"], "heureDebut", [], "any", false, false, false, 33)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "heureDebut", [], "any", false, false, false, 33), "H:i"), "html", null, true))) : (print ("")));
-            echo "</td>
+                // line 33
+                ((twig_get_attribute($this->env, $this->source, $context["evenement"], "heureDebut", [], "any", false, false, false, 33)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "heureDebut", [], "any", false, false, false, 33), "H:i"), "html", null, true))) : (print ("")));
+                echo "</td>
                          
                     </tr>
                 ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evenement'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
-        echo "            </tbody>
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evenement'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 37
+            echo "            </tbody>
                 
             </table>
         </div>
 
     ";
-        // line 43
-        echo "        ";
-        // line 44
-        echo "        <div class=\"col-md-1 me-3 col-3 mb-2 color-table\">
+            // line 43
+            echo "        ";
+            // line 44
+            echo "        <div class=\"col-md-1 me-3 col-3 mb-2 color-table\">
         <h6 class=\"text-center mt-2\">Biberon</h6>
             <table class=\"table text-center\">
             <thead>
@@ -154,43 +156,43 @@ class __TwigTemplate_927be46647b739e204eb2d2162dc199f3a9ebcf64fa3cb127f02a366129
             </thead>
             <tbody>
                 ";
-        // line 53
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["evenements"]) || array_key_exists("evenements", $context) ? $context["evenements"] : (function () { throw new RuntimeError('Variable "evenements" does not exist.', 53, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["evenement"]) {
-            // line 54
-            echo "                    <tr>
+            // line 53
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["evenements"]) || array_key_exists("evenements", $context) ? $context["evenements"] : (function () { throw new RuntimeError('Variable "evenements" does not exist.', 53, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["evenement"]) {
+                // line 54
+                echo "                    <tr>
                         <td>
                         ";
-            // line 56
-            if ((null === twig_get_attribute($this->env, $this->source, $context["evenement"], "repas", [], "any", false, false, false, 56))) {
-                // line 57
-                echo "                            <i class=\"far fa-clock\"></i>
+                // line 56
+                if ((null === twig_get_attribute($this->env, $this->source, $context["evenement"], "repas", [], "any", false, false, false, 56))) {
+                    // line 57
+                    echo "                            <i class=\"far fa-clock\"></i>
                         ";
-            } else {
-                // line 59
-                echo "                        ";
-                ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["evenement"], "repas", [], "any", false, false, false, 59), "quantiteMl", [], "any", false, false, false, 59)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["evenement"], "repas", [], "any", false, false, false, 59), "quantiteMl", [], "any", false, false, false, 59), "html", null, true))) : (print ("-")));
-                echo "
+                } else {
+                    // line 59
+                    echo "                        ";
+                    ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["evenement"], "repas", [], "any", false, false, false, 59), "quantiteMl", [], "any", false, false, false, 59)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["evenement"], "repas", [], "any", false, false, false, 59), "quantiteMl", [], "any", false, false, false, 59), "html", null, true))) : (print ("-")));
+                    echo "
                         ";
-            }
-            // line 61
-            echo "                        
+                }
+                // line 61
+                echo "                        
                         </td>
                     </tr>
                 ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evenement'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 65
-        echo "            </tbody>
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evenement'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 65
+            echo "            </tbody>
                 
             </table>
         </div>
         ";
-        // line 70
-        echo "        <div class=\"col-md-3 col-5 me-3 mb-2 color-table\">
+            // line 70
+            echo "        <div class=\"col-md-3 col-5 me-3 mb-2 color-table\">
         <h6 class=\"text-center mt-2\">Diversification</h6>
             <table class=\"table text-center\">
             <thead>
@@ -201,77 +203,77 @@ class __TwigTemplate_927be46647b739e204eb2d2162dc199f3a9ebcf64fa3cb127f02a366129
             </thead>
             <tbody>
                 ";
-        // line 80
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["evenements"]) || array_key_exists("evenements", $context) ? $context["evenements"] : (function () { throw new RuntimeError('Variable "evenements" does not exist.', 80, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["evenement"]) {
-            // line 81
-            echo "                    <tr>
+            // line 80
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["evenements"]) || array_key_exists("evenements", $context) ? $context["evenements"] : (function () { throw new RuntimeError('Variable "evenements" does not exist.', 80, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["evenement"]) {
+                // line 81
+                echo "                    <tr>
                         <td>
                         ";
-            // line 83
-            if ((null === twig_get_attribute($this->env, $this->source, $context["evenement"], "repas", [], "any", false, false, false, 83))) {
-                // line 84
-                echo "                            <i class=\"far fa-clock\"></i>
+                // line 83
+                if ((null === twig_get_attribute($this->env, $this->source, $context["evenement"], "repas", [], "any", false, false, false, 83))) {
+                    // line 84
+                    echo "                            <i class=\"far fa-clock\"></i>
                         ";
-            } elseif (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,             // line 85
+                } elseif (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,                 // line 85
 $context["evenement"], "repas", [], "any", false, false, false, 85), "puree", [], "any", false, false, false, 85)) {
-                // line 86
-                echo "                            Purée
+                    // line 86
+                    echo "                            Purée
                         ";
-            } elseif (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,             // line 87
+                } elseif (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,                 // line 87
 $context["evenement"], "repas", [], "any", false, false, false, 87), "compote", [], "any", false, false, false, 87)) {
-                // line 88
-                echo "                            Compote
+                    // line 88
+                    echo "                            Compote
                         ";
-            } elseif (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,             // line 89
+                } elseif (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,                 // line 89
 $context["evenement"], "repas", [], "any", false, false, false, 89), "Yaourt", [], "any", false, false, false, 89)) {
-                // line 90
-                echo "                            Yaourt
+                    // line 90
+                    echo "                            Yaourt
                         ";
-            } else {
-                // line 92
-                echo "                            <i class=\"far fa-clock\"></i>
+                } else {
+                    // line 92
+                    echo "                            <i class=\"far fa-clock\"></i>
                         ";
-            }
-            // line 94
-            echo "                        </td>
+                }
+                // line 94
+                echo "                        </td>
                         <td>
                         ";
-            // line 96
-            if ((null === twig_get_attribute($this->env, $this->source, $context["evenement"], "repas", [], "any", false, false, false, 96))) {
-                // line 97
-                echo "                            <i class=\"far fa-clock\"></i>
+                // line 96
+                if ((null === twig_get_attribute($this->env, $this->source, $context["evenement"], "repas", [], "any", false, false, false, 96))) {
+                    // line 97
+                    echo "                            <i class=\"far fa-clock\"></i>
                         ";
-            } elseif (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,             // line 98
+                } elseif (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,                 // line 98
 $context["evenement"], "repas", [], "any", false, false, false, 98), "quantitepot", [], "any", false, false, false, 98)) {
-                // line 99
-                echo "                             ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["evenement"], "repas", [], "any", false, false, false, 99), "quantitepot", [], "any", false, false, false, 99), "html", null, true);
-                echo "
+                    // line 99
+                    echo "                             ";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["evenement"], "repas", [], "any", false, false, false, 99), "quantitepot", [], "any", false, false, false, 99), "html", null, true);
+                    echo "
                         ";
-            } else {
-                // line 101
-                echo "                            <i class=\"far fa-clock\"></i>
+                } else {
+                    // line 101
+                    echo "                            <i class=\"far fa-clock\"></i>
                         ";
-            }
-            // line 103
-            echo "                        </td>
+                }
+                // line 103
+                echo "                        </td>
                            
                     
                     </tr>
                 ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evenement'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 108
-        echo "            </tbody>   
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evenement'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 108
+            echo "            </tbody>   
             </table>
         </div>
         ";
-        // line 112
-        echo "        <div class=\"col-md-1 me-3 mb-2 col-3 color-table\">
+            // line 112
+            echo "        <div class=\"col-md-1 me-3 mb-2 col-3 color-table\">
         <h6 class=\"text-center mt-2\">Couche</h6>
             <table class=\"table text-center\">
             <thead>
@@ -281,50 +283,50 @@ $context["evenement"], "repas", [], "any", false, false, false, 98), "quantitepo
             </thead>
             <tbody>
                 ";
-        // line 121
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["evenements"]) || array_key_exists("evenements", $context) ? $context["evenements"] : (function () { throw new RuntimeError('Variable "evenements" does not exist.', 121, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["evenement"]) {
-            // line 122
-            echo "                    <tr>
+            // line 121
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["evenements"]) || array_key_exists("evenements", $context) ? $context["evenements"] : (function () { throw new RuntimeError('Variable "evenements" does not exist.', 121, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["evenement"]) {
+                // line 122
+                echo "                    <tr>
                         <td>
                         ";
-            // line 124
-            if ((null === twig_get_attribute($this->env, $this->source, $context["evenement"], "hygiene", [], "any", false, false, false, 124))) {
-                // line 125
-                echo "                             <i class=\"far fa-clock\"></i>
+                // line 124
+                if ((null === twig_get_attribute($this->env, $this->source, $context["evenement"], "hygiene", [], "any", false, false, false, 124))) {
+                    // line 125
+                    echo "                             <i class=\"far fa-clock\"></i>
                         ";
-            } elseif (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,             // line 126
+                } elseif (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,                 // line 126
 $context["evenement"], "hygiene", [], "any", false, false, false, 126), "coucheUrine", [], "any", false, false, false, 126)) {
-                // line 127
-                echo "                            Urine
+                    // line 127
+                    echo "                            Urine
                         ";
-            } elseif (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,             // line 128
+                } elseif (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,                 // line 128
 $context["evenement"], "hygiene", [], "any", false, false, false, 128), "coucheSelle", [], "any", false, false, false, 128)) {
-                // line 129
-                echo "                            Selle
+                    // line 129
+                    echo "                            Selle
                         ";
-            } else {
-                // line 131
-                echo "                            <i class=\"far fa-clock\"></i>
+                } else {
+                    // line 131
+                    echo "                            <i class=\"far fa-clock\"></i>
                         ";
-            }
-            // line 132
-            echo " 
+                }
+                // line 132
+                echo " 
                         </td>
                     </tr>
                 ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evenement'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 136
-        echo "            </tbody>   
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evenement'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 136
+            echo "            </tbody>   
             </table>
         </div>
         ";
-        // line 140
-        echo "        <div class=\"col-md-1 me-3 mb-2 col-3 color-table\">
+            // line 140
+            echo "        <div class=\"col-md-1 me-3 mb-2 col-3 color-table\">
         <h6 class=\"text-center mt-2\">Bain</h6>
             <table class=\"table text-center\">
             <thead>
@@ -334,46 +336,46 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 128), "coucheS
             </thead>
             <tbody>
                ";
-        // line 149
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["evenements"]) || array_key_exists("evenements", $context) ? $context["evenements"] : (function () { throw new RuntimeError('Variable "evenements" does not exist.', 149, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["evenement"]) {
-            // line 150
-            echo "                    <tr>
+            // line 149
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["evenements"]) || array_key_exists("evenements", $context) ? $context["evenements"] : (function () { throw new RuntimeError('Variable "evenements" does not exist.', 149, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["evenement"]) {
+                // line 150
+                echo "                    <tr>
                         <td>
                         ";
-            // line 152
-            if ((null === twig_get_attribute($this->env, $this->source, $context["evenement"], "hygiene", [], "any", false, false, false, 152))) {
-                // line 153
-                echo "                            <i class=\"far fa-clock\"></i>
+                // line 152
+                if ((null === twig_get_attribute($this->env, $this->source, $context["evenement"], "hygiene", [], "any", false, false, false, 152))) {
+                    // line 153
+                    echo "                            <i class=\"far fa-clock\"></i>
                         ";
-            } elseif (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,             // line 154
+                } elseif (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,                 // line 154
 $context["evenement"], "hygiene", [], "any", false, false, false, 154), "bain", [], "any", false, false, false, 154)) {
-                // line 155
-                echo "                            <i class=\"fas fa-check\"></i>
+                    // line 155
+                    echo "                            <i class=\"fas fa-check\"></i>
 
                         ";
-            } else {
-                // line 158
-                echo "                            <i class=\"far fa-clock\"></i>
+                } else {
+                    // line 158
+                    echo "                            <i class=\"far fa-clock\"></i>
                         ";
-            }
-            // line 159
-            echo " 
+                }
+                // line 159
+                echo " 
                         </td>
                     </tr>
                 ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evenement'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 163
-        echo "            </tbody>   
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evenement'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 163
+            echo "            </tbody>   
             </table>
         </div>
         ";
-        // line 167
-        echo "        <div class=\"col-md-2 me-3 mb-2 col-4 color-table\">
+            // line 167
+            echo "        <div class=\"col-md-2 me-3 mb-2 col-4 color-table\">
         <h6 class=\"text-center mt-2\">Sommeil</h6>
             <table class=\"table text-center\">
             <thead>
@@ -385,102 +387,115 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 154), "bain", 
             </thead>
             <tbody>
                 ";
-        // line 178
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["evenements"]) || array_key_exists("evenements", $context) ? $context["evenements"] : (function () { throw new RuntimeError('Variable "evenements" does not exist.', 178, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["evenement"]) {
-            // line 179
-            echo "                    <tr>
+            // line 178
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["evenements"]) || array_key_exists("evenements", $context) ? $context["evenements"] : (function () { throw new RuntimeError('Variable "evenements" does not exist.', 178, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["evenement"]) {
+                // line 179
+                echo "                    <tr>
                         <td>
                             ";
-            // line 181
-            if (twig_get_attribute($this->env, $this->source, $context["evenement"], "dodo", [], "any", false, false, false, 181)) {
-                // line 182
-                echo "                                <i class=\"fas fa-check\"></i>
+                // line 181
+                if (twig_get_attribute($this->env, $this->source, $context["evenement"], "dodo", [], "any", false, false, false, 181)) {
+                    // line 182
+                    echo "                                <i class=\"fas fa-check\"></i>
                             ";
-            } else {
-                // line 184
-                echo "                                <i class=\"far fa-clock\"></i>
+                } else {
+                    // line 184
+                    echo "                                <i class=\"far fa-clock\"></i>
                             ";
-            }
-            // line 186
-            echo "                        </td> 
+                }
+                // line 186
+                echo "                        </td> 
                         <td>
                             ";
-            // line 188
-            if (twig_get_attribute($this->env, $this->source, $context["evenement"], "heureFin", [], "any", false, false, false, 188)) {
-                // line 189
-                echo "                                ";
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "heureFin", [], "any", false, false, false, 189), "H:i"), "html", null, true);
-                echo "
+                // line 188
+                if (twig_get_attribute($this->env, $this->source, $context["evenement"], "heureFin", [], "any", false, false, false, 188)) {
+                    // line 189
+                    echo "                                ";
+                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "heureFin", [], "any", false, false, false, 189), "H:i"), "html", null, true);
+                    echo "
                             ";
-            } else {
-                // line 191
-                echo "                                <i class=\"far fa-clock\"></i>
+                } else {
+                    // line 191
+                    echo "                                <i class=\"far fa-clock\"></i>
                             ";
-            }
-            // line 193
-            echo "                        </td>
+                }
+                // line 193
+                echo "                        </td>
                         <td><a href=\"";
-            // line 194
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("evenement_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["evenement"], "id", [], "any", false, false, false, 194)]), "html", null, true);
-            echo "\"><i class=\"fas fa-feather\"></i></a></td>
+                // line 194
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("evenement_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["evenement"], "id", [], "any", false, false, false, 194)]), "html", null, true);
+                echo "\"><i class=\"fas fa-feather\"></i></a></td>
                     </tr>
                 ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evenement'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 197
-        echo "            </tbody>   
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evenement'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 197
+            echo "            </tbody>   
             </table>
         </div>
 
     ";
-        // line 202
-        echo "    </div> 
-    ";
-        // line 204
-        echo "    ";
-        // line 205
-        echo "
+            // line 202
+            echo "    </div> 
+   ";
+        } else {
+            // line 204
+            echo "   <div class=\"text-center mt-5 mb-5\">
+    <p>Pour profiter des fonctionnalités de l'Enfant Do, veuillez-vous authentifier</p>
+    <a class=\"underline\" href=\"";
+            // line 206
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_new");
+            echo "\">Inscrivez-vous</a> ou
+    <a href=\"";
+            // line 207
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\">Connectez-vous</a> 
+   </div>
+    
+
 ";
-        // line 207
-        echo "
+        }
+        // line 211
+        echo " 
+
 
     
 
     ";
-        // line 212
+        // line 217
         echo "    <h2>Conseils autour de bébé</h2>
     <div class=\"section-info row d-flex pt-4 pb-4 mb-5\">
         <div class=\"col-md-3\">
             <img class=\"me-2\" src=\"";
-        // line 215
+        // line 220
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/dodo/photo-dodo2.jpg"), "html", null, true);
         echo "\" alt=\"rust-texture\">
         </div>
         <div class=\"col-9\">
 
         ";
-        // line 219
+        // line 224
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["conseils"]) || array_key_exists("conseils", $context) ? $context["conseils"] : (function () { throw new RuntimeError('Variable "conseils" does not exist.', 219, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["conseils"]) || array_key_exists("conseils", $context) ? $context["conseils"] : (function () { throw new RuntimeError('Variable "conseils" does not exist.', 224, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["conseil"]) {
-            // line 220
+            // line 225
             echo "            <h4>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "nom", [], "any", false, false, false, 220), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "nom", [], "any", false, false, false, 225), "html", null, true);
             echo "</h4>
             <p>";
-            // line 221
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "description", [], "any", false, false, false, 221), "html", null, true);
+            // line 226
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "description", [], "any", false, false, false, 226), "html", null, true);
             echo "</p>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['conseil'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 223
+        // line 228
         echo "        </div>
     </div>
              
@@ -489,7 +504,7 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 154), "bain", 
 
     
                     ";
-        // line 232
+        // line 237
         echo "           
 
     ";
@@ -513,7 +528,7 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 154), "bain", 
 
     public function getDebugInfo()
     {
-        return array (  493 => 232,  484 => 223,  476 => 221,  471 => 220,  467 => 219,  460 => 215,  455 => 212,  449 => 207,  446 => 205,  444 => 204,  441 => 202,  435 => 197,  426 => 194,  423 => 193,  419 => 191,  413 => 189,  411 => 188,  407 => 186,  403 => 184,  399 => 182,  397 => 181,  393 => 179,  389 => 178,  376 => 167,  371 => 163,  362 => 159,  358 => 158,  353 => 155,  351 => 154,  348 => 153,  346 => 152,  342 => 150,  338 => 149,  327 => 140,  322 => 136,  313 => 132,  309 => 131,  305 => 129,  303 => 128,  300 => 127,  298 => 126,  295 => 125,  293 => 124,  289 => 122,  285 => 121,  274 => 112,  269 => 108,  259 => 103,  255 => 101,  249 => 99,  247 => 98,  244 => 97,  242 => 96,  238 => 94,  234 => 92,  230 => 90,  228 => 89,  225 => 88,  223 => 87,  220 => 86,  218 => 85,  215 => 84,  213 => 83,  209 => 81,  205 => 80,  193 => 70,  187 => 65,  178 => 61,  172 => 59,  168 => 57,  166 => 56,  162 => 54,  158 => 53,  147 => 44,  145 => 43,  138 => 37,  128 => 33,  125 => 32,  121 => 31,  110 => 22,  106 => 19,  102 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  508 => 237,  499 => 228,  491 => 226,  486 => 225,  482 => 224,  475 => 220,  470 => 217,  463 => 211,  455 => 207,  451 => 206,  447 => 204,  443 => 202,  437 => 197,  428 => 194,  425 => 193,  421 => 191,  415 => 189,  413 => 188,  409 => 186,  405 => 184,  401 => 182,  399 => 181,  395 => 179,  391 => 178,  378 => 167,  373 => 163,  364 => 159,  360 => 158,  355 => 155,  353 => 154,  350 => 153,  348 => 152,  344 => 150,  340 => 149,  329 => 140,  324 => 136,  315 => 132,  311 => 131,  307 => 129,  305 => 128,  302 => 127,  300 => 126,  297 => 125,  295 => 124,  291 => 122,  287 => 121,  276 => 112,  271 => 108,  261 => 103,  257 => 101,  251 => 99,  249 => 98,  246 => 97,  244 => 96,  240 => 94,  236 => 92,  232 => 90,  230 => 89,  227 => 88,  225 => 87,  222 => 86,  220 => 85,  217 => 84,  215 => 83,  211 => 81,  207 => 80,  195 => 70,  189 => 65,  180 => 61,  174 => 59,  170 => 57,  168 => 56,  164 => 54,  160 => 53,  149 => 44,  147 => 43,  140 => 37,  130 => 33,  127 => 32,  123 => 31,  112 => 22,  108 => 19,  104 => 16,  102 => 15,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -532,7 +547,7 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 154), "bain", 
     <h6 class=\"mt-4\">{{ \"now\" | date('d/m/Y à H:i', \"Europe/Paris\" ) }}</h6>
 
    
-    {# {% if is_granted(\"IS_AUTHENTICATED_FULLY\") %} #}
+    {% if is_granted(\"IS_AUTHENTICATED_FULLY\") %}
 
     <div class=\"event-section row d-flex justify-content-center mb-5 pt-4 pb-4\">
     {# edition #}
@@ -720,10 +735,15 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 154), "bain", 
 
     {# end div row #}
     </div> 
-    {# {% else %} #}
-    {# <p>Pour profiter des fonctionnalités de l'Enfant Do, veuillez-vous authentifier</p><a href=\"{{path('app_login')}}\">Connexion</a> #}
+   {% else %}
+   <div class=\"text-center mt-5 mb-5\">
+    <p>Pour profiter des fonctionnalités de l'Enfant Do, veuillez-vous authentifier</p>
+    <a class=\"underline\" href=\"{{path('user_new')}}\">Inscrivez-vous</a> ou
+    <a href=\"{{path('app_login')}}\">Connectez-vous</a> 
+   </div>
+    
 
-{# {% endif %} #}
+{% endif %} 
 
 
     

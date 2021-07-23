@@ -66,14 +66,15 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 5
-        echo "    <header>
+        echo "   
+    <header>
     ";
-        // line 7
+        // line 8
         echo "        ";
-        // line 9
+        // line 10
         echo "
     ";
-        // line 11
+        // line 12
         echo "       <nav class=\"navbar navbar-expand-lg navbar-light\">
             <div class=\"container-fluid\">
                 <a class=\"navbar-brand\" href=\"#\">L'Enfant Do</a>
@@ -89,43 +90,43 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
                             <a class=\"nav-link\" href=\"#\">Contact</a>
                             </li>
 ";
-        // line 25
+        // line 26
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             echo " ";
-            // line 26
+            // line 27
             echo "
                         <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
-            // line 28
+            // line 29
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Déconnexion</a>
                         </li>
 
                         ";
         } else {
-            // line 32
+            // line 33
             echo "                        <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
-            // line 33
+            // line 34
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_new");
             echo "\">Inscription</a>
                         </li>
 
                         <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
-            // line 37
+            // line 38
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">Connexion</a>
                         </li>
                         ";
         }
-        // line 40
+        // line 41
         echo "
                         
                         ";
-        // line 42
+        // line 43
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 43
+            // line 44
             echo "                        <li class=\"nav-item dropdown\">
                         <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
                             Profil
@@ -137,9 +138,18 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
                                 <li><a class=\"dropdown-item\" href=\"#\">Inscrire une autre personne</a></li>
                             </ul>
                         </li>
+
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link disabled\" href=\"#\" tabindex=\"-1\" aria-disabled=\"true\">Bonjour ";
+            // line 57
+            echo twig_escape_filter($this->env, (isset($context["pseudo"]) || array_key_exists("pseudo", $context) ? $context["pseudo"] : (function () { throw new RuntimeError('Variable "pseudo" does not exist.', 57, $this->source); })()), "html", null, true);
+            echo "</a>
+                        </li>
+                
+
                         ";
         }
-        // line 55
+        // line 62
         echo "
 
                         </ul>
@@ -153,13 +163,13 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
         <div class=\"row\">    
 
         ";
-        // line 68
+        // line 75
         echo "
 
         <div class=\"d-flex flex-row justify-content-center\">
             <div class=\"icon-link biberon\">
                 <a href=\"";
-        // line 72
+        // line 79
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("repas_new");
         echo "\"><img class=\"text-center\" src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-biberon.png"), "html", null, true);
@@ -167,7 +177,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
             </a><p>Repas</p></div>
             <div class=\"icon-link couche\">
                 <a href=\"";
-        // line 75
+        // line 82
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("hygiene_new");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-couche.png"), "html", null, true);
@@ -175,7 +185,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
             </a><p>Hygiène</p></div>
             <div class=\"icon-link dodo\">
                 <a href=\"";
-        // line 78
+        // line 85
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("evenement_sommeil");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-dodo.png"), "html", null, true);
@@ -183,7 +193,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
             </a><p>Sommeil</p></div>
             <div class=\"icon-link statistique\">
                 <a href=\"";
-        // line 81
+        // line 88
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conseil");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-statistique.png"), "html", null, true);
@@ -192,26 +202,46 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
             <div class=\"section-profil-bebe d-flex\">
                 <img class=\"me-2\" src=\"";
-        // line 85
+        // line 92
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/repas/diversification1.jpg"), "html", null, true);
         echo "\" alt=\"rust-texture\">
                 <div class=\"d-flex flex-column\">
-                    <h4>Prénom</h4>
-                    <h6>Age</h6>
-                    <h6>Date de naissance</h6>
 
+            ";
+        // line 96
+        echo "                ";
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 97
+            echo "                        <h4>";
+            echo twig_escape_filter($this->env, (isset($context["prenom"]) || array_key_exists("prenom", $context) ? $context["prenom"] : (function () { throw new RuntimeError('Variable "prenom" does not exist.', 97, $this->source); })()), "html", null, true);
+            echo "</h4>
+                        <h6>Date de naissance :</h6>
+                        <h6>";
+            // line 99
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, (isset($context["dateNaissance"]) || array_key_exists("dateNaissance", $context) ? $context["dateNaissance"] : (function () { throw new RuntimeError('Variable "dateNaissance" does not exist.', 99, $this->source); })()), "d/m/Y"), "html", null, true);
+            echo "</h6>
+                        <h5>";
+            // line 100
+            echo twig_escape_filter($this->env, (isset($context["age"]) || array_key_exists("age", $context) ? $context["age"] : (function () { throw new RuntimeError('Variable "age" does not exist.', 100, $this->source); })()), "html", null, true);
+            echo " mois</h5>
+                ";
+        }
+        // line 102
+        echo "                
+                
+                    
                 </div>
                 
             </div>
 
         </div>
     ";
-        // line 97
+        // line 111
         echo "    </div> 
         ";
-        // line 98
+        // line 112
         $this->displayBlock('content', $context, $blocks);
-        // line 100
+        // line 114
         echo " 
    
     </main>
@@ -224,7 +254,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
         <div class=\"copyright d-flex justify-content-center\">
             <p class=\"mt-3 mb-1\">
                 &copy;EnfantDo 2021 - ";
-        // line 111
+        // line 125
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "Y"), "html", null, true);
         echo " all right reserved 
             </p>
@@ -260,7 +290,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
     }
 
-    // line 98
+    // line 112
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -270,9 +300,9 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 99
+        // line 113
         echo "            ";
-        // line 100
+        // line 114
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -294,7 +324,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
     public function getDebugInfo()
     {
-        return array (  276 => 100,  274 => 99,  264 => 98,  228 => 111,  215 => 100,  213 => 98,  210 => 97,  196 => 85,  187 => 81,  179 => 78,  171 => 75,  163 => 72,  157 => 68,  143 => 55,  129 => 43,  127 => 42,  123 => 40,  117 => 37,  110 => 33,  107 => 32,  100 => 28,  96 => 26,  93 => 25,  77 => 11,  74 => 9,  72 => 7,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  306 => 114,  304 => 113,  294 => 112,  258 => 125,  245 => 114,  243 => 112,  240 => 111,  230 => 102,  225 => 100,  221 => 99,  215 => 97,  212 => 96,  206 => 92,  197 => 88,  189 => 85,  181 => 82,  173 => 79,  167 => 75,  153 => 62,  145 => 57,  130 => 44,  128 => 43,  124 => 41,  118 => 38,  111 => 34,  108 => 33,  101 => 29,  97 => 27,  94 => 26,  78 => 12,  75 => 10,  73 => 8,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -303,6 +333,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
 
 {% block body %}
+   
     <header>
     {# Intégration des images, il faut installer : composer require symfony/asset #}
         {# <img src=\"{{ asset('image/header.jpeg')}}\" alt=\"rust-texture\"> 
@@ -352,6 +383,12 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
                                 <li><a class=\"dropdown-item\" href=\"#\">Inscrire une autre personne</a></li>
                             </ul>
                         </li>
+
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link disabled\" href=\"#\" tabindex=\"-1\" aria-disabled=\"true\">Bonjour {{pseudo}}</a>
+                        </li>
+                
+
                         {% endif %}
 
 
@@ -385,10 +422,17 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
             <div class=\"section-profil-bebe d-flex\">
                 <img class=\"me-2\" src=\"{{ asset('image/repas/diversification1.jpg')}}\" alt=\"rust-texture\">
                 <div class=\"d-flex flex-column\">
-                    <h4>Prénom</h4>
-                    <h6>Age</h6>
-                    <h6>Date de naissance</h6>
 
+            {# Informations du bébé #}
+                {% if is_granted(\"IS_AUTHENTICATED_FULLY\") %}
+                        <h4>{{prenom}}</h4>
+                        <h6>Date de naissance :</h6>
+                        <h6>{{dateNaissance| date('d/m/Y')}}</h6>
+                        <h5>{{age}} mois</h5>
+                {% endif %}
+                
+                
+                    
                 </div>
                 
             </div>

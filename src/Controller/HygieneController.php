@@ -35,9 +35,31 @@ class HygieneController extends AbstractController
      */
     public function new(Request $request, ConseilRepository $conseilRepo): Response
     {
+        // récupération des conseils
         $conseils = $conseilRepo->findBy([
             'nom' => "Hygiene"
         ]);
+
+        //récupération de l'utilisateur
+        $utilisateur = $this->getUser();
+        
+        if($utilisateur) {
+            $pseudo = $utilisateur->getPseudo();
+            $bebe = $utilisateur->getBebe();
+            // Calcul de l'age 
+            $dateNaissance = $bebe->getDateNaissance();
+            $dateNow = new \DateTime('now');
+            $age = date_diff($dateNow, $dateNaissance)->m;
+
+            $prenom = $bebe->getPrenom();
+
+        } else {
+            $age = 0;
+            $bebe = "mumu";
+            $prenom = "Le prénom de bébé";
+            $dateNaissance = 0;
+            $pseudo = "";
+        }
 
         $hygiene = new Hygiene();
         $form = $this->createForm(HygieneType::class, $hygiene);
@@ -45,28 +67,11 @@ class HygieneController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-             // création d'évènement et le lier au repas
-             $event = new Evenement();
-             // getUser info de la session
-             $utilisateur = $this->getUser();
+            // création d'évènement et le lier au repas
+            $event = new Evenement();
+
+            $bebe = $utilisateur->getBebe();
  
-            //  $utilisateur = $utilisateurRepo->findOneBy([
-            //      'pseudo' => 'maman'
-            //  ]);
-  
-             // Avec l'ajout de la connexion utilisateur :
-             // $bebe = $utilisateurRepo->findOneBy([
-             //     'bebe' => $utilisateur
-             // ]);
- 
-             // $bebe = $bebeRepo->findOneBy([
-             //     'prenom' => 'lolo'
-             // ]);
- 
-             $bebe = $utilisateur->getBebe();
- 
-              // Convertir la date en string 
-            //  $date = new \DateTime('@'.strtotime('now'));
             $date = new \DateTime('now');
 
              $event
@@ -91,6 +96,10 @@ class HygieneController extends AbstractController
             'hygiene' => $hygiene,
             'conseils' => $conseils,
             'form' => $form,
+            'prenom' => $prenom,
+            'dateNaissance' => $dateNaissance,
+            'age' => $age,
+            'pseudo' => $pseudo
         ]);
     }
 

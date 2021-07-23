@@ -22,38 +22,63 @@ class EvenementController extends AbstractController
      */
     public function index(EvenementRepository $evenementRepository, ConseilRepository $conseilRepo): Response
     {
-        
+        // récupération des conseils
         $conseils = $conseilRepo->findBy([
             'nom' => "Conseil d'été !"
         ]);
-
+        
+        //récupération de l'utilisateur
         $utilisateur = $this->getUser();
-        $bebe = $utilisateur->getBebe();
+        
+        if($utilisateur) {
+            $pseudo = $utilisateur->getPseudo();
+            $bebe = $utilisateur->getBebe();
+            // Calcul de l'age 
+            $dateNaissance = $bebe->getDateNaissance();
+            $dateNow = new \DateTime('now');
+            $age = date_diff($dateNow, $dateNaissance)->m;
 
+            $prenom = $bebe->getPrenom();
+
+        } else {
+            $age = 0;
+            $bebe = "mumu";
+            $prenom = "Le prénom de bébé";
+            $dateNaissance = 0;
+            $pseudo = "";
+        }
+       
         $elements = $evenementRepository->findBy([
             'bebe' => $bebe
         ]);
 
+        
+
+        // comparaison de la date d'insert avec la date actuelle
         foreach($elements as $element) {
-            // Extraire le jour et mois de $dateElement
+            // Extraction du jour et mois :
             $dateElement = $element->getHeureDebut();
             $dateConvert = $dateElement->format('Y-m-d');
             // dd($dateConvert);
-            // Trouver le jour actuel dans une variable
-            $dateNow = new \DateTime('now');
+            // Le jour actuel :
+            // $dateNow = new \DateTime('now');
             $dateNowConvert = $dateNow->format('Y-m-d');
             
             $isToday = false;
-            // Comparaison de ces variables dans le if
-            // Rajoute 
+        
             if($dateConvert == $dateNowConvert) {
                 $isToday = true;
             }
         }
         return $this->render('evenement/index.html.twig', [
             'evenements' => $elements,
-            'isToday' => $isToday,
-            'conseils' => $conseils
+            // 'isToday' => $isToday,
+            'conseils' => $conseils,
+            'prenom' => $prenom,
+            'dateNaissance' => $dateNaissance,
+            'age' => $age,
+            'pseudo' => $pseudo
+
         ]);
     }
 
@@ -65,9 +90,31 @@ class EvenementController extends AbstractController
      */
     public function new(Request $request, ConseilRepository $conseilRepo): Response
     {
+        // récupération des conseils
         $conseils = $conseilRepo->findBy([
             'nom' => "Quand fera t-il ses nuits ?"
         ]);
+
+        //récupération de l'utilisateur
+        $utilisateur = $this->getUser();
+        
+        if($utilisateur) {
+            $pseudo = $utilisateur->getPseudo();
+            $bebe = $utilisateur->getBebe();
+            // Calcul de l'age 
+            $dateNaissance = $bebe->getDateNaissance();
+            $dateNow = new \DateTime('now');
+            $age = date_diff($dateNow, $dateNaissance)->m;
+
+            $prenom = $bebe->getPrenom();
+
+        } else {
+            $age = 0;
+            $bebe = "mumu";
+            $prenom = "Le prénom de bébé";
+            $dateNaissance = 0;
+            $pseudo = "";
+        }
 
         $evenement = new Evenement();
         $form = $this->createForm(EvenementType::class, $evenement);
@@ -78,24 +125,9 @@ class EvenementController extends AbstractController
               // getUser info de la session :
               $utilisateur = $this->getUser();
   
-            //   $utilisateur = $utilisateurRepo->findOneBy([
-            //       'pseudo' => 'maman'
-            //   ]);
-   
-              // Avec l'ajout de la connexion utilisateur :
-              // $bebe = $utilisateurRepo->findOneBy([
-              //     'bebe' => $utilisateur
-              // ]);
-  
-              // $bebe = $bebeRepo->findOneBy([
-              //     'prenom' => 'lolo'
-              // ]);
-  
               $bebe = $utilisateur->getBebe();
               $date = new \DateTime('now');
-               // Convertir la date en string 
-            //   $date = new \DateTime('@'.strtotime('now'));
-          
+
               // Remplir l'instance event avec tous les champs évènement :
               $evenement
                   ->setUser($utilisateur)
@@ -114,6 +146,10 @@ class EvenementController extends AbstractController
             'evenement' => $evenement,
             'conseils' => $conseils,
             'form' => $form,
+            'prenom' => $prenom,
+            'dateNaissance' => $dateNaissance,
+            'age' => $age,
+            'pseudo' => $pseudo
         ]);
     }
 

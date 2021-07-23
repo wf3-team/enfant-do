@@ -20,7 +20,6 @@ return [
         '/accueil/sommeil/ajouter' => [[['_route' => 'evenement_sommeil', '_controller' => 'App\\Controller\\EvenementController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/hygiene' => [[['_route' => 'hygiene_index', '_controller' => 'App\\Controller\\HygieneController::index'], null, ['GET' => 0], null, true, false, null]],
         '/hygiene/ajouter' => [[['_route' => 'hygiene_new', '_controller' => 'App\\Controller\\HygieneController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/repas' => [[['_route' => 'repas_index', '_controller' => 'App\\Controller\\RepasController::index'], null, ['GET' => 0], null, true, false, null]],
         '/repas/ajouter' => [[['_route' => 'repas_new', '_controller' => 'App\\Controller\\RepasController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/connexion' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/deconnexion' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
