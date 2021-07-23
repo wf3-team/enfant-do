@@ -22,9 +22,7 @@ class UserController extends AbstractController
      */
     public function index(UserRepository $userRepository): Response
     {
-        return $this->render('user/index.html.twig', [
-            'users' => $userRepository->findAll(),
-        ]);
+        return $this->redirectToRoute('evenement_index', [], Response::HTTP_SEE_OTHER);
     }
 
 

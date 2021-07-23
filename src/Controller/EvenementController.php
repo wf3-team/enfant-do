@@ -27,7 +27,12 @@ class EvenementController extends AbstractController
             'nom' => "Conseil d'été !"
         ]);
 
-        $elements = $evenementRepository->findAll();
+        $utilisateur = $this->getUser();
+        $bebe = $utilisateur->getBebe();
+
+        $elements = $evenementRepository->findBy([
+            'bebe' => $bebe
+        ]);
 
         foreach($elements as $element) {
             // Extraire le jour et mois de $dateElement
