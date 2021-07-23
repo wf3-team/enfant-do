@@ -24,8 +24,10 @@
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-        {% endblock %}
 
+            
+        {% endblock %}
+            
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
             <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -37,6 +39,8 @@
             crossorigin="anonymous"
             ></script>
         {% endblock %}
+
+        <link rel="shortcut icon" type="image/x-icon" href="{{asset('favicon.ico')}}"/>
     </head>
     <body>
         {% block body %}{% endblock %}

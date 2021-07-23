@@ -21,9 +21,9 @@ class ConnexionAuthenticator extends AbstractLoginFormAuthenticator
     use TargetPathTrait;
 
     public const LOGIN_ROUTE = 'app_login';
-
-    private UrlGeneratorInterface $urlGenerator;
-
+    // CHANGEMENT : Il faut supprimer UrlGeneratorInterface --------------------
+    private $urlGenerator;
+    // -----------------------------------------------------
     public function __construct(UrlGeneratorInterface $urlGenerator)
     {
         $this->urlGenerator = $urlGenerator;
@@ -51,7 +51,7 @@ class ConnexionAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         // For example:
-        //return new RedirectResponse($this->urlGenerator->generate('some_route'));
+        return new RedirectResponse($this->urlGenerator->generate('evenement_index'));
         throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 

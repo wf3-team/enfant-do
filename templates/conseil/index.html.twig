@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{{parent()}}{% endblock %}
+
+{% block content %}
+<div class="mb-5 retour-accueil">
+        <a href="{{path('evenement_index')}}"><i class="fas fa-arrow-left"></i> Retour à la page d'accueil</a>
+</div> 
+
+<h2>Nos conseils autours de bébé</h2>
+
+
+
+{% for conseil in conseils %}
+<div class="section-info p-4 mb-5">
+    <h5>{{conseil.nom}}</h5>
+    <p class="mb-5">{{conseil.description}}</p>
+</div>
+{% endfor %}
+
+{% endblock %}

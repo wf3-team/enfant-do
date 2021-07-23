@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Repas index{% endblock %}
+
+{% block body %}
+    <h1>Repas index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Biberon</th>
+                <th>Quantite_ml</th>
+                <th>Puree</th>
+                <th>Compote</th>
+                <th>Yaourt</th>
+                <th>Quantite_pot</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for repa in repas %}
+            <tr>
+                <td>{{ repa.id }}</td>
+                <td>{{ repa.biberon ? 'Yes' : 'No' }}</td>
+                <td>{{ repa.quantiteMl }}</td>
+                <td>{{ repa.puree ? 'Yes' : 'No' }}</td>
+                <td>{{ repa.compote ? 'Yes' : 'No' }}</td>
+                <td>{{ repa.yaourt ? 'Yes' : 'No' }}</td>
+                <td>{{ repa.quantitePot }}</td>
+                <td>
+                    <a href="{{ path('repas_show', {'id': repa.id}) }}">show</a>
+                    <a href="{{ path('repas_edit', {'id': repa.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('repas_new') }}">Create new</a>
+{% endblock %}

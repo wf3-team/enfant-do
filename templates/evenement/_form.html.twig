@@ -1,0 +1,62 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<div class="container">
+    <div class="mb-5">
+        <a href="{{path('evenement_index')}}"><i class="fas fa-arrow-left"></i> Retour à la page d'accueil</a>
+    </div>  
+   
+<h2>Gestion du sommeil</h2>
+{{ form_start(form) }}
+  <div class="event-section row d-flex justify-content-center mb-5">
+
+    {# Sommeil #}
+    <div class="col-md-3 col-10 mb-2 me-3 color-table">
+        <h6 class="text-center mt-2">Sommeil</h6>
+            <table class="table text-center">
+            <tbody>
+                    <tr>
+                         <td>{{ form_widget(form.dodo, {
+                            'label': 'Bébé dort'}) }}</td>    
+                    </tr>
+            </tbody>
+            </table>
+    </div>
+
+     {# heure_fin #}
+    <div class="col-md-3 col-5 me-3 mb-2 color-table">
+        <h6 class="text-center mt-2">Heure de fin</h6>
+            <table class="table text-center">
+            <tbody>
+                    <tr>
+                         <td>{{ form_widget(form.heure_fin) }}</td>    
+                    </tr>
+            </tbody>
+            </table>
+    </div>
+    
+    
+   <div>{{form_widget(form.enregistrer)}}</div>
+</div> 
+{{ form_end(form) }}
+
+
+{# information #}
+        <h2>Conseils autour de bébé</h2>
+        <div class="section-info d-flex row pt-4 pb-4 mb-5">
+            <div class="col-3">
+                <img class="me-2" src="{{ asset('image/dodo/photo-dodo1.jpg')}}" alt="rust-texture">
+            </div>
+            <div class="col-9">
+
+            {% for conseil in conseils %}
+                <h4>{{conseil.nom}}</h4>
+                <p>{{conseil.description}}</p>
+            {% endfor %}
+            </div>
+        </div> 
+</div>
+
+
+{% endblock %}
+
