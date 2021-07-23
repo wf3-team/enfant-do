@@ -12,7 +12,7 @@
     <h6 class="mt-4">{{ "now" | date('d/m/Y à H:i', "Europe/Paris" ) }}</h6>
 
    
-    {% if is_granted("IS_AUTHENTICATED_FULLY") and isToday %}
+    {# {% if is_granted("IS_AUTHENTICATED_FULLY") %} #}
 
     <div class="event-section row d-flex justify-content-center mb-5 pt-4 pb-4">
     {# edition #}
@@ -200,10 +200,10 @@
 
     {# end div row #}
     </div> 
-    {% else %}
-    <p>Pour profiter des fonctionnalités de l'Enfant Do, veuillez-vous authentifier</p><a href="{{path('app_login')}}">Connexion</a>
+    {# {% else %} #}
+    {# <p>Pour profiter des fonctionnalités de l'Enfant Do, veuillez-vous authentifier</p><a href="{{path('app_login')}}">Connexion</a> #}
 
-{% endif %}
+{# {% endif %} #}
 
 
     
