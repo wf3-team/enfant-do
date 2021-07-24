@@ -209,22 +209,6 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
             ";
         // line 96
         echo "                ";
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 97
-            echo "                        <h4>";
-            echo twig_escape_filter($this->env, (isset($context["prenom"]) || array_key_exists("prenom", $context) ? $context["prenom"] : (function () { throw new RuntimeError('Variable "prenom" does not exist.', 97, $this->source); })()), "html", null, true);
-            echo "</h4>
-                        <h6>Date de naissance :</h6>
-                        <h6>";
-            // line 99
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, (isset($context["dateNaissance"]) || array_key_exists("dateNaissance", $context) ? $context["dateNaissance"] : (function () { throw new RuntimeError('Variable "dateNaissance" does not exist.', 99, $this->source); })()), "d/m/Y"), "html", null, true);
-            echo "</h6>
-                        <h5>";
-            // line 100
-            echo twig_escape_filter($this->env, (isset($context["age"]) || array_key_exists("age", $context) ? $context["age"] : (function () { throw new RuntimeError('Variable "age" does not exist.', 100, $this->source); })()), "html", null, true);
-            echo " mois</h5>
-                ";
-        }
         // line 102
         echo "                
                 
@@ -323,7 +307,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
     public function getDebugInfo()
     {
-        return array (  305 => 114,  303 => 113,  293 => 112,  257 => 125,  244 => 114,  242 => 112,  239 => 111,  229 => 102,  224 => 100,  220 => 99,  214 => 97,  211 => 96,  205 => 92,  196 => 88,  188 => 85,  180 => 82,  172 => 79,  166 => 75,  152 => 62,  147 => 59,  133 => 44,  131 => 43,  127 => 41,  121 => 38,  114 => 34,  111 => 33,  104 => 29,  100 => 27,  97 => 26,  82 => 14,  78 => 12,  75 => 10,  73 => 8,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  289 => 114,  287 => 113,  277 => 112,  241 => 125,  228 => 114,  226 => 112,  223 => 111,  213 => 102,  211 => 96,  205 => 92,  196 => 88,  188 => 85,  180 => 82,  172 => 79,  166 => 75,  152 => 62,  147 => 59,  133 => 44,  131 => 43,  127 => 41,  121 => 38,  114 => 34,  111 => 33,  104 => 29,  100 => 27,  97 => 26,  82 => 14,  78 => 12,  75 => 10,  73 => 8,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -423,12 +407,12 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
                 <div class=\"d-flex flex-column\">
 
             {# Informations du bébé #}
-                {% if is_granted(\"IS_AUTHENTICATED_FULLY\") %}
+                {# {% if is_granted(\"IS_AUTHENTICATED_FULLY\") %}
                         <h4>{{prenom}}</h4>
                         <h6>Date de naissance :</h6>
                         <h6>{{dateNaissance| date('d/m/Y')}}</h6>
                         <h5>{{age}} mois</h5>
-                {% endif %}
+                {% endif %} #}
                 
                 
                     
