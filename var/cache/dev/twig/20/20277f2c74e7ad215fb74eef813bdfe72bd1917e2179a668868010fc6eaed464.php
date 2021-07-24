@@ -65,7 +65,8 @@ class __TwigTemplate_ff1df232420866ae1f742badbfee372d680404293545a5edd9b2c721341
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Connexion ";
+        $this->displayParentBlock("title", $context, $blocks);
+        echo " ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -98,32 +99,43 @@ class __TwigTemplate_ff1df232420866ae1f742badbfee372d680404293545a5edd9b2c721341
         // line 10
         echo "
 
+    <div class=\"text-center\">
+        <img class=\"w-25\" src=\"";
+        // line 13
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-dodo.png"), "html", null, true);
+        echo "\" alt=\"rust-texture\">
+    </div>
 
-    <h1 class=\"h3 mb-3 font-weight-normal\">Connexion</h1>
+    <div class=\"w-50 offset-3 col-6 offset-3 mt-5 margin-bottom\">
+        <h1 class=\"h3 mb-3 font-weight-normal\">Connexion</h1>
+        <div class=\"section-info p-3\">
+            <label for=\"inputEmail\">Email</label>
+            <input type=\"email\" value=\"";
+        // line 20
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 20, $this->source); })()), "html", null, true);
+        echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control mb-4\" autocomplete=\"email\" required autofocus>
+            <label for=\"inputPassword\">Mot de passe</label>
+            <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control mb-4\" autocomplete=\"current-password\" required>
 
-
-    <label for=\"inputEmail\">Email</label>
-    <input type=\"email\" value=\"";
-        // line 17
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 17, $this->source); })()), "html", null, true);
-        echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
-    <label for=\"inputPassword\">Mot de passe</label>
-    <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>
-
-    <input type=\"hidden\" name=\"_csrf_token\"
-           value=\"";
-        // line 22
+            <input type=\"hidden\" name=\"_csrf_token\"
+                value=\"";
+        // line 25
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
-    >
+            >
+        
+    
 
-    ";
-        // line 35
+        ";
+        // line 40
         echo "
-    <button class=\"btn btn-lg btn-warning\" type=\"submit\">
-        Valider
-    </button>
-</form>
+        <button class=\"btn btn-lg btn-primary\" type=\"submit\">
+            Valider
+        </button>
+    </form>
+</div>
+        
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -145,14 +157,14 @@ class __TwigTemplate_ff1df232420866ae1f742badbfee372d680404293545a5edd9b2c721341
 
     public function getDebugInfo()
     {
-        return array (  122 => 35,  116 => 22,  108 => 17,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  131 => 40,  123 => 25,  115 => 20,  105 => 13,  100 => 10,  94 => 8,  92 => 7,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'layout.html.twig' %}
 
-{% block title %}Connexion {% endblock %}
+{% block title %}{{parent()}} {% endblock %}
 
 {% block content %}
 <form method=\"post\">
@@ -161,34 +173,42 @@ class __TwigTemplate_ff1df232420866ae1f742badbfee372d680404293545a5edd9b2c721341
     {% endif %}
 
 
+    <div class=\"text-center\">
+        <img class=\"w-25\" src=\"{{ asset('image/icon/icon-dodo.png')}}\" alt=\"rust-texture\">
+    </div>
 
-    <h1 class=\"h3 mb-3 font-weight-normal\">Connexion</h1>
+    <div class=\"w-50 offset-3 col-6 offset-3 mt-5 margin-bottom\">
+        <h1 class=\"h3 mb-3 font-weight-normal\">Connexion</h1>
+        <div class=\"section-info p-3\">
+            <label for=\"inputEmail\">Email</label>
+            <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control mb-4\" autocomplete=\"email\" required autofocus>
+            <label for=\"inputPassword\">Mot de passe</label>
+            <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control mb-4\" autocomplete=\"current-password\" required>
 
+            <input type=\"hidden\" name=\"_csrf_token\"
+                value=\"{{ csrf_token('authenticate') }}\"
+            >
+        
+    
 
-    <label for=\"inputEmail\">Email</label>
-    <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
-    <label for=\"inputPassword\">Mot de passe</label>
-    <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>
+        {#
+            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+            See https://symfony.com/doc/current/security/remember_me.html
 
-    <input type=\"hidden\" name=\"_csrf_token\"
-           value=\"{{ csrf_token('authenticate') }}\"
-    >
+            <div class=\"checkbox mb-3\">
+                <label>
+                    <input type=\"checkbox\" name=\"_remember_me\"> Remember me
+                </label>
+            </div>
+        #}
 
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
-
-        <div class=\"checkbox mb-3\">
-            <label>
-                <input type=\"checkbox\" name=\"_remember_me\"> Remember me
-            </label>
-        </div>
-    #}
-
-    <button class=\"btn btn-lg btn-warning\" type=\"submit\">
-        Valider
-    </button>
-</form>
+        <button class=\"btn btn-lg btn-primary\" type=\"submit\">
+            Valider
+        </button>
+    </form>
+</div>
+        
+</div>
 {% endblock %}
 ", "security/login.html.twig", "/Users/carolinezaini/Desktop/enfant-do/templates/security/login.html.twig");
     }

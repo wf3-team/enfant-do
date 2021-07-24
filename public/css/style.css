@@ -1,5 +1,6 @@
 body {
   background-color: #f2f3f3;
+  font-family: "Poppins", sans-serif;
 }
 p {
   font-size: 14px;
@@ -17,6 +18,10 @@ h2 {
   background-color: #f9efbc;
   font-size: 20px;
   padding: 10px;
+}
+
+.margin-bottom {
+  margin-bottom: 200px;
 }
 
 .fa-check {
@@ -37,6 +42,11 @@ h2 {
   background-color: #f9efbc;
   box-shadow: 0 4px 8px rgb(0 0 0 / 28%);
   border-radius: 5%;
+}
+
+.logo {
+  font-family: "Dancing Script", cursive;
+  font-size: 30px;
 }
 
 .color-table {
@@ -94,6 +104,8 @@ h2 {
 
 /* navbar changement des couleurs */
 .navbar {
+  vertical-align: bottom;
+  line-height: 50px;
   background-color: #f9efbc;
   box-shadow: 0 0 4px rgb(0 0 0 / 14%), 0 4px 8px rgb(0 0 0 / 28%);
 }

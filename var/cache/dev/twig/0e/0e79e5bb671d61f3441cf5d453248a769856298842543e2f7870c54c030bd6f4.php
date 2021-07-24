@@ -56,23 +56,23 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
         // line 8
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 30
+        // line 34
         echo "            
         ";
-        // line 31
+        // line 35
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 42
+        // line 46
         echo "
         <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"";
-        // line 43
+        // line 47
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\"/>
     </head>
     <body>
         ";
-        // line 46
+        // line 50
         $this->displayBlock('body', $context, $blocks);
-        // line 47
+        // line 51
         echo "    </body>
 </html>
 
@@ -139,10 +139,16 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
             
             ";
         // line 24
+        echo "            ";
+        // line 25
         echo "            <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
             <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
-            <link href=\"https://fonts.googleapis.com/css2?family=Pacifico&display=swap\" rel=\"stylesheet\">
-
+            <link href=\"https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,600&display=swap\" rel=\"stylesheet\">
+            ";
+        // line 29
+        echo "            <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+            <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+            <link href=\"https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap\" rel=\"stylesheet\">
             
         ";
         
@@ -153,7 +159,7 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
 
     }
 
-    // line 31
+    // line 35
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -163,9 +169,9 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 32
+        // line 36
         echo "            ";
-        // line 33
+        // line 37
         echo "            <script src=\"https://polyfill.io/v3/polyfill.min.js?features=default\"></script>
             <script type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
             <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>
@@ -183,7 +189,7 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
 
     }
 
-    // line 46
+    // line 50
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -213,7 +219,7 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
 
     public function getDebugInfo()
     {
-        return array (  187 => 46,  169 => 33,  167 => 32,  157 => 31,  142 => 24,  138 => 21,  133 => 18,  128 => 17,  120 => 10,  118 => 9,  108 => 8,  89 => 5,  76 => 47,  74 => 46,  68 => 43,  65 => 42,  63 => 31,  60 => 30,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  193 => 50,  175 => 37,  173 => 36,  163 => 35,  149 => 29,  144 => 25,  142 => 24,  138 => 21,  133 => 18,  128 => 17,  120 => 10,  118 => 9,  108 => 8,  89 => 5,  76 => 51,  74 => 50,  68 => 47,  65 => 46,  63 => 35,  60 => 34,  57 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -241,10 +247,14 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
             <script src=\"https://kit.fontawesome.com/dbfb43a444.js\" crossorigin=\"anonymous\"></script>
             
             {# GOOGLE FONT --------------------------- #}
+            {# police générale #}
             <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
             <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
-            <link href=\"https://fonts.googleapis.com/css2?family=Pacifico&display=swap\" rel=\"stylesheet\">
-
+            <link href=\"https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,600&display=swap\" rel=\"stylesheet\">
+            {# police logo #}
+            <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+            <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+            <link href=\"https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap\" rel=\"stylesheet\">
             
         {% endblock %}
             

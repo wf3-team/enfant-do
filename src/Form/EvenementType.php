@@ -27,8 +27,6 @@ class EvenementType extends AbstractType
             ])
             ->add('dodo')
 
-            
-          
             ->add('enregistrer', SubmitType::class, [
                 "attr" => [
                     "class" => "btn btn-primary"

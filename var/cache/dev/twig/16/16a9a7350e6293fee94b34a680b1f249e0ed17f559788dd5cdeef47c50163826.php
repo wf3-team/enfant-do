@@ -77,7 +77,10 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
         // line 12
         echo "       <nav class=\"navbar navbar-expand-lg navbar-light\">
             <div class=\"container-fluid\">
-                <a class=\"navbar-brand\" href=\"#\">L'Enfant Do</a>
+                <a class=\"navbar-brand logo ms-4\" href=\"";
+        // line 14
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("evenement_index");
+        echo "\">L'Enfant Do</a>
                     <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                         <span class=\"navbar-toggler-icon\"></span>
                     </button>
@@ -139,13 +142,9 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
                             </ul>
                         </li>
 
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link disabled\" href=\"#\" tabindex=\"-1\" aria-disabled=\"true\">Bonjour ";
-            // line 57
-            echo twig_escape_filter($this->env, (isset($context["pseudo"]) || array_key_exists("pseudo", $context) ? $context["pseudo"] : (function () { throw new RuntimeError('Variable "pseudo" does not exist.', 57, $this->source); })()), "html", null, true);
-            echo "</a>
-                        </li>
-                
+                        ";
+            // line 59
+            echo "                
 
                         ";
         }
@@ -324,7 +323,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
     public function getDebugInfo()
     {
-        return array (  306 => 114,  304 => 113,  294 => 112,  258 => 125,  245 => 114,  243 => 112,  240 => 111,  230 => 102,  225 => 100,  221 => 99,  215 => 97,  212 => 96,  206 => 92,  197 => 88,  189 => 85,  181 => 82,  173 => 79,  167 => 75,  153 => 62,  145 => 57,  130 => 44,  128 => 43,  124 => 41,  118 => 38,  111 => 34,  108 => 33,  101 => 29,  97 => 27,  94 => 26,  78 => 12,  75 => 10,  73 => 8,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  305 => 114,  303 => 113,  293 => 112,  257 => 125,  244 => 114,  242 => 112,  239 => 111,  229 => 102,  224 => 100,  220 => 99,  214 => 97,  211 => 96,  205 => 92,  196 => 88,  188 => 85,  180 => 82,  172 => 79,  166 => 75,  152 => 62,  147 => 59,  133 => 44,  131 => 43,  127 => 41,  121 => 38,  114 => 34,  111 => 33,  104 => 29,  100 => 27,  97 => 26,  82 => 14,  78 => 12,  75 => 10,  73 => 8,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -342,7 +341,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
     {# Intégration de la nav Bootstrap : #}
        <nav class=\"navbar navbar-expand-lg navbar-light\">
             <div class=\"container-fluid\">
-                <a class=\"navbar-brand\" href=\"#\">L'Enfant Do</a>
+                <a class=\"navbar-brand logo ms-4\" href=\"{{path('evenement_index')}}\">L'Enfant Do</a>
                     <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                         <span class=\"navbar-toggler-icon\"></span>
                     </button>
@@ -384,9 +383,9 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
                             </ul>
                         </li>
 
-                        <li class=\"nav-item\">
+                        {# <li class=\"nav-item\">
                             <a class=\"nav-link disabled\" href=\"#\" tabindex=\"-1\" aria-disabled=\"true\">Bonjour {{pseudo}}</a>
-                        </li>
+                        </li> #}
                 
 
                         {% endif %}

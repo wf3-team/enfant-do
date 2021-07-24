@@ -136,49 +136,51 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 44, $this->source); })()), "enregistrer", [], "any", false, false, false, 44), 'widget');
         echo "</div>
         ";
-        // line 46
+        // line 53
+        echo "        ";
+        // line 54
         echo "        </div>
 
             
 
     ";
-        // line 50
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 50, $this->source); })()), 'form_end');
+        // line 58
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 58, $this->source); })()), 'form_end');
         echo "
 
     ";
-        // line 53
+        // line 61
         echo "        <h2>Conseils autour de bébé</h2>
         <div class=\"section-info\">
         
             <div class=\"row d-flex justify-content-center pt-4 pb-4 mb-5\">
                 <div class=\"col-3\">
                     <img class=\"me-2 w-75\" src=\"";
-        // line 58
+        // line 66
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/repas/biberon2.jpg"), "html", null, true);
         echo "\" alt=\"rust-texture\">
                 </div>
                 <div class=\"col-9\">
 
                 ";
-        // line 62
+        // line 70
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["conseilsBiberon"]) || array_key_exists("conseilsBiberon", $context) ? $context["conseilsBiberon"] : (function () { throw new RuntimeError('Variable "conseilsBiberon" does not exist.', 62, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["conseilsBiberon"]) || array_key_exists("conseilsBiberon", $context) ? $context["conseilsBiberon"] : (function () { throw new RuntimeError('Variable "conseilsBiberon" does not exist.', 70, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["conseil"]) {
-            // line 63
+            // line 71
             echo "                    <h4>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "nom", [], "any", false, false, false, 63), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "nom", [], "any", false, false, false, 71), "html", null, true);
             echo "</h4>
                     <p>";
-            // line 64
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "description", [], "any", false, false, false, 64), "html", null, true);
+            // line 72
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "description", [], "any", false, false, false, 72), "html", null, true);
             echo "}}</p>
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['conseil'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 66
+        // line 74
         echo "                        
                 </div>
             </div>
@@ -187,28 +189,28 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
                
                 <div class=\"col-9\">
                 ";
-        // line 73
+        // line 81
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["conseilsDivers"]) || array_key_exists("conseilsDivers", $context) ? $context["conseilsDivers"] : (function () { throw new RuntimeError('Variable "conseilsDivers" does not exist.', 73, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["conseilsDivers"]) || array_key_exists("conseilsDivers", $context) ? $context["conseilsDivers"] : (function () { throw new RuntimeError('Variable "conseilsDivers" does not exist.', 81, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["conseil"]) {
-            // line 74
+            // line 82
             echo "                    <h4>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "nom", [], "any", false, false, false, 74), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "nom", [], "any", false, false, false, 82), "html", null, true);
             echo "</h4>
                     <p>";
-            // line 75
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "description", [], "any", false, false, false, 75), "html", null, true);
+            // line 83
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "description", [], "any", false, false, false, 83), "html", null, true);
             echo "</p>
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['conseil'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 77
+        // line 85
         echo "                </div>
                  <div class=\"col-3\">
                     <img class=\"me-2\" src=\"";
-        // line 79
+        // line 87
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/repas/diversification3.jpg"), "html", null, true);
         echo "\" alt=\"rust-texture\">
                 </div>
@@ -218,7 +220,7 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
         </div>
 
 ";
-        // line 87
+        // line 95
         echo "</div>
 ";
         
@@ -241,7 +243,7 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
 
     public function getDebugInfo()
     {
-        return array (  222 => 87,  212 => 79,  208 => 77,  200 => 75,  195 => 74,  191 => 73,  182 => 66,  174 => 64,  169 => 63,  165 => 62,  158 => 58,  151 => 53,  146 => 50,  140 => 46,  136 => 44,  128 => 39,  122 => 36,  118 => 35,  114 => 34,  107 => 29,  99 => 23,  93 => 20,  86 => 15,  79 => 10,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  224 => 95,  214 => 87,  210 => 85,  202 => 83,  197 => 82,  193 => 81,  184 => 74,  176 => 72,  171 => 71,  167 => 70,  160 => 66,  153 => 61,  148 => 58,  142 => 54,  140 => 53,  136 => 44,  128 => 39,  122 => 36,  118 => 35,  114 => 34,  107 => 29,  99 => 23,  93 => 20,  86 => 15,  79 => 10,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -290,6 +292,14 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
                 </table>
         </div>
         <div>{{form_widget(form.enregistrer)}}</div>
+        {# {% if is_granted(\"IS_AUTHENTICATED_FULLY\") %}
+        <div>{{form_widget(form.enregistrer)}}</div>
+        {% else %}
+        <div class=\"alert alert-info m-3\" role=\"alert\">
+            Authentifiez-vous pour rentrer les informations de bébé  <a class=\"underline\" href=\"{{path('user_new')}}\"> Inscrivez-vous</a> ou
+            <a href=\"{{path('app_login')}}\"> Connectez-vous</a> 
+        </div> 
+        {% endif %} #}
         {# Fin de la row #}
         </div>
 

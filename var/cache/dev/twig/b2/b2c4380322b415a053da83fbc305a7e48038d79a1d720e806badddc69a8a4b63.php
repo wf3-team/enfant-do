@@ -65,24 +65,35 @@ class __TwigTemplate_2533bacde53862c0ff3727dd184da224c65318f8f8aab42db1d04ca044e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 4
-        echo "
-    ";
+        echo "    <div class=\"text-center\">
+        <img class=\"w-25\" src=\"";
         // line 5
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 5, $this->source); })()), 'form_start');
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-dodo.png"), "html", null, true);
+        echo "\" alt=\"rust-texture\">
+    </div>
+
+    <div class=\"w-50 offset-3 col-6 offset-3 mt-5 margin-bottom\">
+    ";
+        // line 9
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'form_start');
         echo "
 
         <h1> Inscription </h1>
 
         <h2> Parent </h2> 
-        ";
-        // line 10
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), 'widget');
+        <div class=\"section-info p-3\">
+            ";
+        // line 15
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), 'widget');
         echo "
 
-    ";
-        // line 12
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), 'form_end');
+            ";
+        // line 17
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), 'form_end');
         echo "
+        </div>
+        
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -104,7 +115,7 @@ class __TwigTemplate_2533bacde53862c0ff3727dd184da224c65318f8f8aab42db1d04ca044e
 
     public function getDebugInfo()
     {
-        return array (  84 => 12,  79 => 10,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  92 => 17,  87 => 15,  78 => 9,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -112,15 +123,23 @@ class __TwigTemplate_2533bacde53862c0ff3727dd184da224c65318f8f8aab42db1d04ca044e
         return new Source("{% extends \"layout.html.twig\" %}
 
 {% block content %}
+    <div class=\"text-center\">
+        <img class=\"w-25\" src=\"{{ asset('image/icon/icon-dodo.png')}}\" alt=\"rust-texture\">
+    </div>
 
+    <div class=\"w-50 offset-3 col-6 offset-3 mt-5 margin-bottom\">
     {{ form_start(form) }}
 
         <h1> Inscription </h1>
 
         <h2> Parent </h2> 
-        {{ form_widget(form) }}
+        <div class=\"section-info p-3\">
+            {{ form_widget(form) }}
 
-    {{ form_end(form) }}
+            {{ form_end(form) }}
+        </div>
+        
+    </div>
 {% endblock %}", "user/_form.html.twig", "/Users/carolinezaini/Desktop/enfant-do/templates/user/_form.html.twig");
     }
 }

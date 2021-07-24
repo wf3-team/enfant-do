@@ -37,7 +37,7 @@ class UserType extends AbstractType
             // ->add('bebe_id')
             ->add('valider', SubmitType::class,[
                 "attr" => [
-                    "class" => "btn btn-warning"
+                    "class" => "btn btn-primary"
                 ] 
             ])
         ;

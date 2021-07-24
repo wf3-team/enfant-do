@@ -34,9 +34,15 @@
             </tbody>
             </table>
     </div>
-    
-    
-   <div>{{form_widget(form.enregistrer)}}</div>
+      <div>{{form_widget(form.enregistrer)}}</div>
+   {# {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+        <div>{{form_widget(form.enregistrer)}}</div>
+        {% else %}
+        <div class="alert alert-info m-3" role="alert">
+            Authentifiez-vous pour rentrer les informations de bébé  <a class="underline" href="{{path('user_new')}}"> Inscrivez-vous</a> ou
+            <a href="{{path('app_login')}}"> Connectez-vous</a> 
+        </div> 
+        {% endif %} #}
 </div> 
 {{ form_end(form) }}
 

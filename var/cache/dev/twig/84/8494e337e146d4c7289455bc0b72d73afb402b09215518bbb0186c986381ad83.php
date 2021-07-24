@@ -65,7 +65,7 @@ class __TwigTemplate_6eab5de85d67effad3dcf7b6f69967ba8d9c5a7dfc54eea84352bf92c26
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Inscription";
+        $this->displayParentBlock("title", $context, $blocks);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -120,7 +120,7 @@ class __TwigTemplate_6eab5de85d67effad3dcf7b6f69967ba8d9c5a7dfc54eea84352bf92c26
     {
         return new Source("{% extends 'layout.html.twig' %}
 
-{% block title %}Inscription{% endblock %}
+{% block title %}{{parent()}}{% endblock %}
 
 
 {% block body %}

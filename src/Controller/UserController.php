@@ -31,6 +31,27 @@ class UserController extends AbstractController
      */
     public function new(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
+        //récupération de l'utilisateur
+        $utilisateur = $this->getUser();
+        
+        if($utilisateur) {
+            $pseudo = $utilisateur->getPseudo();
+            $bebe = $utilisateur->getBebe();
+            // Calcul de l'age 
+            $dateNaissance = $bebe->getDateNaissance();
+            $dateNow = new \DateTime('now');
+            $age = date_diff($dateNow, $dateNaissance)->m;
+
+            $prenom = $bebe->getPrenom();
+
+        } else {
+            $age = 0;
+            $bebe = "mumu";
+            $prenom = "Le prénom de bébé";
+            $dateNaissance = 0;
+            $pseudo = "";
+        }
+
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
@@ -59,6 +80,10 @@ class UserController extends AbstractController
         return $this->renderForm('user/new.html.twig', [
             'user' => $user,
             'form' => $form,
+            'prenom' => $prenom,
+            'dateNaissance' => $dateNaissance,
+            'age' => $age,
+            'pseudo' => $pseudo
         ]);
 
 
