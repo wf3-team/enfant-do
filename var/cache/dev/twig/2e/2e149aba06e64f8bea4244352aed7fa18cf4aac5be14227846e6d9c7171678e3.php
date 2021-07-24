@@ -97,7 +97,7 @@ class __TwigTemplate_54feed1bd68e55589522c3aed3aea74184702afe076a770222a5fdc2812
             </table>
     </div>
 
-     ";
+    ";
         // line 27
         echo "    <div class=\"col-md-3 col-5 me-3 mb-2 color-table\">
         <h6 class=\"text-center mt-2\">Heure de fin</h6>
@@ -112,11 +112,29 @@ class __TwigTemplate_54feed1bd68e55589522c3aed3aea74184702afe076a770222a5fdc2812
             </tbody>
             </table>
     </div>
-      <div>";
-        // line 37
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 37, $this->source); })()), "enregistrer", [], "any", false, false, false, 37), 'widget');
-        echo "</div>
-   ";
+      ";
+        // line 38
+        echo "   ";
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 39
+            echo "        <div>";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 39, $this->source); })()), "enregistrer", [], "any", false, false, false, 39), 'widget');
+            echo "</div>
+        ";
+        } else {
+            // line 41
+            echo "        <div class=\"alert alert-info m-3\" role=\"alert\">
+            Authentifiez-vous pour rentrer les informations de bébé  <a class=\"underline\" href=\"";
+            // line 42
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_new");
+            echo "\"> Inscrivez-vous</a> ou
+            <a href=\"";
+            // line 43
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\"> Connectez-vous</a> 
+        </div> 
+        ";
+        }
         // line 46
         echo "</div> 
 ";
@@ -182,7 +200,7 @@ class __TwigTemplate_54feed1bd68e55589522c3aed3aea74184702afe076a770222a5fdc2812
 
     public function getDebugInfo()
     {
-        return array (  159 => 62,  151 => 60,  146 => 59,  142 => 58,  135 => 54,  130 => 51,  124 => 47,  121 => 46,  117 => 37,  109 => 32,  102 => 27,  94 => 20,  92 => 19,  85 => 14,  79 => 10,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  177 => 62,  169 => 60,  164 => 59,  160 => 58,  153 => 54,  148 => 51,  142 => 47,  139 => 46,  133 => 43,  129 => 42,  126 => 41,  120 => 39,  117 => 38,  109 => 32,  102 => 27,  94 => 20,  92 => 19,  85 => 14,  79 => 10,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -212,7 +230,7 @@ class __TwigTemplate_54feed1bd68e55589522c3aed3aea74184702afe076a770222a5fdc2812
             </table>
     </div>
 
-     {# heure_fin #}
+    {# heure_fin #}
     <div class=\"col-md-3 col-5 me-3 mb-2 color-table\">
         <h6 class=\"text-center mt-2\">Heure de fin</h6>
             <table class=\"table text-center\">
@@ -223,15 +241,15 @@ class __TwigTemplate_54feed1bd68e55589522c3aed3aea74184702afe076a770222a5fdc2812
             </tbody>
             </table>
     </div>
-      <div>{{form_widget(form.enregistrer)}}</div>
-   {# {% if is_granted(\"IS_AUTHENTICATED_FULLY\") %}
+      {# <div>{{form_widget(form.enregistrer)}}</div> #}
+   {% if is_granted(\"IS_AUTHENTICATED_FULLY\") %}
         <div>{{form_widget(form.enregistrer)}}</div>
         {% else %}
         <div class=\"alert alert-info m-3\" role=\"alert\">
             Authentifiez-vous pour rentrer les informations de bébé  <a class=\"underline\" href=\"{{path('user_new')}}\"> Inscrivez-vous</a> ou
             <a href=\"{{path('app_login')}}\"> Connectez-vous</a> 
         </div> 
-        {% endif %} #}
+        {% endif %}
 </div> 
 {{ form_end(form) }}
 

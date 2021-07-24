@@ -115,11 +115,29 @@ class __TwigTemplate_e55ebc0ed2e0cef9ae0cbadadf012c72a3d57b6e6352c6c819026eaadf8
             </tbody>
             </table>
     </div>
-    <div>";
-        // line 37
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 37, $this->source); })()), "enregistrer", [], "any", false, false, false, 37), 'widget');
-        echo "</div>
     ";
+        // line 38
+        echo "    ";
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 39
+            echo "        <div>";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 39, $this->source); })()), "enregistrer", [], "any", false, false, false, 39), 'widget');
+            echo "</div>
+        ";
+        } else {
+            // line 41
+            echo "        <div class=\"alert alert-info m-3\" role=\"alert\">
+            Authentifiez-vous pour rentrer les informations de bébé  <a class=\"underline\" href=\"";
+            // line 42
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_new");
+            echo "\"> Inscrivez-vous</a> ou
+            <a href=\"";
+            // line 43
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\"> Connectez-vous</a> 
+        </div> 
+        ";
+        }
         // line 46
         echo "    </div>  
     
@@ -184,7 +202,7 @@ class __TwigTemplate_e55ebc0ed2e0cef9ae0cbadadf012c72a3d57b6e6352c6c819026eaadf8
 
     public function getDebugInfo()
     {
-        return array (  163 => 63,  155 => 61,  150 => 60,  146 => 59,  140 => 56,  135 => 53,  130 => 50,  124 => 46,  120 => 37,  112 => 32,  105 => 27,  96 => 20,  92 => 19,  85 => 14,  79 => 10,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  181 => 63,  173 => 61,  168 => 60,  164 => 59,  158 => 56,  153 => 53,  148 => 50,  142 => 46,  136 => 43,  132 => 42,  129 => 41,  123 => 39,  120 => 38,  112 => 32,  105 => 27,  96 => 20,  92 => 19,  85 => 14,  79 => 10,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -225,15 +243,15 @@ class __TwigTemplate_e55ebc0ed2e0cef9ae0cbadadf012c72a3d57b6e6352c6c819026eaadf8
             </tbody>
             </table>
     </div>
-    <div>{{form_widget(form.enregistrer)}}</div>
-    {# {% if is_granted(\"IS_AUTHENTICATED_FULLY\") %}
+    {# <div>{{form_widget(form.enregistrer)}}</div> #}
+    {% if is_granted(\"IS_AUTHENTICATED_FULLY\") %}
         <div>{{form_widget(form.enregistrer)}}</div>
         {% else %}
         <div class=\"alert alert-info m-3\" role=\"alert\">
             Authentifiez-vous pour rentrer les informations de bébé  <a class=\"underline\" href=\"{{path('user_new')}}\"> Inscrivez-vous</a> ou
             <a href=\"{{path('app_login')}}\"> Connectez-vous</a> 
         </div> 
-        {% endif %} #}
+        {% endif %}
     </div>  
     
 

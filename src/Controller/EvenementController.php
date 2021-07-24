@@ -26,6 +26,8 @@ class EvenementController extends AbstractController
         $conseils = $conseilRepo->findBy([
             'nom' => "Conseil d'été !"
         ]);
+
+        $isToday = false;
         
         //récupération de l'utilisateur
         $utilisateur = $this->getUser();
@@ -46,13 +48,12 @@ class EvenementController extends AbstractController
             $prenom = "Le prénom de bébé";
             $dateNaissance = 0;
             $pseudo = "";
+            $isToday = false;
         }
        
         $elements = $evenementRepository->findBy([
             'bebe' => $bebe
         ]);
-
-        
 
         // comparaison de la date d'insert avec la date actuelle
         foreach($elements as $element) {
@@ -64,15 +65,13 @@ class EvenementController extends AbstractController
             // $dateNow = new \DateTime('now');
             $dateNowConvert = $dateNow->format('Y-m-d');
             
-            $isToday = false;
-        
             if($dateConvert == $dateNowConvert) {
                 $isToday = true;
             }
         }
         return $this->render('evenement/index.html.twig', [
             'evenements' => $elements,
-            // 'isToday' => $isToday,
+            'isToday' => $isToday,
             'conseils' => $conseils,
             'prenom' => $prenom,
             'dateNaissance' => $dateNaissance,

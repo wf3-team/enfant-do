@@ -13,7 +13,7 @@
 
    
     {% if is_granted("IS_AUTHENTICATED_FULLY") %}
-
+        
     <div class="event-section row d-flex justify-content-center mb-5 pt-4 pb-4">
     {# edition #}
         <div class="col-md-1">
@@ -29,10 +29,11 @@
             </thead>
             <tbody>
                 {% for evenement in evenements %}
+                    {% if evenement.heureDebut|date('d/m/Y') == "now" | date('d/m/Y', "Europe/Paris" ) %}      
                     <tr>
-                         <td>{{ evenement.heureDebut ? evenement.heureDebut|date('H:i') : '' }}</td>
-                         
+                         <td>{{ evenement.heureDebut ? evenement.heureDebut|date('H:i') : '' }}</td>    
                     </tr>
+                    {% endif %}
                 {% endfor %}
             </tbody>
                 
@@ -51,6 +52,7 @@
             </thead>
             <tbody>
                 {% for evenement in evenements %}
+                    {% if evenement.heureDebut|date('d/m/Y') == "now" | date('d/m/Y', "Europe/Paris" ) %}  
                     <tr>
                         <td>
                         {% if evenement.repas is null %}
@@ -61,6 +63,7 @@
                         
                         </td>
                     </tr>
+                    {% endif %}
                 {% endfor %}
             </tbody>
                 
@@ -78,6 +81,7 @@
             </thead>
             <tbody>
                 {% for evenement in evenements %}
+                    {% if evenement.heureDebut|date('d/m/Y') == "now" | date('d/m/Y', "Europe/Paris" ) %}  
                     <tr>
                         <td>
                         {% if evenement.repas is null %}
@@ -101,9 +105,8 @@
                             <i class="far fa-clock"></i>
                         {% endif %}
                         </td>
-                           
-                    
                     </tr>
+                    {% endif %}
                 {% endfor %}
             </tbody>   
             </table>
@@ -119,6 +122,7 @@
             </thead>
             <tbody>
                 {% for evenement in evenements %}
+                    {% if evenement.heureDebut|date('d/m/Y') == "now" | date('d/m/Y', "Europe/Paris" ) %}  
                     <tr>
                         <td>
                         {% if evenement.hygiene is null %}
@@ -132,6 +136,7 @@
                         {% endif %} 
                         </td>
                     </tr>
+                    {% endif %}
                 {% endfor %}
             </tbody>   
             </table>
@@ -147,6 +152,7 @@
             </thead>
             <tbody>
                {% for evenement in evenements %}
+                    {% if evenement.heureDebut|date('d/m/Y') == "now" | date('d/m/Y', "Europe/Paris" ) %}  
                     <tr>
                         <td>
                         {% if evenement.hygiene is null %}
@@ -159,6 +165,7 @@
                         {% endif %} 
                         </td>
                     </tr>
+                    {% endif %}
                 {% endfor %}
             </tbody>   
             </table>
@@ -176,6 +183,7 @@
             </thead>
             <tbody>
                 {% for evenement in evenements %}
+                    {% if evenement.heureDebut|date('d/m/Y') == "now" | date('d/m/Y', "Europe/Paris" ) %}  
                     <tr>
                         <td>
                             {% if evenement.dodo %}
@@ -193,6 +201,7 @@
                         </td>
                         <td><a href="{{ path('evenement_edit', {'id': evenement.id}) }}"><i class="fas fa-feather"></i></a></td>
                     </tr>
+                    {% endif %}
                 {% endfor %}
             </tbody>   
             </table>
@@ -200,16 +209,14 @@
     
     {# end div row #}
     </div> 
-   {% else %}
-   <div class="text-center mt-5 mb-5">
+ 
+    {% else %}
+    <div class="alert alert-info text-center mt-5 mb-5" role="alert">
     <p>Pour profiter des fonctionnalités de l'Enfant Do, veuillez-vous authentifier</p>
     <a class="underline" href="{{path('user_new')}}">Inscrivez-vous</a> ou
     <a href="{{path('app_login')}}">Connectez-vous</a> 
    </div>
-    
-
-{% endif %} 
-
+{% endif %}
 
     
 
