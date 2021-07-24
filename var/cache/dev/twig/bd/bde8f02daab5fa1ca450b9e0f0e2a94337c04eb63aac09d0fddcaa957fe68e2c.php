@@ -67,22 +67,27 @@ class __TwigTemplate_1cb96693769ce4aa18a7c0f42dd5de65e66949bc5c52a32220310666c10
         // line 4
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 4, $this->source); })()), 'form_start');
         echo "
-
+    <div class=\"text-center\">
+        <img class=\"w-25\" src=\"";
+        // line 6
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/logo.png"), "html", null, true);
+        echo "\" alt=\"rust-texture\">
+    </div>
     <h1> Inscription </h1>
 
     <h2> Bébé </h2> 
     ";
-        // line 9
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'widget');
+        // line 11
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()), 'widget');
         echo "
     <button class=\"btn btn-warning\">";
-        // line 10
-        echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 10, $this->source); })()), "Valider")) : ("Valider")), "html", null, true);
+        // line 12
+        echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 12, $this->source); })()), "Valider")) : ("Valider")), "html", null, true);
         echo "</button>
 
 ";
-        // line 12
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), 'form_end');
+        // line 14
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 14, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -105,7 +110,7 @@ class __TwigTemplate_1cb96693769ce4aa18a7c0f42dd5de65e66949bc5c52a32220310666c10
 
     public function getDebugInfo()
     {
-        return array (  85 => 12,  80 => 10,  76 => 9,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  90 => 14,  85 => 12,  81 => 11,  73 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -114,7 +119,9 @@ class __TwigTemplate_1cb96693769ce4aa18a7c0f42dd5de65e66949bc5c52a32220310666c10
 
 {% block content %}
 {{ form_start(form) }}
-
+    <div class=\"text-center\">
+        <img class=\"w-25\" src=\"{{ asset('image/icon/logo.png')}}\" alt=\"rust-texture\">
+    </div>
     <h1> Inscription </h1>
 
     <h2> Bébé </h2> 

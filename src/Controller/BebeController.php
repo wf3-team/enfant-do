@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
  * @Route("/bebe")
@@ -35,11 +35,31 @@ class BebeController extends AbstractController
     /**
      * @Route("/inscription", name="bebe_new", methods={"GET","POST"})
      */
-    public function new(Request $request, UserRepository $userRepository): Response
+    public function new(Request $request, UserRepository $userRepository, SluggerInterface $slugger): Response
     {
         $bebe = new Bebe();
         $form = $this->createForm(BebeType::class, $bebe);
         $form->handleRequest($request);
+
+        $utilisateur = $this->getUser();
+
+        if($utilisateur) {
+            $pseudo = $utilisateur->getPseudo();
+            $bebe = $utilisateur->getBebe();
+            // Calcul de l'age 
+            $dateNaissance = $bebe->getDateNaissance();
+            $dateNow = new \DateTime('now');
+            $age = date_diff($dateNow, $dateNaissance)->m;
+
+            $prenom = $bebe->getPrenom();
+
+        } else {
+            $age = 0;
+            $bebe = "mumu";
+            $prenom = "Le prénom de bébé";
+            $dateNaissance = 0;
+            $pseudo = "";
+        }
 
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $this->getUser();
@@ -48,6 +68,25 @@ class BebeController extends AbstractController
             ]);
             // dd($actualuser);
             $actualuser->setBebe($bebe);
+
+            // si il y a une image il faut la placer la ou il faut
+            $imagesDirectory = "image/uploads/";
+            // donc, on commence par récuperer ce qui a été uploadé
+            $imageFile = $form->get('photo')->getData();
+            // on test, au cas ou
+            if ($imageFile) {
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                // on crée un nom unique de stockage du fichier
+                $safeFileName = $slugger->slug($originalFilename);
+                $finalFilename = $safeFileName . '-' . uniqid() . '.' . $imageFile->guessExtension();
+                // on essaye de deplacer le fichier à sa place finale, sur le serveur
+                $imageFile->move($imagesDirectory, $finalFilename);
+                // et bien sur on n'oubli pas de mettre à jour le path dans l'objet image
+                // petite astuce pour éviter d'avoir à modifier les vues
+                $fichierCheminComplet = "$imagesDirectory$finalFilename";
+                $bebe->setPhoto($fichierCheminComplet);
+            }
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($actualuser);
             $entityManager->persist($bebe);
@@ -59,6 +98,10 @@ class BebeController extends AbstractController
         return $this->renderForm('bebe/new.html.twig', [
             'bebe' => $bebe,
             'form' => $form,
+            'prenom' => $prenom,
+            'dateNaissance' => $dateNaissance,
+            'age' => $age,
+            'pseudo' => $pseudo
         ]);
     }
 

@@ -45,7 +45,11 @@ class Bebe
      */
     private $genre;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
 
+    private $photo;
 
     /**
      * @ORM\OneToMany(targetEntity=User::class, mappedBy="bebe_id", orphanRemoval=true)
@@ -187,4 +191,18 @@ class Bebe
 
         return $this;
     }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(?string $photo): self
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+
 }

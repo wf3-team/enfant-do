@@ -6001,9 +6001,10 @@
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
-    <service id=".service_locator..Ae5NXw" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.xTk4WP9" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="slugger" type="service_closure" id="slugger"/>
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
@@ -6056,6 +6057,12 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
+    <service id=".service_locator..Ae5NXw" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.pwZ6MTM" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6068,13 +6075,13 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.ch4Jgvl.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.HCSh.1i" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.2Buaaxy" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\BebeController::delete" type="service_closure" id=".service_locator.utDPBgJ"/>
         <argument key="App\Controller\BebeController::edit" type="service_closure" id=".service_locator.utDPBgJ"/>
         <argument key="App\Controller\BebeController::index" type="service_closure" id=".service_locator.GfSyruw"/>
-        <argument key="App\Controller\BebeController::new" type="service_closure" id=".service_locator..Ae5NXw"/>
+        <argument key="App\Controller\BebeController::new" type="service_closure" id=".service_locator.xTk4WP9"/>
         <argument key="App\Controller\BebeController::show" type="service_closure" id=".service_locator.utDPBgJ"/>
         <argument key="App\Controller\ConseilController::index" type="service_closure" id=".service_locator.LEE18h1"/>
         <argument key="App\Controller\EvenementController::delete" type="service_closure" id=".service_locator.m32XZm7"/>
@@ -6105,7 +6112,7 @@
         <argument key="App\Controller\BebeController:delete" type="service_closure" id=".service_locator.utDPBgJ"/>
         <argument key="App\Controller\BebeController:edit" type="service_closure" id=".service_locator.utDPBgJ"/>
         <argument key="App\Controller\BebeController:index" type="service_closure" id=".service_locator.GfSyruw"/>
-        <argument key="App\Controller\BebeController:new" type="service_closure" id=".service_locator..Ae5NXw"/>
+        <argument key="App\Controller\BebeController:new" type="service_closure" id=".service_locator.xTk4WP9"/>
         <argument key="App\Controller\BebeController:show" type="service_closure" id=".service_locator.utDPBgJ"/>
         <argument key="App\Controller\ConseilController:index" type="service_closure" id=".service_locator.LEE18h1"/>
         <argument key="App\Controller\EvenementController:delete" type="service_closure" id=".service_locator.m32XZm7"/>
@@ -6623,12 +6630,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.HCSh.1i"/>
+      <argument type="service" id=".service_locator.2Buaaxy"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.HCSh.1i"/>
+      <argument type="service" id=".service_locator.2Buaaxy"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -7544,7 +7551,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.0GV1BZZ" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.HCSh.1i"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.2Buaaxy"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -7586,7 +7593,7 @@
     <service id=".service_locator._5g_Wvc" alias=".service_locator.KfwZsne"/>
     <service id=".service_locator.JBAFp66" alias=".service_locator.KfbR3DY"/>
     <service id=".service_locator.6041pVQ" alias=".service_locator.GfSyruw"/>
-    <service id=".service_locator.8PQa8Mp" alias=".service_locator..Ae5NXw"/>
+    <service id=".service_locator.zCEdMk5" alias=".service_locator.xTk4WP9"/>
     <service id=".service_locator.k0Ye9DT" alias=".service_locator.utDPBgJ"/>
     <service id=".service_locator.vqq6v3." alias=".service_locator.LEE18h1"/>
     <service id=".service_locator.UYPZpn4" alias=".service_locator.5MGEPl7"/>
@@ -7595,6 +7602,7 @@
     <service id=".service_locator.YXWH0hU" alias=".service_locator.1lN00u6"/>
     <service id=".service_locator.Md_e4wG" alias=".service_locator.DxReJxZ"/>
     <service id=".service_locator.kXCVHeG" alias=".service_locator.UDgw6Ol"/>
+    <service id=".service_locator.8PQa8Mp" alias=".service_locator..Ae5NXw"/>
     <service id=".service_locator.F2VpVm6" alias=".service_locator.pwZ6MTM"/>
     <service id=".service_locator.NFoOWn0" alias=".service_locator.ch4Jgvl"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.anofQPJ"/>

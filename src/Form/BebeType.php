@@ -10,6 +10,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\File;
 
 class BebeType extends AbstractType
 {
@@ -35,7 +37,28 @@ class BebeType extends AbstractType
                 ],
                 "multiple" => false,
                 "expanded" => true
-            ]);
+            ])
+            ->add('photo', FileType::class, [
+                'mapped' => false,
+                'required' => false,
+                'multiple' => false,
+                'label' => "Ajouter la photo du bébé",
+                'attr' => [
+                    'placeholder' => "parcourir pour trouver l'image"
+                ],
+                'constraints' => [
+                    new File([
+                        'maxSize' => '2048K',
+                        'mimeTypes' => [
+                            'image/png',
+                            'image/jpg',
+                            'image/jpeg',
+                            'image/gif'
+                        ]
+                    ])
+                ]
+            ])
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

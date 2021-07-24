@@ -66,10 +66,10 @@ class Bebe extends \App\Entity\Bebe implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'date_naissance', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'poids', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'taille', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'genre', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'users', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'evenements'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'date_naissance', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'poids', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'taille', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'genre', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'photo', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'users', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'evenements'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'date_naissance', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'poids', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'taille', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'genre', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'users', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'evenements'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'date_naissance', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'poids', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'taille', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'genre', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'photo', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'users', '' . "\0" . 'App\\Entity\\Bebe' . "\0" . 'evenements'];
     }
 
     /**
@@ -365,6 +365,28 @@ class Bebe extends \App\Entity\Bebe implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeEvenement', [$evenement]);
 
         return parent::removeEvenement($evenement);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPhoto(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPhoto', []);
+
+        return parent::getPhoto();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPhoto(?string $photo): \App\Entity\Bebe
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPhoto', [$photo]);
+
+        return parent::setPhoto($photo);
     }
 
 }
