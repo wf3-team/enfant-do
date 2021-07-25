@@ -24,7 +24,7 @@
     </div>
 
     {# heure_fin #}
-    <div class="col-md-3 col-5 me-3 mb-2 color-table">
+    <div class="col-md-3 col-10 me-3 mb-2 color-table">
         <h6 class="text-center mt-2">Heure de fin</h6>
             <table class="table text-center">
             <tbody>
@@ -34,9 +34,13 @@
             </tbody>
             </table>
     </div>
-      {# <div>{{form_widget(form.enregistrer)}}</div> #}
+
    {% if is_granted("IS_AUTHENTICATED_FULLY") %}
-        <div>{{form_widget(form.enregistrer)}}</div>
+        <div class="row">
+            <div class="offset-md-2 col-2 mt-4 mb-4">
+                <button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
+            </div>
+        </div>
         {% else %}
         <div class="alert alert-info m-3" role="alert">
             Authentifiez-vous pour rentrer les informations de bébé  <a class="underline" href="{{path('user_new')}}"> Inscrivez-vous</a> ou

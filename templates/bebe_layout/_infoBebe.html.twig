@@ -1,0 +1,10 @@
+ {# Informations du bébé #}
+        <div class="section-profil-bebe d-flex">
+            <img class="me-2" src="{{bebe.photo}}" alt="photo-bebe">
+
+            <div class="d-flex flex-column">
+                    <h4>{{bebe.prenom}}</h4>
+                    <h6>Date de naissance :</h6>
+                    <h6>{{bebe.dateNaissance| date('d/m/Y')}}</h6>
+            </div>   
+        </div>

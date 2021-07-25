@@ -12,7 +12,7 @@
     <div class="event-section row d-flex flex-row justify-content-center mb-5 pt-5 pb-5">
 
         {# Biberon #}
-        <div class="col-md-4 col-7 me-3 mb-2 color-table">
+        <div class="col-md-4 col-8 me-3 mb-2 color-table">
             <h6 class="text-center mt-2">Biberon</h6>
                 <table class="table text-center">
                 <tbody>
@@ -26,7 +26,7 @@
                 </table>
         </div>
         {# Diversification #}
-        <div class="col-md-5 col-7 me-3 mb-2 color-table">
+        <div class="col-md-5 col-8 me-3 mb-2 color-table">
             <h6 class="text-center mt-2">Diversification</h6>
                 <table class="table text-center">
                 <tbody>
@@ -41,9 +41,12 @@
                 </tbody>
                 </table>
         </div>
-        {# <div>{{form_widget(form.enregistrer)}}</div> #}
         {% if is_granted("IS_AUTHENTICATED_FULLY") %}
-        <div>{{form_widget(form.enregistrer)}}</div>
+        <div class="row">
+            <div class="offset-1 col-2 mt-4">
+                <button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
+            </div>
+        </div>
         {% else %}
         <div class="alert alert-info m-3" role="alert">
             Authentifiez-vous pour rentrer les informations de bébé  <a class="underline" href="{{path('user_new')}}"> Inscrivez-vous</a> ou

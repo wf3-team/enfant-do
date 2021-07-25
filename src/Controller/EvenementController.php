@@ -31,24 +31,13 @@ class EvenementController extends AbstractController
         
         //récupération de l'utilisateur
         $utilisateur = $this->getUser();
+
+        $dateNow = new \DateTime('now');
         
         if($utilisateur) {
-            $pseudo = $utilisateur->getPseudo();
             $bebe = $utilisateur->getBebe();
-            // Calcul de l'age 
-            $dateNaissance = $bebe->getDateNaissance();
-            $dateNow = new \DateTime('now');
-            $age = date_diff($dateNow, $dateNaissance)->m;
-
-            $prenom = $bebe->getPrenom();
-
-        } else {
-            $age = 0;
-            $bebe = "mumu";
-            $prenom = "Le prénom de bébé";
-            $dateNaissance = 0;
-            $pseudo = "";
-            $isToday = false;
+        } else {  
+            $bebe = "mumu"; // bébé existant en BDD 
         }
        
         $elements = $evenementRepository->findBy([
@@ -60,9 +49,7 @@ class EvenementController extends AbstractController
             // Extraction du jour et mois :
             $dateElement = $element->getHeureDebut();
             $dateConvert = $dateElement->format('Y-m-d');
-            // dd($dateConvert);
-            // Le jour actuel :
-            // $dateNow = new \DateTime('now');
+
             $dateNowConvert = $dateNow->format('Y-m-d');
             
             if($dateConvert == $dateNowConvert) {
@@ -72,12 +59,7 @@ class EvenementController extends AbstractController
         return $this->render('evenement/index.html.twig', [
             'evenements' => $elements,
             'isToday' => $isToday,
-            'conseils' => $conseils,
-            'prenom' => $prenom,
-            'dateNaissance' => $dateNaissance,
-            'age' => $age,
-            'pseudo' => $pseudo
-
+            'conseils' => $conseils
         ]);
     }
 
@@ -93,27 +75,6 @@ class EvenementController extends AbstractController
         $conseils = $conseilRepo->findBy([
             'nom' => "Quand fera t-il ses nuits ?"
         ]);
-
-        //récupération de l'utilisateur
-        $utilisateur = $this->getUser();
-        
-        if($utilisateur) {
-            $pseudo = $utilisateur->getPseudo();
-            $bebe = $utilisateur->getBebe();
-            // Calcul de l'age 
-            $dateNaissance = $bebe->getDateNaissance();
-            $dateNow = new \DateTime('now');
-            $age = date_diff($dateNow, $dateNaissance)->m;
-
-            $prenom = $bebe->getPrenom();
-
-        } else {
-            $age = 0;
-            $bebe = "mumu";
-            $prenom = "Le prénom de bébé";
-            $dateNaissance = 0;
-            $pseudo = "";
-        }
 
         $evenement = new Evenement();
         $form = $this->createForm(EvenementType::class, $evenement);
@@ -145,10 +106,7 @@ class EvenementController extends AbstractController
             'evenement' => $evenement,
             'conseils' => $conseils,
             'form' => $form,
-            'prenom' => $prenom,
-            'dateNaissance' => $dateNaissance,
-            'age' => $age,
-            'pseudo' => $pseudo
+
         ]);
     }
 

@@ -338,6 +338,13 @@
         <argument type="service" id=".service_locator.W9y3dzm.App\Controller\BebeController"/>
       </call>
     </service>
+    <service id="App\Controller\BebeLayoutController" class="App\Controller\BebeLayoutController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\BebeLayoutController"/>
+      </call>
+    </service>
     <service id="App\Controller\ConseilController" class="App\Controller\ConseilController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -5639,6 +5646,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BebeController" class="App\Controller\BebeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BebeController" class="App\Controller\BebeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\BebeController" class="App\Controller\BebeController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BebeLayoutController" class="App\Controller\BebeLayoutController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BebeLayoutController" class="App\Controller\BebeLayoutController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\BebeLayoutController" class="App\Controller\BebeLayoutController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ConseilController" class="App\Controller\ConseilController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ConseilController" class="App\Controller\ConseilController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ConseilController" class="App\Controller\ConseilController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6014,6 +6024,14 @@
         <argument key="bebe" type="service_closure" id=".errored..service_locator.utDPBgJ.App\Entity\Bebe"/>
       </argument>
     </service>
+    <service id=".service_locator.FdGtrBR" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="bebe" type="service_closure" id=".errored..service_locator.FdGtrBR.App\Entity\Bebe"/>
+        <argument key="slugger" type="service_closure" id="slugger"/>
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.LEE18h1" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6075,11 +6093,11 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.ch4Jgvl.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.2Buaaxy" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.6K3EgOZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\BebeController::delete" type="service_closure" id=".service_locator.utDPBgJ"/>
-        <argument key="App\Controller\BebeController::edit" type="service_closure" id=".service_locator.utDPBgJ"/>
+        <argument key="App\Controller\BebeController::edit" type="service_closure" id=".service_locator.FdGtrBR"/>
         <argument key="App\Controller\BebeController::index" type="service_closure" id=".service_locator.GfSyruw"/>
         <argument key="App\Controller\BebeController::new" type="service_closure" id=".service_locator.xTk4WP9"/>
         <argument key="App\Controller\BebeController::show" type="service_closure" id=".service_locator.utDPBgJ"/>
@@ -6110,7 +6128,7 @@
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.KfwZsne"/>
         <argument key="App\Controller\BebeController:delete" type="service_closure" id=".service_locator.utDPBgJ"/>
-        <argument key="App\Controller\BebeController:edit" type="service_closure" id=".service_locator.utDPBgJ"/>
+        <argument key="App\Controller\BebeController:edit" type="service_closure" id=".service_locator.FdGtrBR"/>
         <argument key="App\Controller\BebeController:index" type="service_closure" id=".service_locator.GfSyruw"/>
         <argument key="App\Controller\BebeController:new" type="service_closure" id=".service_locator.xTk4WP9"/>
         <argument key="App\Controller\BebeController:show" type="service_closure" id=".service_locator.utDPBgJ"/>
@@ -6480,6 +6498,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.W9y3dzm" method="withContext"/>
     </service>
+    <service id=".service_locator.W9y3dzm.App\Controller\BebeLayoutController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\BebeLayoutController"/>
+      <argument>App\Controller\BebeLayoutController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.W9y3dzm" method="withContext"/>
+    </service>
     <service id=".service_locator.W9y3dzm.App\Controller\ConseilController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ConseilController"/>
       <argument>App\Controller\ConseilController</argument>
@@ -6630,12 +6654,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.2Buaaxy"/>
+      <argument type="service" id=".service_locator.6K3EgOZ"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.2Buaaxy"/>
+      <argument type="service" id=".service_locator.6K3EgOZ"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6654,6 +6678,7 @@
     <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.utDPBgJ.App\Entity\Bebe" class="App\Entity\Bebe"/>
+    <service id=".errored..service_locator.FdGtrBR.App\Entity\Bebe" class="App\Entity\Bebe"/>
     <service id=".errored..service_locator.m32XZm7.App\Entity\Evenement" class="App\Entity\Evenement"/>
     <service id=".errored..service_locator.1lN00u6.App\Entity\Hygiene" class="App\Entity\Hygiene"/>
     <service id=".errored..service_locator.DxReJxZ.App\Entity\Repas" class="App\Entity\Repas"/>
@@ -7551,7 +7576,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.0GV1BZZ" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.2Buaaxy"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.6K3EgOZ"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -7595,6 +7620,7 @@
     <service id=".service_locator.6041pVQ" alias=".service_locator.GfSyruw"/>
     <service id=".service_locator.zCEdMk5" alias=".service_locator.xTk4WP9"/>
     <service id=".service_locator.k0Ye9DT" alias=".service_locator.utDPBgJ"/>
+    <service id=".service_locator.lk6oaGd" alias=".service_locator.FdGtrBR"/>
     <service id=".service_locator.vqq6v3." alias=".service_locator.LEE18h1"/>
     <service id=".service_locator.UYPZpn4" alias=".service_locator.5MGEPl7"/>
     <service id=".service_locator.d4hz2r0" alias=".service_locator.m32XZm7"/>

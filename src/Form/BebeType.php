@@ -22,7 +22,6 @@ class BebeType extends AbstractType
             // ->add('roles', ChoiceType::class, )
             ->add('date_naissance', DateType::class, [
                 "widget" => "single_text"
-
             ] )
             ->add('poids', TextType::class, [
                 'label'=> 'Poids (en kg)'

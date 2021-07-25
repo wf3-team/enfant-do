@@ -52,34 +52,14 @@ class RepasController extends AbstractController
         $form = $this->createForm(RepasType::class, $repa);
         $form->handleRequest($request);
 
-        $utilisateur = $this->getUser();
-        
-        if($utilisateur) {
-            $pseudo = $utilisateur->getPseudo();
-            $bebe = $utilisateur->getBebe();
-            // Calcul de l'age 
-            $dateNaissance = $bebe->getDateNaissance();
-            $dateNow = new \DateTime('now');
-            $age = date_diff($dateNow, $dateNaissance)->m;
-
-            $prenom = $bebe->getPrenom();
-
-        } else {
-            $age = 0;
-            $bebe = "mumu";
-            $prenom = "Le prénom de bébé";
-            $dateNaissance = 0;
-            $pseudo = "";
-        }
-
         if ($form->isSubmitted() && $form->isValid()) {
             
             // création d'évènement et le lier au repas
             $event = new Evenement();
             // getUser info de la session
-            // $utilisateur = $this->getUser();
+            $utilisateur = $this->getUser();
 
-            // $bebe = $utilisateur->getBebe();
+            $bebe = $utilisateur->getBebe();
 
             // Convertir la date et la mettre à l'heure française dans le fichier twig.yaml
             $date = new \DateTime('now');
@@ -108,10 +88,6 @@ class RepasController extends AbstractController
             'conseilsBiberon' => $conseilsBiberon,
             'conseilsDivers' => $conseilsDivers,
             'form' => $form,
-            'prenom' => $prenom,
-            'dateNaissance' => $dateNaissance,
-            'age' => $age,
-            'pseudo' => $pseudo
         ]);
     }
 

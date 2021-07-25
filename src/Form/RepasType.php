@@ -23,11 +23,11 @@ class RepasType extends AbstractType
             ->add('compote')
             ->add('yaourt')
             ->add('quantite_pot')
-            ->add('enregistrer', SubmitType::class, [
-                "attr" => [
-                    "class" => "btn btn-primary"
-                ]
-            ])
+            // ->add('enregistrer', SubmitType::class, [
+            //     "attr" => [
+            //         "class" => "btn btn-primary"
+            //     ]
+            // ])
         ;
     }
 

@@ -40,27 +40,6 @@ class HygieneController extends AbstractController
             'nom' => "Hygiene"
         ]);
 
-        //récupération de l'utilisateur
-        $utilisateur = $this->getUser();
-        
-        if($utilisateur) {
-            $pseudo = $utilisateur->getPseudo();
-            $bebe = $utilisateur->getBebe();
-            // Calcul de l'age 
-            $dateNaissance = $bebe->getDateNaissance();
-            $dateNow = new \DateTime('now');
-            $age = date_diff($dateNow, $dateNaissance)->m;
-
-            $prenom = $bebe->getPrenom();
-
-        } else {
-            $age = 0;
-            $bebe = "mumu";
-            $prenom = "Le prénom de bébé";
-            $dateNaissance = 0;
-            $pseudo = "";
-        }
-
         $hygiene = new Hygiene();
         $form = $this->createForm(HygieneType::class, $hygiene);
         $form->handleRequest($request);
@@ -69,6 +48,9 @@ class HygieneController extends AbstractController
 
             // création d'évènement et le lier au repas
             $event = new Evenement();
+
+            //récupération de l'utilisateur
+            $utilisateur = $this->getUser();
 
             $bebe = $utilisateur->getBebe();
  
@@ -96,10 +78,6 @@ class HygieneController extends AbstractController
             'hygiene' => $hygiene,
             'conseils' => $conseils,
             'form' => $form,
-            'prenom' => $prenom,
-            'dateNaissance' => $dateNaissance,
-            'age' => $age,
-            'pseudo' => $pseudo
         ]);
     }
 

@@ -73,22 +73,25 @@ class __TwigTemplate_1cb96693769ce4aa18a7c0f42dd5de65e66949bc5c52a32220310666c10
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/logo.png"), "html", null, true);
         echo "\" alt=\"rust-texture\">
     </div>
-    <h1> Inscription </h1>
-
-    <h2> Bébé </h2> 
-    ";
-        // line 11
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()), 'widget');
-        echo "
-    <button class=\"btn btn-warning\">";
+    <div class=\"w-50 offset-3 col-6 offset-3 mt-1 margin-bottom\">
+        <h1 class=\"text-center mt-1\"> Inscription </h1>
+        <div class=\"section-info p-3\">
+            <h2> Bébé </h2> 
+            ";
         // line 12
-        echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 12, $this->source); })()), "Valider")) : ("Valider")), "html", null, true);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), 'widget');
+        echo "
+            <button class=\"btn btn-warning\">";
+        // line 13
+        echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 13, $this->source); })()), "Valider")) : ("Valider")), "html", null, true);
         echo "</button>
 
-";
-        // line 14
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 14, $this->source); })()), 'form_end');
+            ";
+        // line 15
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), 'form_end');
         echo "
+        </div>
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -110,7 +113,7 @@ class __TwigTemplate_1cb96693769ce4aa18a7c0f42dd5de65e66949bc5c52a32220310666c10
 
     public function getDebugInfo()
     {
-        return array (  90 => 14,  85 => 12,  81 => 11,  73 => 6,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  91 => 15,  86 => 13,  82 => 12,  73 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -122,13 +125,16 @@ class __TwigTemplate_1cb96693769ce4aa18a7c0f42dd5de65e66949bc5c52a32220310666c10
     <div class=\"text-center\">
         <img class=\"w-25\" src=\"{{ asset('image/icon/logo.png')}}\" alt=\"rust-texture\">
     </div>
-    <h1> Inscription </h1>
+    <div class=\"w-50 offset-3 col-6 offset-3 mt-1 margin-bottom\">
+        <h1 class=\"text-center mt-1\"> Inscription </h1>
+        <div class=\"section-info p-3\">
+            <h2> Bébé </h2> 
+            {{ form_widget(form) }}
+            <button class=\"btn btn-warning\">{{ button_label|default('Valider') }}</button>
 
-    <h2> Bébé </h2> 
-    {{ form_widget(form) }}
-    <button class=\"btn btn-warning\">{{ button_label|default('Valider') }}</button>
-
-{{ form_end(form) }}
+            {{ form_end(form) }}
+        </div>
+</div>
 {% endblock %}
 
 ", "bebe/_form.html.twig", "/Users/carolinezaini/Desktop/enfant-do/templates/bebe/_form.html.twig");

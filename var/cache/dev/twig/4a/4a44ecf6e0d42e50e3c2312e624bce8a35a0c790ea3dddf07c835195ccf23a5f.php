@@ -115,69 +115,74 @@ class __TwigTemplate_e55ebc0ed2e0cef9ae0cbadadf012c72a3d57b6e6352c6c819026eaadf8
             </tbody>
             </table>
     </div>
+    
     ";
         // line 38
-        echo "    ";
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             // line 39
-            echo "        <div>";
-            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 39, $this->source); })()), "enregistrer", [], "any", false, false, false, 39), 'widget');
-            echo "</div>
-        ";
-        } else {
+            echo "         <div class=\"row\">
+            <div class=\"offset-1 col-2 mt-4\">
+                <button class=\"btn btn-primary\">";
             // line 41
+            echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 41, $this->source); })()), "Enregistrer")) : ("Enregistrer")), "html", null, true);
+            echo "</button>
+            </div>
+        </div>
+    ";
+        } else {
+            // line 45
             echo "        <div class=\"alert alert-info m-3\" role=\"alert\">
             Authentifiez-vous pour rentrer les informations de bébé  <a class=\"underline\" href=\"";
-            // line 42
+            // line 46
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_new");
             echo "\"> Inscrivez-vous</a> ou
             <a href=\"";
-            // line 43
+            // line 47
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\"> Connectez-vous</a> 
         </div> 
-        ";
+    ";
         }
-        // line 46
+        // line 50
         echo "    </div>  
     
 
 
 ";
-        // line 50
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 50, $this->source); })()), 'form_end');
+        // line 54
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 54, $this->source); })()), 'form_end');
         echo "
 
 ";
-        // line 53
+        // line 57
         echo "    <h2>Conseils autour de bébé</h2>
     <div class=\"section-info row pt-4 pb-4 mb-5\">
         <div class=\"col-3\">
             <img class=\"me-2\" src=\"";
-        // line 56
+        // line 60
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/hygiene/photo-hygiène2.png"), "html", null, true);
         echo "\" alt=\"rust-texture\">
         </div>
         <div class=\"col-9\">
         ";
-        // line 59
+        // line 63
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["conseils"]) || array_key_exists("conseils", $context) ? $context["conseils"] : (function () { throw new RuntimeError('Variable "conseils" does not exist.', 59, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["conseils"]) || array_key_exists("conseils", $context) ? $context["conseils"] : (function () { throw new RuntimeError('Variable "conseils" does not exist.', 63, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["conseil"]) {
-            // line 60
+            // line 64
             echo "            <h4>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "nom", [], "any", false, false, false, 60), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "nom", [], "any", false, false, false, 64), "html", null, true);
             echo "</h4>
             <p>";
-            // line 61
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "description", [], "any", false, false, false, 61), "html", null, true);
+            // line 65
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "description", [], "any", false, false, false, 65), "html", null, true);
             echo "</p>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['conseil'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 63
+        // line 67
         echo "        </div>
     </div>
 </div>
@@ -202,7 +207,7 @@ class __TwigTemplate_e55ebc0ed2e0cef9ae0cbadadf012c72a3d57b6e6352c6c819026eaadf8
 
     public function getDebugInfo()
     {
-        return array (  181 => 63,  173 => 61,  168 => 60,  164 => 59,  158 => 56,  153 => 53,  148 => 50,  142 => 46,  136 => 43,  132 => 42,  129 => 41,  123 => 39,  120 => 38,  112 => 32,  105 => 27,  96 => 20,  92 => 19,  85 => 14,  79 => 10,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  186 => 67,  178 => 65,  173 => 64,  169 => 63,  163 => 60,  158 => 57,  153 => 54,  147 => 50,  141 => 47,  137 => 46,  134 => 45,  127 => 41,  123 => 39,  121 => 38,  112 => 32,  105 => 27,  96 => 20,  92 => 19,  85 => 14,  79 => 10,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -243,15 +248,19 @@ class __TwigTemplate_e55ebc0ed2e0cef9ae0cbadadf012c72a3d57b6e6352c6c819026eaadf8
             </tbody>
             </table>
     </div>
-    {# <div>{{form_widget(form.enregistrer)}}</div> #}
+    
     {% if is_granted(\"IS_AUTHENTICATED_FULLY\") %}
-        <div>{{form_widget(form.enregistrer)}}</div>
-        {% else %}
+         <div class=\"row\">
+            <div class=\"offset-1 col-2 mt-4\">
+                <button class=\"btn btn-primary\">{{ button_label|default('Enregistrer') }}</button>
+            </div>
+        </div>
+    {% else %}
         <div class=\"alert alert-info m-3\" role=\"alert\">
             Authentifiez-vous pour rentrer les informations de bébé  <a class=\"underline\" href=\"{{path('user_new')}}\"> Inscrivez-vous</a> ou
             <a href=\"{{path('app_login')}}\"> Connectez-vous</a> 
         </div> 
-        {% endif %}
+    {% endif %}
     </div>  
     
 

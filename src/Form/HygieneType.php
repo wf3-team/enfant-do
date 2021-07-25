@@ -16,11 +16,11 @@ class HygieneType extends AbstractType
             ->add('couche_urine')
             ->add('couche_selle')
             ->add('bain')
-            ->add('enregistrer', SubmitType::class, [
-                "attr" => [
-                    "class" => "btn btn-primary"
-                ]
-            ])
+            // ->add('enregistrer', SubmitType::class, [
+            //     "attr" => [
+            //         "class" => "btn btn-primary"
+            //     ]
+            // ])
         ;
     }
 

@@ -92,44 +92,45 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
                             <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"#\">Contact</a>
                             </li>
-";
-        // line 26
+                            
+                        ";
+        // line 27
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             echo " ";
-            // line 27
+            // line 28
             echo "
                         <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
-            // line 29
+            // line 30
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Déconnexion</a>
                         </li>
 
                         ";
         } else {
-            // line 33
+            // line 34
             echo "                        <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
-            // line 34
+            // line 35
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_new");
             echo "\">Inscription</a>
                         </li>
 
                         <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
-            // line 38
+            // line 39
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">Connexion</a>
                         </li>
                         ";
         }
-        // line 41
+        // line 42
         echo "
                         
                         ";
-        // line 43
+        // line 44
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 44
+            // line 45
             echo "                        <li class=\"nav-item dropdown\">
                         <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
                             Profil
@@ -143,12 +144,12 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
                         </li>
 
                         ";
-            // line 59
+            // line 60
             echo "                
 
                         ";
         }
-        // line 62
+        // line 63
         echo "
 
                         </ul>
@@ -162,69 +163,62 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
         <div class=\"row\">    
 
         ";
-        // line 75
+        // line 76
         echo "
 
         <div class=\"d-flex flex-row justify-content-center\">
             <div class=\"icon-link biberon\">
                 <a href=\"";
-        // line 79
+        // line 80
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("repas_new");
         echo "\"><img class=\"text-center\" src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-biberon.png"), "html", null, true);
-        echo "\" alt=\"rust-texture\">
+        echo "\" alt=\"icone-repas\">
             </a><p>Repas</p></div>
             <div class=\"icon-link couche\">
                 <a href=\"";
-        // line 82
+        // line 83
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("hygiene_new");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-couche.png"), "html", null, true);
-        echo "\" alt=\"rust-texture\">
+        echo "\" alt=\"icon-hygiene\">
             </a><p>Hygiène</p></div>
             <div class=\"icon-link dodo\">
                 <a href=\"";
-        // line 85
+        // line 86
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("evenement_sommeil");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-dodo.png"), "html", null, true);
-        echo "\" alt=\"rust-texture\">
+        echo "\" alt=\"icone-sommeil\">
             </a><p>Sommeil</p></div>
             <div class=\"icon-link statistique\">
                 <a href=\"";
-        // line 88
+        // line 89
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conseil");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-statistique.png"), "html", null, true);
         echo "\" alt=\"rust-texture\">
             </a><p>Conseils</p></div>
-
-            <div class=\"section-profil-bebe d-flex\">
-                <img class=\"me-2\" src=\"";
-        // line 92
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/repas/diversification1.jpg"), "html", null, true);
-        echo "\" alt=\"rust-texture\">
-                <div class=\"d-flex flex-column\">
-
+            
             ";
-        // line 96
-        echo "                ";
-        // line 102
-        echo "                
-                
-                    
-                </div>
-                
-            </div>
-
+        // line 92
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 92, $this->source); })()), "user", [], "any", false, false, false, 92)) {
+            // line 93
+            echo "                ";
+            echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\BebeLayoutController::infoBebe"));
+            echo "
+            ";
+        }
+        // line 95
+        echo "
         </div>
     ";
-        // line 111
+        // line 98
         echo "    </div> 
         ";
-        // line 112
+        // line 99
         $this->displayBlock('content', $context, $blocks);
-        // line 114
+        // line 101
         echo " 
    
     </main>
@@ -237,7 +231,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
         <div class=\"copyright d-flex justify-content-center\">
             <p class=\"mt-3 mb-1\">
                 &copy;EnfantDo 2021 - ";
-        // line 125
+        // line 112
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "Y"), "html", null, true);
         echo " all right reserved 
             </p>
@@ -273,7 +267,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
     }
 
-    // line 112
+    // line 99
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -283,9 +277,9 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 113
+        // line 100
         echo "            ";
-        // line 114
+        // line 101
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -307,7 +301,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
     public function getDebugInfo()
     {
-        return array (  289 => 114,  287 => 113,  277 => 112,  241 => 125,  228 => 114,  226 => 112,  223 => 111,  213 => 102,  211 => 96,  205 => 92,  196 => 88,  188 => 85,  180 => 82,  172 => 79,  166 => 75,  152 => 62,  147 => 59,  133 => 44,  131 => 43,  127 => 41,  121 => 38,  114 => 34,  111 => 33,  104 => 29,  100 => 27,  97 => 26,  82 => 14,  78 => 12,  75 => 10,  73 => 8,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  283 => 101,  281 => 100,  271 => 99,  235 => 112,  222 => 101,  220 => 99,  217 => 98,  213 => 95,  207 => 93,  205 => 92,  197 => 89,  189 => 86,  181 => 83,  173 => 80,  167 => 76,  153 => 63,  148 => 60,  134 => 45,  132 => 44,  128 => 42,  122 => 39,  115 => 35,  112 => 34,  105 => 30,  101 => 28,  98 => 27,  82 => 14,  78 => 12,  75 => 10,  73 => 8,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -337,7 +331,8 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
                             <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"#\">Contact</a>
                             </li>
-{% if is_granted(\"IS_AUTHENTICATED_FULLY\") %} {# signifie que l'utilisateur est authentifié est connecté #}
+                            
+                        {% if is_granted(\"IS_AUTHENTICATED_FULLY\") %} {# signifie que l'utilisateur est authentifié est connecté #}
 
                         <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"{{ path(\"app_logout\") }}\">Déconnexion</a>
@@ -390,35 +385,21 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
         <div class=\"d-flex flex-row justify-content-center\">
             <div class=\"icon-link biberon\">
-                <a href=\"{{path('repas_new')}}\"><img class=\"text-center\" src=\"{{ asset('image/icon/icon-biberon.png')}}\" alt=\"rust-texture\">
+                <a href=\"{{path('repas_new')}}\"><img class=\"text-center\" src=\"{{ asset('image/icon/icon-biberon.png')}}\" alt=\"icone-repas\">
             </a><p>Repas</p></div>
             <div class=\"icon-link couche\">
-                <a href=\"{{path('hygiene_new')}}\"><img src=\"{{ asset('image/icon/icon-couche.png')}}\" alt=\"rust-texture\">
+                <a href=\"{{path('hygiene_new')}}\"><img src=\"{{ asset('image/icon/icon-couche.png')}}\" alt=\"icon-hygiene\">
             </a><p>Hygiène</p></div>
             <div class=\"icon-link dodo\">
-                <a href=\"{{path('evenement_sommeil')}}\"><img src=\"{{ asset('image/icon/icon-dodo.png')}}\" alt=\"rust-texture\">
+                <a href=\"{{path('evenement_sommeil')}}\"><img src=\"{{ asset('image/icon/icon-dodo.png')}}\" alt=\"icone-sommeil\">
             </a><p>Sommeil</p></div>
             <div class=\"icon-link statistique\">
                 <a href=\"{{path('conseil')}}\"><img src=\"{{ asset('image/icon/icon-statistique.png')}}\" alt=\"rust-texture\">
             </a><p>Conseils</p></div>
-
-            <div class=\"section-profil-bebe d-flex\">
-                <img class=\"me-2\" src=\"{{ asset('image/repas/diversification1.jpg')}}\" alt=\"rust-texture\">
-                <div class=\"d-flex flex-column\">
-
-            {# Informations du bébé #}
-                {# {% if is_granted(\"IS_AUTHENTICATED_FULLY\") %}
-                        <h4>{{prenom}}</h4>
-                        <h6>Date de naissance :</h6>
-                        <h6>{{dateNaissance| date('d/m/Y')}}</h6>
-                        <h5>{{age}} mois</h5>
-                {% endif %} #}
-                
-                
-                    
-                </div>
-                
-            </div>
+            
+            {% if app.user %}
+                {{ render(controller('App\\\\Controller\\\\BebeLayoutController::infoBebe')) }}
+            {% endif %}
 
         </div>
     {# end row #}

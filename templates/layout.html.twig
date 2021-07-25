@@ -23,7 +23,8 @@
                             <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
                             </li>
-{% if is_granted("IS_AUTHENTICATED_FULLY") %} {# signifie que l'utilisateur est authentifié est connecté #}
+                            
+                        {% if is_granted("IS_AUTHENTICATED_FULLY") %} {# signifie que l'utilisateur est authentifié est connecté #}
 
                         <li class="nav-item">
                         <a class="nav-link" href="{{ path("app_logout") }}">Déconnexion</a>
@@ -76,35 +77,21 @@
 
         <div class="d-flex flex-row justify-content-center">
             <div class="icon-link biberon">
-                <a href="{{path('repas_new')}}"><img class="text-center" src="{{ asset('image/icon/icon-biberon.png')}}" alt="rust-texture">
+                <a href="{{path('repas_new')}}"><img class="text-center" src="{{ asset('image/icon/icon-biberon.png')}}" alt="icone-repas">
             </a><p>Repas</p></div>
             <div class="icon-link couche">
-                <a href="{{path('hygiene_new')}}"><img src="{{ asset('image/icon/icon-couche.png')}}" alt="rust-texture">
+                <a href="{{path('hygiene_new')}}"><img src="{{ asset('image/icon/icon-couche.png')}}" alt="icon-hygiene">
             </a><p>Hygiène</p></div>
             <div class="icon-link dodo">
-                <a href="{{path('evenement_sommeil')}}"><img src="{{ asset('image/icon/icon-dodo.png')}}" alt="rust-texture">
+                <a href="{{path('evenement_sommeil')}}"><img src="{{ asset('image/icon/icon-dodo.png')}}" alt="icone-sommeil">
             </a><p>Sommeil</p></div>
             <div class="icon-link statistique">
                 <a href="{{path('conseil')}}"><img src="{{ asset('image/icon/icon-statistique.png')}}" alt="rust-texture">
             </a><p>Conseils</p></div>
-
-            <div class="section-profil-bebe d-flex">
-                <img class="me-2" src="{{ asset('image/repas/diversification1.jpg')}}" alt="rust-texture">
-                <div class="d-flex flex-column">
-
-            {# Informations du bébé #}
-                {# {% if is_granted("IS_AUTHENTICATED_FULLY") %}
-                        <h4>{{prenom}}</h4>
-                        <h6>Date de naissance :</h6>
-                        <h6>{{dateNaissance| date('d/m/Y')}}</h6>
-                        <h5>{{age}} mois</h5>
-                {% endif %} #}
-                
-                
-                    
-                </div>
-                
-            </div>
+            
+            {% if app.user %}
+                {{ render(controller('App\\Controller\\BebeLayoutController::infoBebe')) }}
+            {% endif %}
 
         </div>
     {# end row #}

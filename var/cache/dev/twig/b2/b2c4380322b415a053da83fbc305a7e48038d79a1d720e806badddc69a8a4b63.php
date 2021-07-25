@@ -72,13 +72,13 @@ class __TwigTemplate_2533bacde53862c0ff3727dd184da224c65318f8f8aab42db1d04ca044e
         echo "\" alt=\"rust-texture\">
     </div>
 
-    <div class=\"w-50 offset-3 col-6 offset-3 mt-5 margin-bottom\">
+    <div class=\"w-50 offset-3 col-6 offset-3 mt-1 margin-bottom\">
     ";
         // line 9
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'form_start');
         echo "
 
-        <h1> Inscription </h1>
+        <h1 class=\"text-center\"> Inscription </h1>
 
         <h2> Parent </h2> 
         <div class=\"section-info p-3\">
@@ -127,10 +127,10 @@ class __TwigTemplate_2533bacde53862c0ff3727dd184da224c65318f8f8aab42db1d04ca044e
         <img class=\"w-25\" src=\"{{ asset('image/icon/logo.png')}}\" alt=\"rust-texture\">
     </div>
 
-    <div class=\"w-50 offset-3 col-6 offset-3 mt-5 margin-bottom\">
+    <div class=\"w-50 offset-3 col-6 offset-3 mt-1 margin-bottom\">
     {{ form_start(form) }}
 
-        <h1> Inscription </h1>
+        <h1 class=\"text-center\"> Inscription </h1>
 
         <h2> Parent </h2> 
         <div class=\"section-info p-3\">

@@ -98,28 +98,27 @@ class __TwigTemplate_ff1df232420866ae1f742badbfee372d680404293545a5edd9b2c721341
         }
         // line 10
         echo "
-
     <div class=\"text-center\">
         <img class=\"w-25\" src=\"";
-        // line 13
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-dodo.png"), "html", null, true);
+        // line 12
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/logo.png"), "html", null, true);
         echo "\" alt=\"rust-texture\">
     </div>
 
-    <div class=\"w-50 offset-3 col-6 offset-3 mt-5 margin-bottom\">
-        <h1 class=\"h3 mb-3 font-weight-normal\">Connexion</h1>
+    <div class=\"w-50 offset-3 col-6 offset-3 mt-1 margin-bottom\">
+        <h1 class=\"h3 mb-3 font-weight-normal text-center\">Connexion</h1>
         <div class=\"section-info p-3\">
             <label for=\"inputEmail\">Email</label>
             <input type=\"email\" value=\"";
-        // line 20
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 20, $this->source); })()), "html", null, true);
+        // line 19
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 19, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control mb-4\" autocomplete=\"email\" required autofocus>
             <label for=\"inputPassword\">Mot de passe</label>
             <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control mb-4\" autocomplete=\"current-password\" required>
 
             <input type=\"hidden\" name=\"_csrf_token\"
                 value=\"";
-        // line 25
+        // line 24
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
             >
@@ -127,7 +126,7 @@ class __TwigTemplate_ff1df232420866ae1f742badbfee372d680404293545a5edd9b2c721341
     
 
         ";
-        // line 40
+        // line 39
         echo "
         <button class=\"btn btn-lg btn-primary\" type=\"submit\">
             Valider
@@ -157,7 +156,7 @@ class __TwigTemplate_ff1df232420866ae1f742badbfee372d680404293545a5edd9b2c721341
 
     public function getDebugInfo()
     {
-        return array (  131 => 40,  123 => 25,  115 => 20,  105 => 13,  100 => 10,  94 => 8,  92 => 7,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
+        return array (  130 => 39,  122 => 24,  114 => 19,  104 => 12,  100 => 10,  94 => 8,  92 => 7,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -172,13 +171,12 @@ class __TwigTemplate_ff1df232420866ae1f742badbfee372d680404293545a5edd9b2c721341
         <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-
     <div class=\"text-center\">
-        <img class=\"w-25\" src=\"{{ asset('image/icon/icon-dodo.png')}}\" alt=\"rust-texture\">
+        <img class=\"w-25\" src=\"{{ asset('image/icon/logo.png')}}\" alt=\"rust-texture\">
     </div>
 
-    <div class=\"w-50 offset-3 col-6 offset-3 mt-5 margin-bottom\">
-        <h1 class=\"h3 mb-3 font-weight-normal\">Connexion</h1>
+    <div class=\"w-50 offset-3 col-6 offset-3 mt-1 margin-bottom\">
+        <h1 class=\"h3 mb-3 font-weight-normal text-center\">Connexion</h1>
         <div class=\"section-info p-3\">
             <label for=\"inputEmail\">Email</label>
             <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control mb-4\" autocomplete=\"email\" required autofocus>

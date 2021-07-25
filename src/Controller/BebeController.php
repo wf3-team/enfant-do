@@ -41,31 +41,15 @@ class BebeController extends AbstractController
         $form = $this->createForm(BebeType::class, $bebe);
         $form->handleRequest($request);
 
-        $utilisateur = $this->getUser();
-
-        if($utilisateur) {
-            $pseudo = $utilisateur->getPseudo();
-            $bebe = $utilisateur->getBebe();
-            // Calcul de l'age 
-            $dateNaissance = $bebe->getDateNaissance();
-            $dateNow = new \DateTime('now');
-            $age = date_diff($dateNow, $dateNaissance)->m;
-
-            $prenom = $bebe->getPrenom();
-
-        } else {
-            $age = 0;
-            $bebe = "mumu";
-            $prenom = "Le prénom de bébé";
-            $dateNaissance = 0;
-            $pseudo = "";
-        }
-
         if ($form->isSubmitted() && $form->isValid()) {
+
             $user = $this->getUser();
+
             $actualuser = $userRepository->findOneBy([
                 'id'=> $user->getId()
             ]);
+
+ 
             // dd($actualuser);
             $actualuser->setBebe($bebe);
 
@@ -83,7 +67,7 @@ class BebeController extends AbstractController
                 $imageFile->move($imagesDirectory, $finalFilename);
                 // et bien sur on n'oubli pas de mettre à jour le path dans l'objet image
                 // petite astuce pour éviter d'avoir à modifier les vues
-                $fichierCheminComplet = "$imagesDirectory$finalFilename";
+                $fichierCheminComplet = "/$imagesDirectory$finalFilename";
                 $bebe->setPhoto($fichierCheminComplet);
             }
 
@@ -92,16 +76,17 @@ class BebeController extends AbstractController
             $entityManager->persist($bebe);
             $entityManager->flush();
 
-            return $this->redirectToRoute('bebe_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('evenement_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('bebe/new.html.twig', [
             'bebe' => $bebe,
             'form' => $form,
-            'prenom' => $prenom,
-            'dateNaissance' => $dateNaissance,
-            'age' => $age,
-            'pseudo' => $pseudo
+            'infosBebe' => $bebe
+            // 'prenom' => $prenom,
+            // 'dateNaissance' => $dateNaissance,
+            // 'age' => $age,
+            // 'pseudo' => $pseudo
         ]);
     }
 
@@ -117,12 +102,49 @@ class BebeController extends AbstractController
     /**
      * @Route("/{id}/edit", name="bebe_edit", methods={"GET", "POST"})
      */
-    public function edit(Request $request, Bebe $bebe): Response
+    public function edit(Request $request, Bebe $bebe, SluggerInterface $slugger, UserRepository $userRepository): Response
     {
         $form = $this->createForm(BebeType::class, $bebe);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $user = $this->getUser();
+
+            $actualuser = $userRepository->findOneBy([
+                'id'=> $user->getId()
+            ]);
+
+ 
+            // dd($actualuser);
+            $actualuser->setBebe($bebe);
+
+
+            // si il y a une image il faut la placer la ou il faut
+            $imagesDirectory = "image/uploads/";
+            // donc, on commence par récuperer ce qui a été uploadé
+            $imageFile = $form->get('photo')->getData();
+            // on test, au cas ou
+            if ($imageFile) {
+
+                $oldFile = $bebe->getPhoto();
+
+                if ($oldFile != "") {
+                    unlink($oldFile);
+                }
+
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                // on crée un nom unique de stockage du fichier
+                $safeFileName = $slugger->slug($originalFilename);
+                $finalFilename = $safeFileName . '-' . uniqid() . '.' . $imageFile->guessExtension();
+                // on essaye de deplacer le fichier à sa place finale, sur le serveur
+                $imageFile->move($imagesDirectory, $finalFilename);
+                // et bien sur on n'oubli pas de mettre à jour le path dans l'objet image
+                // petite astuce pour éviter d'avoir à modifier les vues
+                $fichierCheminComplet = "/$imagesDirectory$finalFilename";
+                $bebe->setPhoto($fichierCheminComplet);
+            }
+            
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('bebe_index', [], Response::HTTP_SEE_OTHER);

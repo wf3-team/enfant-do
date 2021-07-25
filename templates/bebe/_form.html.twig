@@ -5,12 +5,15 @@
     <div class="text-center">
         <img class="w-25" src="{{ asset('image/icon/logo.png')}}" alt="rust-texture">
     </div>
-    <h1> Inscription </h1>
+    <div class="w-50 offset-3 col-6 offset-3 mt-1 margin-bottom">
+        <h1 class="text-center mt-1"> Inscription </h1>
+        <div class="section-info p-3">
+            <h2> Bébé </h2> 
+            {{ form_widget(form) }}
+            <button class="btn btn-warning">{{ button_label|default('Valider') }}</button>
 
-    <h2> Bébé </h2> 
-    {{ form_widget(form) }}
-    <button class="btn btn-warning">{{ button_label|default('Valider') }}</button>
-
-{{ form_end(form) }}
+            {{ form_end(form) }}
+        </div>
+</div>
 {% endblock %}
 
