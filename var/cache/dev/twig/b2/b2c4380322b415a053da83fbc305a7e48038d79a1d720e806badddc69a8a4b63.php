@@ -69,7 +69,7 @@ class __TwigTemplate_2533bacde53862c0ff3727dd184da224c65318f8f8aab42db1d04ca044e
         <img class=\"w-25\" src=\"";
         // line 5
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/logo.png"), "html", null, true);
-        echo "\" alt=\"rust-texture\">
+        echo "\" alt=\"logo-lapin\">
     </div>
 
     <div class=\"w-50 offset-3 col-6 offset-3 mt-1 margin-bottom\">
@@ -124,7 +124,7 @@ class __TwigTemplate_2533bacde53862c0ff3727dd184da224c65318f8f8aab42db1d04ca044e
 
 {% block content %}
     <div class=\"text-center\">
-        <img class=\"w-25\" src=\"{{ asset('image/icon/logo.png')}}\" alt=\"rust-texture\">
+        <img class=\"w-25\" src=\"{{ asset('image/icon/logo.png')}}\" alt=\"logo-lapin\">
     </div>
 
     <div class=\"w-50 offset-3 col-6 offset-3 mt-1 margin-bottom\">

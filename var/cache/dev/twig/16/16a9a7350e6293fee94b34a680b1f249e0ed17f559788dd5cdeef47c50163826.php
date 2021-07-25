@@ -87,50 +87,51 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
                     <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
                         <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
                             <li class=\"nav-item\">
-                            <a class=\"nav-link\" aria-current=\"page\" href=\"#\">Actualités</a>
-                            </li>
-                            <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\">Contact</a>
+                            <a class=\"nav-link\" aria-current=\"page\" href=\"";
+        // line 21
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conseil");
+        echo "\">Actualités</a>
                             </li>
                             
+
                         ";
-        // line 27
+        // line 25
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             echo " ";
-            // line 28
+            // line 26
             echo "
                         <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
-            // line 30
+            // line 28
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Déconnexion</a>
                         </li>
 
                         ";
         } else {
-            // line 34
+            // line 32
             echo "                        <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
-            // line 35
+            // line 33
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_new");
             echo "\">Inscription</a>
                         </li>
 
                         <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
-            // line 39
+            // line 37
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">Connexion</a>
                         </li>
                         ";
         }
-        // line 42
+        // line 40
         echo "
                         
                         ";
-        // line 44
+        // line 42
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 45
+            // line 43
             echo "                        <li class=\"nav-item dropdown\">
                         <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
                             Profil
@@ -144,12 +145,12 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
                         </li>
 
                         ";
-            // line 60
+            // line 58
             echo "                
 
                         ";
         }
-        // line 63
+        // line 61
         echo "
 
                         </ul>
@@ -163,13 +164,13 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
         <div class=\"row\">    
 
         ";
-        // line 76
+        // line 74
         echo "
 
         <div class=\"d-flex flex-row justify-content-center\">
             <div class=\"icon-link biberon\">
                 <a href=\"";
-        // line 80
+        // line 78
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("repas_new");
         echo "\"><img class=\"text-center\" src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-biberon.png"), "html", null, true);
@@ -177,7 +178,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
             </a><p>Repas</p></div>
             <div class=\"icon-link couche\">
                 <a href=\"";
-        // line 83
+        // line 81
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("hygiene_new");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-couche.png"), "html", null, true);
@@ -185,7 +186,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
             </a><p>Hygiène</p></div>
             <div class=\"icon-link dodo\">
                 <a href=\"";
-        // line 86
+        // line 84
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("evenement_sommeil");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-dodo.png"), "html", null, true);
@@ -193,7 +194,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
             </a><p>Sommeil</p></div>
             <div class=\"icon-link statistique\">
                 <a href=\"";
-        // line 89
+        // line 87
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conseil");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-statistique.png"), "html", null, true);
@@ -201,24 +202,24 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
             </a><p>Conseils</p></div>
             
             ";
-        // line 92
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 92, $this->source); })()), "user", [], "any", false, false, false, 92)) {
-            // line 93
+        // line 90
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 90, $this->source); })()), "user", [], "any", false, false, false, 90)) {
+            // line 91
             echo "                ";
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\BebeLayoutController::infoBebe"));
             echo "
             ";
         }
-        // line 95
+        // line 93
         echo "
         </div>
     ";
-        // line 98
+        // line 96
         echo "    </div> 
         ";
-        // line 99
+        // line 97
         $this->displayBlock('content', $context, $blocks);
-        // line 101
+        // line 99
         echo " 
    
     </main>
@@ -231,7 +232,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
         <div class=\"copyright d-flex justify-content-center\">
             <p class=\"mt-3 mb-1\">
                 &copy;EnfantDo 2021 - ";
-        // line 112
+        // line 110
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "Y"), "html", null, true);
         echo " all right reserved 
             </p>
@@ -267,7 +268,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
     }
 
-    // line 99
+    // line 97
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -277,9 +278,9 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 100
+        // line 98
         echo "            ";
-        // line 101
+        // line 99
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -301,7 +302,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
     public function getDebugInfo()
     {
-        return array (  283 => 101,  281 => 100,  271 => 99,  235 => 112,  222 => 101,  220 => 99,  217 => 98,  213 => 95,  207 => 93,  205 => 92,  197 => 89,  189 => 86,  181 => 83,  173 => 80,  167 => 76,  153 => 63,  148 => 60,  134 => 45,  132 => 44,  128 => 42,  122 => 39,  115 => 35,  112 => 34,  105 => 30,  101 => 28,  98 => 27,  82 => 14,  78 => 12,  75 => 10,  73 => 8,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  284 => 99,  282 => 98,  272 => 97,  236 => 110,  223 => 99,  221 => 97,  218 => 96,  214 => 93,  208 => 91,  206 => 90,  198 => 87,  190 => 84,  182 => 81,  174 => 78,  168 => 74,  154 => 61,  149 => 58,  135 => 43,  133 => 42,  129 => 40,  123 => 37,  116 => 33,  113 => 32,  106 => 28,  102 => 26,  99 => 25,  92 => 21,  82 => 14,  78 => 12,  75 => 10,  73 => 8,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -326,12 +327,10 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
                     <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
                         <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
                             <li class=\"nav-item\">
-                            <a class=\"nav-link\" aria-current=\"page\" href=\"#\">Actualités</a>
-                            </li>
-                            <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\">Contact</a>
+                            <a class=\"nav-link\" aria-current=\"page\" href=\"{{path('conseil')}}\">Actualités</a>
                             </li>
                             
+
                         {% if is_granted(\"IS_AUTHENTICATED_FULLY\") %} {# signifie que l'utilisateur est authentifié est connecté #}
 
                         <li class=\"nav-item\">
