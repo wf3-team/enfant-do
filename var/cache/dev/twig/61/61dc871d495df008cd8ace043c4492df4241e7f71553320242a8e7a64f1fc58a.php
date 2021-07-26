@@ -42,8 +42,8 @@ class __TwigTemplate_a4d4f62a4f676942eda83a3fc0025ac4d1d82911ff8096009e79e5566dc
         // line 1
         echo " ";
         // line 2
-        echo "        <div class=\"section-profil-bebe rounded-circle d-flex\">
-            <img class=\"me-2\" src=\"";
+        echo "        <div class=\"section-profil-bebe d-flex\">
+            <img class=\"me-2 section-profil-bebe-img\" src=\"";
         // line 3
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["bebe"]) || array_key_exists("bebe", $context) ? $context["bebe"] : (function () { throw new RuntimeError('Variable "bebe" does not exist.', 3, $this->source); })()), "photo", [], "any", false, false, false, 3), "html", null, true);
         echo "\" alt=\"photo-bebe\">
@@ -86,8 +86,8 @@ class __TwigTemplate_a4d4f62a4f676942eda83a3fc0025ac4d1d82911ff8096009e79e5566dc
     public function getSourceContext()
     {
         return new Source(" {# Informations du bébé #}
-        <div class=\"section-profil-bebe rounded-circle d-flex\">
-            <img class=\"me-2\" src=\"{{bebe.photo}}\" alt=\"photo-bebe\">
+        <div class=\"section-profil-bebe d-flex\">
+            <img class=\"me-2 section-profil-bebe-img\" src=\"{{bebe.photo}}\" alt=\"photo-bebe\">
 
             <div class=\"d-flex flex-column\">
                     <h4>{{bebe.prenom}}</h4>

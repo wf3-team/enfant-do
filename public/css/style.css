@@ -74,11 +74,11 @@ h2 {
   margin-left: 30px;
 }
 
-/* .section-profil-bebe img {
+.section-profil-bebe-img {
   height: 100px;
-  width: 100px;
+  width: auto;
   border-radius: 50%;
-} */
+}
 
 @media (max-width: 700px) {
   .section-profil-bebe {
