@@ -3,7 +3,9 @@
 {% block title %}{{parent()}}{% endblock %}
 
 {% block content %}
- 
+     <div class="mb-5 retour-accueil">
+        <a href="{{path('evenement_index')}}"><i class="fas fa-arrow-left"></i> Retour à la page d'accueil</a>
+    </div>  
 
     {% for item in data %}
         {# {{dump(item)}} #}

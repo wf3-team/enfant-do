@@ -82,7 +82,7 @@ class __TwigTemplate_e55ebc0ed2e0cef9ae0cbadadf012c72a3d57b6e6352c6c819026eaadf8
 
     ";
         // line 14
-        echo "    <div class=\"col-md-4 col-6 me-3 mb-2 color-table\">
+        echo "    <div class=\"col-md-4 col-12 me-3 mb-2 color-table\">
         <h6 class=\"text-center mt-2\">Couche</h6>
             <table class=\"table text-center\">
             <tbody>
@@ -102,7 +102,7 @@ class __TwigTemplate_e55ebc0ed2e0cef9ae0cbadadf012c72a3d57b6e6352c6c819026eaadf8
     </div>
     ";
         // line 27
-        echo "    <div class=\"col-md-5 col-6 me-3 mb-2 color-table\">
+        echo "    <div class=\"col-md-5 col-12 me-3 mb-2 color-table\">
         <h6 class=\"text-center mt-2\">Bain</h6>
             <table class=\"table text-center\">
             <tbody>
@@ -156,14 +156,14 @@ class __TwigTemplate_e55ebc0ed2e0cef9ae0cbadadf012c72a3d57b6e6352c6c819026eaadf8
 ";
         // line 57
         echo "    <h2>Conseils autour de bébé</h2>
-    <div class=\"section-info row pt-4 pb-4 mb-5\">
-        <div class=\"col-3\">
+    <div class=\"section-info d-flex row pt-4 pb-4 mb-5\">
+        <div class=\"col-md-3 col-3\">
             <img class=\"me-2\" src=\"";
         // line 60
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/hygiene/photo-hygiène2.png"), "html", null, true);
         echo "\" alt=\"rust-texture\">
         </div>
-        <div class=\"col-9\">
+        <div class=\"col-md-9 col-12\">
         ";
         // line 63
         $context['_parent'] = $context;
@@ -225,7 +225,7 @@ class __TwigTemplate_e55ebc0ed2e0cef9ae0cbadadf012c72a3d57b6e6352c6c819026eaadf8
  <div class=\"event-section row d-flex justify-content-center mb-5 pt-5 pb-5\">
 
     {# Couche #}
-    <div class=\"col-md-4 col-6 me-3 mb-2 color-table\">
+    <div class=\"col-md-4 col-12 me-3 mb-2 color-table\">
         <h6 class=\"text-center mt-2\">Couche</h6>
             <table class=\"table text-center\">
             <tbody>
@@ -238,7 +238,7 @@ class __TwigTemplate_e55ebc0ed2e0cef9ae0cbadadf012c72a3d57b6e6352c6c819026eaadf8
             </table>
     </div>
     {# Diversification #}
-    <div class=\"col-md-5 col-6 me-3 mb-2 color-table\">
+    <div class=\"col-md-5 col-12 me-3 mb-2 color-table\">
         <h6 class=\"text-center mt-2\">Bain</h6>
             <table class=\"table text-center\">
             <tbody>
@@ -269,11 +269,11 @@ class __TwigTemplate_e55ebc0ed2e0cef9ae0cbadadf012c72a3d57b6e6352c6c819026eaadf8
 
 {# information #}
     <h2>Conseils autour de bébé</h2>
-    <div class=\"section-info row pt-4 pb-4 mb-5\">
-        <div class=\"col-3\">
+    <div class=\"section-info d-flex row pt-4 pb-4 mb-5\">
+        <div class=\"col-md-3 col-3\">
             <img class=\"me-2\" src=\"{{ asset('image/hygiene/photo-hygiène2.png')}}\" alt=\"rust-texture\">
         </div>
-        <div class=\"col-9\">
+        <div class=\"col-md-9 col-12\">
         {% for conseil in conseils %}
             <h4>{{conseil.nom}}</h4>
             <p>{{conseil.description}}</p>

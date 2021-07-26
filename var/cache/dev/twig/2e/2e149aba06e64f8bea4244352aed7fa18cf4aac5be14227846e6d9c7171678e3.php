@@ -152,13 +152,13 @@ class __TwigTemplate_54feed1bd68e55589522c3aed3aea74184702afe076a770222a5fdc2812
         // line 55
         echo "        <h2>Conseils autour de bébé</h2>
         <div class=\"section-info d-flex row pt-4 pb-4 mb-5\">
-            <div class=\"col-3\">
+            <div class=\"col-md-3 col-3\">
                 <img class=\"me-2\" src=\"";
         // line 58
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/dodo/photo-dodo1.jpg"), "html", null, true);
         echo "\" alt=\"rust-texture\">
             </div>
-            <div class=\"col-9\">
+            <div class=\"col-md-9 col-12\">
 
             ";
         // line 62
@@ -266,10 +266,10 @@ class __TwigTemplate_54feed1bd68e55589522c3aed3aea74184702afe076a770222a5fdc2812
 {# information #}
         <h2>Conseils autour de bébé</h2>
         <div class=\"section-info d-flex row pt-4 pb-4 mb-5\">
-            <div class=\"col-3\">
+            <div class=\"col-md-3 col-3\">
                 <img class=\"me-2\" src=\"{{ asset('image/dodo/photo-dodo1.jpg')}}\" alt=\"rust-texture\">
             </div>
-            <div class=\"col-9\">
+            <div class=\"col-md-9 col-12\">
 
             {% for conseil in conseils %}
                 <h4>{{conseil.nom}}</h4>

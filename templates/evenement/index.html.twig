@@ -25,7 +25,7 @@
         <div class="col-md-1">
         </div>
         {# Tableau heure #}
-        <div class="col-md-1 me-3 col-2 mb-2 base">
+        <div class="col-md-1 me-3 col-3 mb-2 base">
         <h6 class="text-center mt-2">Heure</h6>
             <table class="table text-center">
             <thead>
@@ -48,7 +48,7 @@
 
     {# Tableau repas #}
         {# Tableau biberon #}
-        <div class="col-md-1 me-3 col-3 mb-2 color-table">
+        <div class="col-md-1 me-3 col-7 mb-2 color-table">
         <h6 class="text-center mt-2">Biberon</h6>
             <table class="table text-center">
             <thead>
@@ -76,7 +76,7 @@
             </table>
         </div>
         {# Tableau diversification #}
-        <div class="col-md-3 col-5 me-3 mb-2 color-table">
+        <div class="col-md-3 col-6 me-3 mb-2 color-table">
         <h6 class="text-center mt-2">Diversification</h6>
             <table class="table text-center">
             <thead>
@@ -118,7 +118,7 @@
             </table>
         </div>
         {# Tableau hygiène #}
-        <div class="col-md-1 me-3 mb-2 col-3 color-table">
+        <div class="col-md-1 me-3 mb-2 col-4 color-table">
         <h6 class="text-center mt-2">Couche</h6>
             <table class="table text-center">
             <thead>
@@ -148,7 +148,7 @@
             </table>
         </div>
         {# Tableau bain #}
-        <div class="col-md-1 me-3 mb-2 col-3 color-table">
+        <div class="col-md-1 me-3 mb-2 col-4 color-table">
         <h6 class="text-center mt-2">Bain</h6>
             <table class="table text-center">
             <thead>
@@ -177,7 +177,7 @@
             </table>
         </div>
         {# Tableau dodo #}
-        <div class="col-md-2 me-3 mb-2 col-4 color-table">
+        <div class="col-md-2 me-3 mb-2 col-6 color-table">
         <h6 class="text-center mt-2">Sommeil</h6>
             <table class="table text-center">
             <thead>
@@ -229,11 +229,10 @@
     {# information #}
     <h2>Conseils autour de bébé</h2>
     <div class="section-info row d-flex pt-4 pb-4 mb-5">
-        <div class="col-md-3">
+        <div class="col-md-3 col-3">
             <img class="me-2" src="{{ asset('image/dodo/photo-dodo2.jpg')}}" alt="rust-texture">
         </div>
-        <div class="col-9">
-
+        <div class="col-md-9 col-12">
         {% for conseil in conseils %}
             <h4>{{conseil.nom}}</h4>
             <p>{{conseil.description}}</p>

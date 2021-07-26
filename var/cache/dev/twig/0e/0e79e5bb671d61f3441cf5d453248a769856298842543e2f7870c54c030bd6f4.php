@@ -48,31 +48,32 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
 <html>
     <head
         <meta charset=\"UTF-8\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
         <title>";
-        // line 5
+        // line 6
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
         ";
-        // line 8
+        // line 9
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 34
+        // line 35
         echo "            
         ";
-        // line 35
+        // line 36
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 46
+        // line 47
         echo "
         <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"";
-        // line 47
+        // line 48
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\"/>
     </head>
     <body>
         ";
-        // line 50
-        $this->displayBlock('body', $context, $blocks);
         // line 51
+        $this->displayBlock('body', $context, $blocks);
+        // line 52
         echo "    </body>
 </html>
 
@@ -85,7 +86,7 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
 
     }
 
-    // line 5
+    // line 6
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -104,7 +105,7 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
 
     }
 
-    // line 8
+    // line 9
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -114,9 +115,9 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 9
-        echo "            ";
         // line 10
+        echo "            ";
+        // line 11
         echo "            <link
             href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css\"
             rel=\"stylesheet\"
@@ -124,28 +125,28 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
             crossorigin=\"anonymous\"
             />
             ";
-        // line 17
+        // line 18
         echo "            <link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/normalize.css"), "html", null, true);
         echo "\">
             <link rel=\"stylesheet\" href=\"";
-        // line 18
+        // line 19
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/style.css"), "html", null, true);
         echo "\">
 
             ";
-        // line 21
+        // line 22
         echo "            <script src=\"https://kit.fontawesome.com/dbfb43a444.js\" crossorigin=\"anonymous\"></script>
             
             ";
-        // line 24
-        echo "            ";
         // line 25
+        echo "            ";
+        // line 26
         echo "            <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
             <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
             <link href=\"https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,600&display=swap\" rel=\"stylesheet\">
             ";
-        // line 29
+        // line 30
         echo "            <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
             <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
             <link href=\"https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap\" rel=\"stylesheet\">
@@ -159,7 +160,7 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
 
     }
 
-    // line 35
+    // line 36
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -169,9 +170,9 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 36
-        echo "            ";
         // line 37
+        echo "            ";
+        // line 38
         echo "            <script src=\"https://polyfill.io/v3/polyfill.min.js?features=default\"></script>
             <script type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
             <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>
@@ -189,7 +190,7 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
 
     }
 
-    // line 50
+    // line 51
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -219,7 +220,7 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
 
     public function getDebugInfo()
     {
-        return array (  193 => 50,  175 => 37,  173 => 36,  163 => 35,  149 => 29,  144 => 25,  142 => 24,  138 => 21,  133 => 18,  128 => 17,  120 => 10,  118 => 9,  108 => 8,  89 => 5,  76 => 51,  74 => 50,  68 => 47,  65 => 46,  63 => 35,  60 => 34,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  194 => 51,  176 => 38,  174 => 37,  164 => 36,  150 => 30,  145 => 26,  143 => 25,  139 => 22,  134 => 19,  129 => 18,  121 => 11,  119 => 10,  109 => 9,  90 => 6,  77 => 52,  75 => 51,  69 => 48,  66 => 47,  64 => 36,  61 => 35,  58 => 9,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -228,6 +229,7 @@ class __TwigTemplate_89ee98c13ca7507c4c8095f73ff97d08fa5caa836d8021526b54061e114
 <html>
     <head
         <meta charset=\"UTF-8\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
         <title>{% block title %}L'Enfant Do{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}

@@ -83,7 +83,7 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
 
         ";
         // line 15
-        echo "        <div class=\"col-md-4 col-8 me-3 mb-2 color-table\">
+        echo "        <div class=\"col-md-4 col-12 me-3 mb-2 color-table\">
             <h6 class=\"text-center mt-2\">Biberon</h6>
                 <table class=\"table text-center\">
                 <tbody>
@@ -104,7 +104,7 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
         </div>
         ";
         // line 29
-        echo "        <div class=\"col-md-5 col-8 me-3 mb-2 color-table\">
+        echo "        <div class=\"col-md-5 col-12 me-3 mb-2 color-table\">
             <h6 class=\"text-center mt-2\">Diversification</h6>
                 <table class=\"table text-center\">
                 <tbody>
@@ -175,14 +175,14 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
         echo "        <h2>Conseils autour de bébé</h2>
         <div class=\"section-info\">
         
-            <div class=\"row d-flex justify-content-center pt-4 pb-4 mb-5\">
-                <div class=\"col-3\">
+            <div class=\"row d-flex section-info justify-content-center pt-4 pb-4 mb-5\">
+                <div class=\"col-md-3 col-3\">
                     <img class=\"me-2 w-75\" src=\"";
         // line 69
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/repas/biberon2.jpg"), "html", null, true);
         echo "\" alt=\"rust-texture\">
                 </div>
-                <div class=\"col-9\">
+                <div class=\"col-md-9 col-12\">
 
                 ";
         // line 73
@@ -207,9 +207,9 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
                 </div>
             </div>
 
-            <div class=\"row pb-4 ps-4 pe-4 mb-5\">
+            <div class=\"row section-info pb-4 ps-4 pe-4 mb-5\">
                
-                <div class=\"col-9\">
+                <div class=\"col-md-9 col-12\">
                 ";
         // line 84
         $context['_parent'] = $context;
@@ -230,7 +230,7 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 88
         echo "                </div>
-                 <div class=\"col-3\">
+                 <div class=\"col-md-3 col-3\">
                     <img class=\"me-2\" src=\"";
         // line 90
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/repas/diversification3.jpg"), "html", null, true);
@@ -284,7 +284,7 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
     <div class=\"event-section row d-flex flex-row justify-content-center mb-5 pt-5 pb-5\">
 
         {# Biberon #}
-        <div class=\"col-md-4 col-8 me-3 mb-2 color-table\">
+        <div class=\"col-md-4 col-12 me-3 mb-2 color-table\">
             <h6 class=\"text-center mt-2\">Biberon</h6>
                 <table class=\"table text-center\">
                 <tbody>
@@ -298,7 +298,7 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
                 </table>
         </div>
         {# Diversification #}
-        <div class=\"col-md-5 col-8 me-3 mb-2 color-table\">
+        <div class=\"col-md-5 col-12 me-3 mb-2 color-table\">
             <h6 class=\"text-center mt-2\">Diversification</h6>
                 <table class=\"table text-center\">
                 <tbody>
@@ -336,11 +336,11 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
         <h2>Conseils autour de bébé</h2>
         <div class=\"section-info\">
         
-            <div class=\"row d-flex justify-content-center pt-4 pb-4 mb-5\">
-                <div class=\"col-3\">
+            <div class=\"row d-flex section-info justify-content-center pt-4 pb-4 mb-5\">
+                <div class=\"col-md-3 col-3\">
                     <img class=\"me-2 w-75\" src=\"{{ asset('image/repas/biberon2.jpg')}}\" alt=\"rust-texture\">
                 </div>
-                <div class=\"col-9\">
+                <div class=\"col-md-9 col-12\">
 
                 {% for conseil in conseilsBiberon %}
                     <h4>{{conseil.nom}}</h4>
@@ -350,15 +350,15 @@ class __TwigTemplate_959033b5643230423b5dea643fc143adbf7c789e40b63f9002138180102
                 </div>
             </div>
 
-            <div class=\"row pb-4 ps-4 pe-4 mb-5\">
+            <div class=\"row section-info pb-4 ps-4 pe-4 mb-5\">
                
-                <div class=\"col-9\">
+                <div class=\"col-md-9 col-12\">
                 {% for conseil in conseilsDivers %}
                     <h4>{{conseil.nom}}</h4>
                     <p>{{conseil.description}}</p>
                 {% endfor %}
                 </div>
-                 <div class=\"col-3\">
+                 <div class=\"col-md-3 col-3\">
                     <img class=\"me-2\" src=\"{{ asset('image/repas/diversification3.jpg')}}\" alt=\"rust-texture\">
                 </div>
             </div>

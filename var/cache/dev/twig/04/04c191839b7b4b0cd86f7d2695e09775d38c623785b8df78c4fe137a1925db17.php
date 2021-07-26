@@ -118,7 +118,7 @@ class __TwigTemplate_927be46647b739e204eb2d2162dc199f3a9ebcf64fa3cb127f02a366129
         </div>
         ";
             // line 28
-            echo "        <div class=\"col-md-1 me-3 col-2 mb-2 base\">
+            echo "        <div class=\"col-md-1 me-3 col-3 mb-2 base\">
         <h6 class=\"text-center mt-2\">Heure</h6>
             <table class=\"table text-center\">
             <thead>
@@ -160,7 +160,7 @@ class __TwigTemplate_927be46647b739e204eb2d2162dc199f3a9ebcf64fa3cb127f02a366129
             // line 50
             echo "        ";
             // line 51
-            echo "        <div class=\"col-md-1 me-3 col-3 mb-2 color-table\">
+            echo "        <div class=\"col-md-1 me-3 col-7 mb-2 color-table\">
         <h6 class=\"text-center mt-2\">Biberon</h6>
             <table class=\"table text-center\">
             <thead>
@@ -212,7 +212,7 @@ class __TwigTemplate_927be46647b739e204eb2d2162dc199f3a9ebcf64fa3cb127f02a366129
         </div>
         ";
             // line 79
-            echo "        <div class=\"col-md-3 col-5 me-3 mb-2 color-table\">
+            echo "        <div class=\"col-md-3 col-6 me-3 mb-2 color-table\">
         <h6 class=\"text-center mt-2\">Diversification</h6>
             <table class=\"table text-center\">
             <thead>
@@ -297,7 +297,7 @@ $context["evenement"], "repas", [], "any", false, false, false, 108), "quantitep
         </div>
         ";
             // line 121
-            echo "        <div class=\"col-md-1 me-3 mb-2 col-3 color-table\">
+            echo "        <div class=\"col-md-1 me-3 mb-2 col-4 color-table\">
         <h6 class=\"text-center mt-2\">Couche</h6>
             <table class=\"table text-center\">
             <thead>
@@ -356,7 +356,7 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 138), "coucheS
         </div>
         ";
             // line 151
-            echo "        <div class=\"col-md-1 me-3 mb-2 col-3 color-table\">
+            echo "        <div class=\"col-md-1 me-3 mb-2 col-4 color-table\">
         <h6 class=\"text-center mt-2\">Bain</h6>
             <table class=\"table text-center\">
             <thead>
@@ -411,7 +411,7 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 166), "bain", 
         </div>
         ";
             // line 180
-            echo "        <div class=\"col-md-2 me-3 mb-2 col-4 color-table\">
+            echo "        <div class=\"col-md-2 me-3 mb-2 col-6 color-table\">
         <h6 class=\"text-center mt-2\">Sommeil</h6>
             <table class=\"table text-center\">
             <thead>
@@ -508,33 +508,32 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 166), "bain", 
         // line 230
         echo "    <h2>Conseils autour de bébé</h2>
     <div class=\"section-info row d-flex pt-4 pb-4 mb-5\">
-        <div class=\"col-md-3\">
+        <div class=\"col-md-3 col-3\">
             <img class=\"me-2\" src=\"";
         // line 233
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/dodo/photo-dodo2.jpg"), "html", null, true);
         echo "\" alt=\"rust-texture\">
         </div>
-        <div class=\"col-9\">
-
+        <div class=\"col-md-9 col-12\">
         ";
-        // line 237
+        // line 236
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["conseils"]) || array_key_exists("conseils", $context) ? $context["conseils"] : (function () { throw new RuntimeError('Variable "conseils" does not exist.', 237, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["conseils"]) || array_key_exists("conseils", $context) ? $context["conseils"] : (function () { throw new RuntimeError('Variable "conseils" does not exist.', 236, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["conseil"]) {
-            // line 238
+            // line 237
             echo "            <h4>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "nom", [], "any", false, false, false, 238), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "nom", [], "any", false, false, false, 237), "html", null, true);
             echo "</h4>
             <p>";
-            // line 239
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "description", [], "any", false, false, false, 239), "html", null, true);
+            // line 238
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "description", [], "any", false, false, false, 238), "html", null, true);
             echo "</p>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['conseil'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 241
+        // line 240
         echo "        </div>
     </div>
              
@@ -543,7 +542,7 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 166), "bain", 
 
     
                     ";
-        // line 250
+        // line 249
         echo "           
 
     ";
@@ -567,7 +566,7 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 166), "bain", 
 
     public function getDebugInfo()
     {
-        return array (  547 => 250,  538 => 241,  530 => 239,  525 => 238,  521 => 237,  514 => 233,  509 => 230,  504 => 226,  498 => 223,  494 => 222,  490 => 220,  485 => 217,  479 => 212,  473 => 211,  467 => 208,  464 => 207,  460 => 205,  454 => 203,  452 => 202,  448 => 200,  444 => 198,  440 => 196,  438 => 195,  431 => 192,  427 => 191,  414 => 180,  409 => 176,  403 => 175,  397 => 171,  393 => 170,  388 => 167,  386 => 166,  383 => 165,  381 => 164,  374 => 161,  370 => 160,  359 => 151,  354 => 147,  348 => 146,  342 => 142,  338 => 141,  334 => 139,  332 => 138,  329 => 137,  327 => 136,  324 => 135,  322 => 134,  315 => 131,  311 => 130,  300 => 121,  295 => 117,  289 => 116,  284 => 113,  280 => 111,  274 => 109,  272 => 108,  269 => 107,  267 => 106,  263 => 104,  259 => 102,  255 => 100,  253 => 99,  250 => 98,  248 => 97,  245 => 96,  243 => 95,  240 => 94,  238 => 93,  231 => 90,  227 => 89,  215 => 79,  209 => 74,  203 => 73,  197 => 69,  191 => 67,  187 => 65,  185 => 64,  178 => 61,  174 => 60,  163 => 51,  161 => 50,  154 => 44,  148 => 43,  142 => 40,  136 => 38,  132 => 37,  121 => 28,  117 => 25,  113 => 22,  111 => 21,  105 => 18,  98 => 14,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  546 => 249,  537 => 240,  529 => 238,  524 => 237,  520 => 236,  514 => 233,  509 => 230,  504 => 226,  498 => 223,  494 => 222,  490 => 220,  485 => 217,  479 => 212,  473 => 211,  467 => 208,  464 => 207,  460 => 205,  454 => 203,  452 => 202,  448 => 200,  444 => 198,  440 => 196,  438 => 195,  431 => 192,  427 => 191,  414 => 180,  409 => 176,  403 => 175,  397 => 171,  393 => 170,  388 => 167,  386 => 166,  383 => 165,  381 => 164,  374 => 161,  370 => 160,  359 => 151,  354 => 147,  348 => 146,  342 => 142,  338 => 141,  334 => 139,  332 => 138,  329 => 137,  327 => 136,  324 => 135,  322 => 134,  315 => 131,  311 => 130,  300 => 121,  295 => 117,  289 => 116,  284 => 113,  280 => 111,  274 => 109,  272 => 108,  269 => 107,  267 => 106,  263 => 104,  259 => 102,  255 => 100,  253 => 99,  250 => 98,  248 => 97,  245 => 96,  243 => 95,  240 => 94,  238 => 93,  231 => 90,  227 => 89,  215 => 79,  209 => 74,  203 => 73,  197 => 69,  191 => 67,  187 => 65,  185 => 64,  178 => 61,  174 => 60,  163 => 51,  161 => 50,  154 => 44,  148 => 43,  142 => 40,  136 => 38,  132 => 37,  121 => 28,  117 => 25,  113 => 22,  111 => 21,  105 => 18,  98 => 14,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -599,7 +598,7 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 166), "bain", 
         <div class=\"col-md-1\">
         </div>
         {# Tableau heure #}
-        <div class=\"col-md-1 me-3 col-2 mb-2 base\">
+        <div class=\"col-md-1 me-3 col-3 mb-2 base\">
         <h6 class=\"text-center mt-2\">Heure</h6>
             <table class=\"table text-center\">
             <thead>
@@ -622,7 +621,7 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 166), "bain", 
 
     {# Tableau repas #}
         {# Tableau biberon #}
-        <div class=\"col-md-1 me-3 col-3 mb-2 color-table\">
+        <div class=\"col-md-1 me-3 col-7 mb-2 color-table\">
         <h6 class=\"text-center mt-2\">Biberon</h6>
             <table class=\"table text-center\">
             <thead>
@@ -650,7 +649,7 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 166), "bain", 
             </table>
         </div>
         {# Tableau diversification #}
-        <div class=\"col-md-3 col-5 me-3 mb-2 color-table\">
+        <div class=\"col-md-3 col-6 me-3 mb-2 color-table\">
         <h6 class=\"text-center mt-2\">Diversification</h6>
             <table class=\"table text-center\">
             <thead>
@@ -692,7 +691,7 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 166), "bain", 
             </table>
         </div>
         {# Tableau hygiène #}
-        <div class=\"col-md-1 me-3 mb-2 col-3 color-table\">
+        <div class=\"col-md-1 me-3 mb-2 col-4 color-table\">
         <h6 class=\"text-center mt-2\">Couche</h6>
             <table class=\"table text-center\">
             <thead>
@@ -722,7 +721,7 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 166), "bain", 
             </table>
         </div>
         {# Tableau bain #}
-        <div class=\"col-md-1 me-3 mb-2 col-3 color-table\">
+        <div class=\"col-md-1 me-3 mb-2 col-4 color-table\">
         <h6 class=\"text-center mt-2\">Bain</h6>
             <table class=\"table text-center\">
             <thead>
@@ -751,7 +750,7 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 166), "bain", 
             </table>
         </div>
         {# Tableau dodo #}
-        <div class=\"col-md-2 me-3 mb-2 col-4 color-table\">
+        <div class=\"col-md-2 me-3 mb-2 col-6 color-table\">
         <h6 class=\"text-center mt-2\">Sommeil</h6>
             <table class=\"table text-center\">
             <thead>
@@ -803,11 +802,10 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 166), "bain", 
     {# information #}
     <h2>Conseils autour de bébé</h2>
     <div class=\"section-info row d-flex pt-4 pb-4 mb-5\">
-        <div class=\"col-md-3\">
+        <div class=\"col-md-3 col-3\">
             <img class=\"me-2\" src=\"{{ asset('image/dodo/photo-dodo2.jpg')}}\" alt=\"rust-texture\">
         </div>
-        <div class=\"col-9\">
-
+        <div class=\"col-md-9 col-12\">
         {% for conseil in conseils %}
             <h4>{{conseil.nom}}</h4>
             <p>{{conseil.description}}</p>

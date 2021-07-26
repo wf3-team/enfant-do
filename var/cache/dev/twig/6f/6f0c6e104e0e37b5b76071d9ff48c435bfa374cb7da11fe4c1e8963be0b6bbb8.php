@@ -85,34 +85,39 @@ class __TwigTemplate_bca4f8f35f3a93ffaf6df12a22d1b6301b8049f59c27b89d9329f44aac6
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
-        echo " 
+        echo "     <div class=\"mb-5 retour-accueil\">
+        <a href=\"";
+        // line 7
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("evenement_index");
+        echo "\"><i class=\"fas fa-arrow-left\"></i> Retour à la page d'accueil</a>
+    </div>  
 
     ";
-        // line 8
+        // line 10
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["data"]) || array_key_exists("data", $context) ? $context["data"] : (function () { throw new RuntimeError('Variable "data" does not exist.', 8, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["data"]) || array_key_exists("data", $context) ? $context["data"] : (function () { throw new RuntimeError('Variable "data" does not exist.', 10, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 9
+            // line 11
             echo "        ";
-            // line 10
+            // line 12
             echo "        
         <div class=\"card\">
             <div class=\"card-body\">
                 <p><strong>";
-            // line 13
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "fields", [], "any", false, false, false, 13), "type_etablissement", [], "array", false, false, false, 13), "html", null, true);
+            // line 15
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "fields", [], "any", false, false, false, 15), "type_etablissement", [], "array", false, false, false, 15), "html", null, true);
             echo "</strong></p>
                 ";
-            // line 15
+            // line 17
             echo "                <p>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "fields", [], "any", false, false, false, 15), "cp_ville", [], "array", false, false, false, 15), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "fields", [], "any", false, false, false, 17), "cp_ville", [], "array", false, false, false, 17), "html", null, true);
             echo "</p>
                 <p>";
-            // line 16
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "fields", [], "any", false, false, false, 16), "dept", [], "array", false, false, false, 16), "html", null, true);
+            // line 18
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "fields", [], "any", false, false, false, 18), "dept", [], "array", false, false, false, 18), "html", null, true);
             echo "</p>
                 ";
-            // line 18
+            // line 20
             echo "            </div>
         </div>
     ";
@@ -120,7 +125,7 @@ class __TwigTemplate_bca4f8f35f3a93ffaf6df12a22d1b6301b8049f59c27b89d9329f44aac6
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 21
+        // line 23
         echo "
  
 
@@ -145,7 +150,7 @@ class __TwigTemplate_bca4f8f35f3a93ffaf6df12a22d1b6301b8049f59c27b89d9329f44aac6
 
     public function getDebugInfo()
     {
-        return array (  124 => 21,  116 => 18,  112 => 16,  107 => 15,  103 => 13,  98 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  129 => 23,  121 => 20,  117 => 18,  112 => 17,  108 => 15,  103 => 12,  101 => 11,  97 => 10,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -155,7 +160,9 @@ class __TwigTemplate_bca4f8f35f3a93ffaf6df12a22d1b6301b8049f59c27b89d9329f44aac6
 {% block title %}{{parent()}}{% endblock %}
 
 {% block content %}
- 
+     <div class=\"mb-5 retour-accueil\">
+        <a href=\"{{path('evenement_index')}}\"><i class=\"fas fa-arrow-left\"></i> Retour à la page d'accueil</a>
+    </div>  
 
     {% for item in data %}
         {# {{dump(item)}} #}

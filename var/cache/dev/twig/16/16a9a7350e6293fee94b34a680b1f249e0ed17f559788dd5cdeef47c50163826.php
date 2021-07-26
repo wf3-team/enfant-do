@@ -160,66 +160,68 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
     </header>
     <div class=\"container\">
     <main>
-
-        <div class=\"row\">    
+    <div class=\"row\">    
 
         ";
-        // line 74
-        echo "
-
-        <div class=\"d-flex flex-row justify-content-center\">
-            <div class=\"icon-link biberon\">
+        // line 73
+        echo "        <div class=\"col-md-6 d-flex justify-content-center\">
+            <div class=\"col-3 icon-link biberon\">
                 <a href=\"";
-        // line 78
+        // line 75
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("repas_new");
         echo "\"><img class=\"text-center\" src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-biberon.png"), "html", null, true);
-        echo "\" alt=\"icone-repas\">
-            </a><p>Repas</p></div>
-            <div class=\"icon-link couche\">
+        echo "\" alt=\"icone-repas\"></a>
+                <p>Repas</p>
+            </div>
+            <div class=\"col-3 icon-link couche\">
                 <a href=\"";
-        // line 81
+        // line 79
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("hygiene_new");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-couche.png"), "html", null, true);
-        echo "\" alt=\"icon-hygiene\">
-            </a><p>Hygiène</p></div>
-            <div class=\"icon-link dodo\">
+        echo "\" alt=\"icon-hygiene\"></a>
+                <p>Hygiène</p>
+            </div>
+            <div class=\"col-3 icon-link dodo\">
                 <a href=\"";
-        // line 84
+        // line 83
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("evenement_sommeil");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-dodo.png"), "html", null, true);
-        echo "\" alt=\"icone-sommeil\">
-            </a><p>Sommeil</p></div>
-            <div class=\"icon-link statistique\">
+        echo "\" alt=\"icone-sommeil\"></a>
+                <p>Sommeil</p>
+            </div>
+            <div class=\"col-3 icon-link statistique\">
                 <a href=\"";
         // line 87
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conseil");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/icon/icon-statistique.png"), "html", null, true);
-        echo "\" alt=\"rust-texture\">
-            </a><p>Conseils</p></div>
-            
-            ";
-        // line 90
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 90, $this->source); })()), "user", [], "any", false, false, false, 90)) {
-            // line 91
-            echo "                ";
+        echo "\" alt=\"rust-texture\"></a>
+                <p>Conseils</p>
+            </div>
+        </div>
+            <div class=\"col-md-5 col-8 section-profil-bebe d-flex\">
+                ";
+        // line 92
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 92, $this->source); })()), "user", [], "any", false, false, false, 92)) {
+            // line 93
+            echo "                    ";
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\BebeLayoutController::infoBebe"));
             echo "
-            ";
+                ";
         }
-        // line 93
-        echo "
-        </div>
+        // line 95
+        echo "            </div>
+        
     ";
-        // line 96
+        // line 98
         echo "    </div> 
         ";
-        // line 97
-        $this->displayBlock('content', $context, $blocks);
         // line 99
+        $this->displayBlock('content', $context, $blocks);
+        // line 101
         echo " 
    
     </main>
@@ -232,7 +234,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
         <div class=\"copyright d-flex justify-content-center\">
             <p class=\"mt-3 mb-1\">
                 &copy;EnfantDo 2021 - ";
-        // line 110
+        // line 112
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "Y"), "html", null, true);
         echo " all right reserved 
             </p>
@@ -268,7 +270,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
     }
 
-    // line 97
+    // line 99
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -278,9 +280,9 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 98
+        // line 100
         echo "            ";
-        // line 99
+        // line 101
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -302,7 +304,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
 
     public function getDebugInfo()
     {
-        return array (  284 => 99,  282 => 98,  272 => 97,  236 => 110,  223 => 99,  221 => 97,  218 => 96,  214 => 93,  208 => 91,  206 => 90,  198 => 87,  190 => 84,  182 => 81,  174 => 78,  168 => 74,  154 => 61,  149 => 58,  135 => 43,  133 => 42,  129 => 40,  123 => 37,  116 => 33,  113 => 32,  106 => 28,  102 => 26,  99 => 25,  92 => 21,  82 => 14,  78 => 12,  75 => 10,  73 => 8,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  286 => 101,  284 => 100,  274 => 99,  238 => 112,  225 => 101,  223 => 99,  220 => 98,  216 => 95,  210 => 93,  208 => 92,  198 => 87,  189 => 83,  180 => 79,  171 => 75,  167 => 73,  154 => 61,  149 => 58,  135 => 43,  133 => 42,  129 => 40,  123 => 37,  116 => 33,  113 => 32,  106 => 28,  102 => 26,  99 => 25,  92 => 21,  82 => 14,  78 => 12,  75 => 10,  73 => 8,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -376,31 +378,33 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
     </header>
     <div class=\"container\">
     <main>
-
-        <div class=\"row\">    
+    <div class=\"row\">    
 
         {# Liens #}
-
-
-        <div class=\"d-flex flex-row justify-content-center\">
-            <div class=\"icon-link biberon\">
-                <a href=\"{{path('repas_new')}}\"><img class=\"text-center\" src=\"{{ asset('image/icon/icon-biberon.png')}}\" alt=\"icone-repas\">
-            </a><p>Repas</p></div>
-            <div class=\"icon-link couche\">
-                <a href=\"{{path('hygiene_new')}}\"><img src=\"{{ asset('image/icon/icon-couche.png')}}\" alt=\"icon-hygiene\">
-            </a><p>Hygiène</p></div>
-            <div class=\"icon-link dodo\">
-                <a href=\"{{path('evenement_sommeil')}}\"><img src=\"{{ asset('image/icon/icon-dodo.png')}}\" alt=\"icone-sommeil\">
-            </a><p>Sommeil</p></div>
-            <div class=\"icon-link statistique\">
-                <a href=\"{{path('conseil')}}\"><img src=\"{{ asset('image/icon/icon-statistique.png')}}\" alt=\"rust-texture\">
-            </a><p>Conseils</p></div>
-            
-            {% if app.user %}
-                {{ render(controller('App\\\\Controller\\\\BebeLayoutController::infoBebe')) }}
-            {% endif %}
-
+        <div class=\"col-md-6 d-flex justify-content-center\">
+            <div class=\"col-3 icon-link biberon\">
+                <a href=\"{{path('repas_new')}}\"><img class=\"text-center\" src=\"{{ asset('image/icon/icon-biberon.png')}}\" alt=\"icone-repas\"></a>
+                <p>Repas</p>
+            </div>
+            <div class=\"col-3 icon-link couche\">
+                <a href=\"{{path('hygiene_new')}}\"><img src=\"{{ asset('image/icon/icon-couche.png')}}\" alt=\"icon-hygiene\"></a>
+                <p>Hygiène</p>
+            </div>
+            <div class=\"col-3 icon-link dodo\">
+                <a href=\"{{path('evenement_sommeil')}}\"><img src=\"{{ asset('image/icon/icon-dodo.png')}}\" alt=\"icone-sommeil\"></a>
+                <p>Sommeil</p>
+            </div>
+            <div class=\"col-3 icon-link statistique\">
+                <a href=\"{{path('conseil')}}\"><img src=\"{{ asset('image/icon/icon-statistique.png')}}\" alt=\"rust-texture\"></a>
+                <p>Conseils</p>
+            </div>
         </div>
+            <div class=\"col-md-5 col-8 section-profil-bebe d-flex\">
+                {% if app.user %}
+                    {{ render(controller('App\\\\Controller\\\\BebeLayoutController::infoBebe')) }}
+                {% endif %}
+            </div>
+        
     {# end row #}
     </div> 
         {% block content %}
