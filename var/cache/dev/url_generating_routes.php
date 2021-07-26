@@ -35,6 +35,7 @@ return [
     'repas_delete' => [['id'], ['_controller' => 'App\\Controller\\RepasController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/repas']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/connexion']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/deconnexion']], [], []],
+    'soin_liste' => [[], ['_controller' => 'App\\Controller\\SoinListeController::index'], [], [['text', '/soin/liste']], [], []],
     'user_index' => [[], ['_controller' => 'App\\Controller\\UserController::index'], [], [['text', '/']], [], []],
     'user_new' => [[], ['_controller' => 'App\\Controller\\UserController::new'], [], [['text', '/inscription']], [], []],
     'user_edit' => [['id'], ['_controller' => 'App\\Controller\\UserController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true]], [], []],

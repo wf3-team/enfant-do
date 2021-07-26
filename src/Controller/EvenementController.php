@@ -7,6 +7,7 @@ use App\Form\EvenementType;
 use App\Repository\ConseilRepository;
 use App\Repository\EvenementRepository;
 use App\Repository\UserRepository;
+use App\Service\CallApiService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,11 +18,13 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class EvenementController extends AbstractController
 {
+    
     /**
      * @Route("/", name="evenement_index", methods={"GET"})
      */
     public function index(EvenementRepository $evenementRepository, ConseilRepository $conseilRepo): Response
     {
+        
         // récupération des conseils
         $conseils = $conseilRepo->findBy([
             'nom' => "Conseil d'été !"
@@ -59,7 +62,7 @@ class EvenementController extends AbstractController
         return $this->render('evenement/index.html.twig', [
             'evenements' => $elements,
             'isToday' => $isToday,
-            'conseils' => $conseils
+            'conseils' => $conseils,
         ]);
     }
 

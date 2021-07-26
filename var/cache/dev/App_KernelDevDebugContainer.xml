@@ -380,6 +380,13 @@
         <argument type="service" id=".service_locator.W9y3dzm.App\Controller\SecurityController"/>
       </call>
     </service>
+    <service id="App\Controller\SoinListeController" class="App\Controller\SoinListeController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\SoinListeController"/>
+      </call>
+    </service>
     <service id="App\Controller\UserController" class="App\Controller\UserController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -428,6 +435,9 @@
     </service>
     <service id="App\Security\ConnexionAuthenticator" class="App\Security\ConnexionAuthenticator" autowire="true" autoconfigure="true">
       <argument type="service" id="router.default"/>
+    </service>
+    <service id="App\Service\CallApiService" class="App\Service\CallApiService" autowire="true" autoconfigure="true">
+      <argument type="service" id=".debug.http_client"/>
     </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
@@ -3729,6 +3739,14 @@
       <argument type="collection"/>
       <argument>/Users/carolinezaini/Desktop/enfant-do</argument>
       <call method="addPath">
+        <argument>/Users/carolinezaini/Desktop/enfant-do/templates/bundles/TwigBundle</argument>
+        <argument>Twig</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/carolinezaini/Desktop/enfant-do/templates/bundles/TwigBundle</argument>
+        <argument>!Twig</argument>
+      </call>
+      <call method="addPath">
         <argument>/Users/carolinezaini/Desktop/enfant-do/vendor/symfony/web-profiler-bundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
@@ -5664,6 +5682,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SoinListeController" class="App\Controller\SoinListeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SoinListeController" class="App\Controller\SoinListeController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\SoinListeController" class="App\Controller\SoinListeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6075,6 +6096,12 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
+    <service id=".service_locator.IdwyOIE" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="callApiService" type="service_closure" id="App\Service\CallApiService"/>
+      </argument>
+    </service>
     <service id=".service_locator..Ae5NXw" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6093,7 +6120,7 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.ch4Jgvl.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.6K3EgOZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.pATyDxH" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\BebeController::delete" type="service_closure" id=".service_locator.utDPBgJ"/>
@@ -6117,6 +6144,7 @@
         <argument key="App\Controller\RepasController::new" type="service_closure" id=".service_locator.LEE18h1"/>
         <argument key="App\Controller\RepasController::show" type="service_closure" id=".service_locator.DxReJxZ"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.UDgw6Ol"/>
+        <argument key="App\Controller\SoinListeController::index" type="service_closure" id=".service_locator.IdwyOIE"/>
         <argument key="App\Controller\UserController::delete" type="service_closure" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\UserController::edit" type="service_closure" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\UserController::index" type="service_closure" id=".service_locator..Ae5NXw"/>
@@ -6148,6 +6176,7 @@
         <argument key="App\Controller\RepasController:new" type="service_closure" id=".service_locator.LEE18h1"/>
         <argument key="App\Controller\RepasController:show" type="service_closure" id=".service_locator.DxReJxZ"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.UDgw6Ol"/>
+        <argument key="App\Controller\SoinListeController:index" type="service_closure" id=".service_locator.IdwyOIE"/>
         <argument key="App\Controller\UserController:delete" type="service_closure" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\UserController:edit" type="service_closure" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\UserController:index" type="service_closure" id=".service_locator..Ae5NXw"/>
@@ -6534,6 +6563,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.W9y3dzm" method="withContext"/>
     </service>
+    <service id=".service_locator.W9y3dzm.App\Controller\SoinListeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\SoinListeController"/>
+      <argument>App\Controller\SoinListeController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.W9y3dzm" method="withContext"/>
+    </service>
     <service id=".service_locator.W9y3dzm.App\Controller\UserController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\UserController"/>
       <argument>App\Controller\UserController</argument>
@@ -6654,12 +6689,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.6K3EgOZ"/>
+      <argument type="service" id=".service_locator.pATyDxH"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.6K3EgOZ"/>
+      <argument type="service" id=".service_locator.pATyDxH"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -7576,7 +7611,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.0GV1BZZ" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.6K3EgOZ"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.pATyDxH"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -7628,6 +7663,7 @@
     <service id=".service_locator.YXWH0hU" alias=".service_locator.1lN00u6"/>
     <service id=".service_locator.Md_e4wG" alias=".service_locator.DxReJxZ"/>
     <service id=".service_locator.kXCVHeG" alias=".service_locator.UDgw6Ol"/>
+    <service id=".service_locator.0R1nEew" alias=".service_locator.IdwyOIE"/>
     <service id=".service_locator.8PQa8Mp" alias=".service_locator..Ae5NXw"/>
     <service id=".service_locator.F2VpVm6" alias=".service_locator.pwZ6MTM"/>
     <service id=".service_locator.NFoOWn0" alias=".service_locator.ch4Jgvl"/>
