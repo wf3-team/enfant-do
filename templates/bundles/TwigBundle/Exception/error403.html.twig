@@ -1,0 +1,13 @@
+
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <div class="text-center">
+        <img class="w-25" src="{{ asset('image/icon/logo.png')}}" alt="logo-lapin">
+    </div>
+    <div class="mb-5">
+        <h1>{{status_code}}</h1>
+        <p>{{status_text}}</p>  
+        <a href="{{path('evenement_index')}}">Retour à la page d'accueil</a>  
+    </div>
+{% endblock %}
