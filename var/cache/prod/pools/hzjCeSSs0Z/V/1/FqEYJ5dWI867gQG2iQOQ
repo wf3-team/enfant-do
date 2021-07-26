@@ -1,0 +1,178 @@
+<?php //App__Entity__Bebe__CLASSMETADATA__
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Bebe',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\Bebe',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\BebeRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => null,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => null,
+                        'id' => true,
+                        'columnName' => 'id',
+                    ],
+                    'prenom' => [
+                        'fieldName' => 'prenom',
+                        'type' => 'string',
+                        'scale' => null,
+                        'length' => 50,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => null,
+                        'columnName' => 'prenom',
+                    ],
+                    'date_naissance' => [
+                        'fieldName' => 'date_naissance',
+                        'type' => 'date',
+                        'scale' => null,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => null,
+                        'columnName' => 'date_naissance',
+                    ],
+                    'poids' => [
+                        'fieldName' => 'poids',
+                        'type' => 'integer',
+                        'scale' => null,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => null,
+                        'columnName' => 'poids',
+                    ],
+                    'taille' => [
+                        'fieldName' => 'taille',
+                        'type' => 'integer',
+                        'scale' => null,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => null,
+                        'columnName' => 'taille',
+                    ],
+                    'genre' => [
+                        'fieldName' => 'genre',
+                        'type' => 'string',
+                        'scale' => null,
+                        'length' => 50,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => null,
+                        'columnName' => 'genre',
+                    ],
+                    'photo' => [
+                        'fieldName' => 'photo',
+                        'type' => 'string',
+                        'scale' => null,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => null,
+                        'columnName' => 'photo',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id' => 'id',
+                    'prenom' => 'prenom',
+                    'date_naissance' => 'date_naissance',
+                    'poids' => 'poids',
+                    'taille' => 'taille',
+                    'genre' => 'genre',
+                    'photo' => 'photo',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'id',
+                    'prenom' => 'prenom',
+                    'date_naissance' => 'date_naissance',
+                    'poids' => 'poids',
+                    'taille' => 'taille',
+                    'genre' => 'genre',
+                    'photo' => 'photo',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'bebe',
+                ],
+            ],
+            'associationMappings' => [
+                [
+                    'users' => [
+                        'fieldName' => 'users',
+                        'mappedBy' => 'bebe_id',
+                        'targetEntity' => 'App\\Entity\\User',
+                        'cascade' => [],
+                        'orphanRemoval' => true,
+                        'fetch' => 2,
+                        'type' => 4,
+                        'inversedBy' => null,
+                        'isOwningSide' => false,
+                        'sourceEntity' => 'App\\Entity\\Bebe',
+                        'isCascadeRemove' => true,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                    ],
+                    'evenements' => [
+                        'fieldName' => 'evenements',
+                        'mappedBy' => 'bebe',
+                        'targetEntity' => 'App\\Entity\\Evenement',
+                        'cascade' => [],
+                        'orphanRemoval' => true,
+                        'fetch' => 2,
+                        'type' => 4,
+                        'inversedBy' => null,
+                        'isOwningSide' => false,
+                        'sourceEntity' => 'App\\Entity\\Bebe',
+                        'isCascadeRemove' => true,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                    ],
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

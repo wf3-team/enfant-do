@@ -1,0 +1,252 @@
+<?php //App__Entity__Evenement__CLASSMETADATA__
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Evenement',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\Evenement',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\EvenementRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => null,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => null,
+                        'id' => true,
+                        'columnName' => 'id',
+                    ],
+                    'dodo' => [
+                        'fieldName' => 'dodo',
+                        'type' => 'boolean',
+                        'scale' => null,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => null,
+                        'columnName' => 'dodo',
+                    ],
+                    'heure_debut' => [
+                        'fieldName' => 'heure_debut',
+                        'type' => 'datetime',
+                        'scale' => null,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => null,
+                        'columnName' => 'heure_debut',
+                    ],
+                    'heure_fin' => [
+                        'fieldName' => 'heure_fin',
+                        'type' => 'datetime',
+                        'scale' => null,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => null,
+                        'columnName' => 'heure_fin',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id' => 'id',
+                    'dodo' => 'dodo',
+                    'heure_debut' => 'heure_debut',
+                    'heure_fin' => 'heure_fin',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'id',
+                    'dodo' => 'dodo',
+                    'heure_debut' => 'heure_debut',
+                    'heure_fin' => 'heure_fin',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'evenement',
+                ],
+            ],
+            'associationMappings' => [
+                [
+                    'user' => [
+                        'fieldName' => 'user',
+                        'joinColumns' => [
+                            [
+                                'name' => 'user_id',
+                                'unique' => false,
+                                'nullable' => false,
+                                'onDelete' => null,
+                                'columnDefinition' => null,
+                                'referencedColumnName' => 'id',
+                            ],
+                        ],
+                        'cascade' => [],
+                        'inversedBy' => 'evenements',
+                        'targetEntity' => 'App\\Entity\\User',
+                        'fetch' => 2,
+                        'type' => 2,
+                        'mappedBy' => null,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\Evenement',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'sourceToTargetKeyColumns' => [
+                            'user_id' => 'id',
+                        ],
+                        'joinColumnFieldNames' => [
+                            'user_id' => 'user_id',
+                        ],
+                        'targetToSourceKeyColumns' => [
+                            'id' => 'user_id',
+                        ],
+                        'orphanRemoval' => false,
+                    ],
+                    'bebe' => [
+                        'fieldName' => 'bebe',
+                        'joinColumns' => [
+                            [
+                                'name' => 'bebe_id',
+                                'unique' => false,
+                                'nullable' => false,
+                                'onDelete' => null,
+                                'columnDefinition' => null,
+                                'referencedColumnName' => 'id',
+                            ],
+                        ],
+                        'cascade' => [],
+                        'inversedBy' => 'evenements',
+                        'targetEntity' => 'App\\Entity\\Bebe',
+                        'fetch' => 2,
+                        'type' => 2,
+                        'mappedBy' => null,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\Evenement',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'sourceToTargetKeyColumns' => [
+                            'bebe_id' => 'id',
+                        ],
+                        'joinColumnFieldNames' => [
+                            'bebe_id' => 'bebe_id',
+                        ],
+                        'targetToSourceKeyColumns' => [
+                            'id' => 'bebe_id',
+                        ],
+                        'orphanRemoval' => false,
+                    ],
+                    'repas' => [
+                        'fieldName' => 'repas',
+                        'joinColumns' => [
+                            [
+                                'name' => 'repas_id',
+                                'unique' => false,
+                                'nullable' => true,
+                                'onDelete' => null,
+                                'columnDefinition' => null,
+                                'referencedColumnName' => 'id',
+                            ],
+                        ],
+                        'cascade' => [],
+                        'inversedBy' => 'evenements',
+                        'targetEntity' => 'App\\Entity\\Repas',
+                        'fetch' => 2,
+                        'type' => 2,
+                        'mappedBy' => null,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\Evenement',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'sourceToTargetKeyColumns' => [
+                            'repas_id' => 'id',
+                        ],
+                        'joinColumnFieldNames' => [
+                            'repas_id' => 'repas_id',
+                        ],
+                        'targetToSourceKeyColumns' => [
+                            'id' => 'repas_id',
+                        ],
+                        'orphanRemoval' => false,
+                    ],
+                    'hygiene' => [
+                        'fieldName' => 'hygiene',
+                        'joinColumns' => [
+                            [
+                                'name' => 'hygiene_id',
+                                'unique' => false,
+                                'nullable' => true,
+                                'onDelete' => null,
+                                'columnDefinition' => null,
+                                'referencedColumnName' => 'id',
+                            ],
+                        ],
+                        'cascade' => [],
+                        'inversedBy' => 'evenements',
+                        'targetEntity' => 'App\\Entity\\Hygiene',
+                        'fetch' => 2,
+                        'type' => 2,
+                        'mappedBy' => null,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\Evenement',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'sourceToTargetKeyColumns' => [
+                            'hygiene_id' => 'id',
+                        ],
+                        'joinColumnFieldNames' => [
+                            'hygiene_id' => 'hygiene_id',
+                        ],
+                        'targetToSourceKeyColumns' => [
+                            'id' => 'hygiene_id',
+                        ],
+                        'orphanRemoval' => false,
+                    ],
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];
