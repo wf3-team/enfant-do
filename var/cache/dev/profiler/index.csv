@@ -762,3 +762,12 @@ b37a00,::1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3D
 28a891,::1,GET,http://localhost:8000/soin/liste,1627321800,,200
 0fd6f2,::1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CBebeLayoutController%253A%253AinfoBebe,1627321812,0a873b,200
 0a873b,::1,GET,http://localhost:8000/soin/liste,1627321812,,200
+1ade7a,::1,GET,http://localhost:8000/,1627371708,,303
+c28f5f,::1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CBebeLayoutController%253A%253AinfoBebe,1627371708,d738ee,200
+d738ee,::1,GET,http://localhost:8000/accueil/,1627371708,,200
+189e00,::1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CBebeLayoutController%253A%253AinfoBebe,1627371718,c8703f,200
+c8703f,::1,GET,http://localhost:8000/soin/liste,1627371718,,200
+163ded,::1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CBebeLayoutController%253A%253AinfoBebe,1627371726,40fe91,200
+40fe91,::1,GET,http://localhost:8000/accueil/,1627371726,,200
+c40a18,::1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CBebeLayoutController%253A%253AinfoBebe,1627371783,fec978,200
+fec978,::1,GET,http://localhost:8000/accueil/,1627371783,,200
