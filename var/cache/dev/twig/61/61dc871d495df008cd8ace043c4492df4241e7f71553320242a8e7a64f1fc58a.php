@@ -42,7 +42,7 @@ class __TwigTemplate_a4d4f62a4f676942eda83a3fc0025ac4d1d82911ff8096009e79e5566dc
         // line 1
         echo " ";
         // line 2
-        echo "        
+        echo "        <div class=\"col-md-5 col-8 section-profil-bebe d-flex\">
             <img class=\"me-2 section-profil-bebe-img\" src=\"";
         // line 3
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["bebe"]) || array_key_exists("bebe", $context) ? $context["bebe"] : (function () { throw new RuntimeError('Variable "bebe" does not exist.', 3, $this->source); })()), "photo", [], "any", false, false, false, 3), "html", null, true);
@@ -59,7 +59,7 @@ class __TwigTemplate_a4d4f62a4f676942eda83a3fc0025ac4d1d82911ff8096009e79e5566dc
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["bebe"]) || array_key_exists("bebe", $context) ? $context["bebe"] : (function () { throw new RuntimeError('Variable "bebe" does not exist.', 8, $this->source); })()), "dateNaissance", [], "any", false, false, false, 8), "d/m/Y"), "html", null, true);
         echo "</h6>
             </div>  
-     
+        </div>
       ";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -87,7 +87,7 @@ class __TwigTemplate_a4d4f62a4f676942eda83a3fc0025ac4d1d82911ff8096009e79e5566dc
     public function getSourceContext()
     {
         return new Source(" {# Informations du bébé #}
-        
+        <div class=\"col-md-5 col-8 section-profil-bebe d-flex\">
             <img class=\"me-2 section-profil-bebe-img\" src=\"{{bebe.photo}}\" alt=\"photo-bebe\">
 
             <div class=\"d-flex flex-column\">
@@ -95,7 +95,7 @@ class __TwigTemplate_a4d4f62a4f676942eda83a3fc0025ac4d1d82911ff8096009e79e5566dc
                     <h6>Date de naissance :</h6>
                     <h6>{{bebe.dateNaissance| date('d/m/Y')}}</h6>
             </div>  
-     
+        </div>
       ", "bebe_layout/_infoBebe.html.twig", "/Users/carolinezaini/Desktop/enfant-do/templates/bebe_layout/_infoBebe.html.twig");
     }
 }

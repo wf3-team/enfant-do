@@ -10,13 +10,11 @@
     {% for item in data %}
         {# {{dump(item)}} #}
         
-        <div class="card">
+        <div class="card mb-4">
             <div class="card-body">
                 <p><strong>{{item.fields['type_etablissement']}}</strong></p>
-                {# <p>{{item.fields['num_tel']}}</p> #}
                 <p>{{item.fields['cp_ville']}}</p>
                 <p>{{item.fields['dept']}}</p>
-                {# <p>{{item.fields['adresse_complete']}}</p> #}
             </div>
         </div>
     {% endfor %}

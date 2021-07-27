@@ -88,11 +88,11 @@
                 <p>Conseils</p>
             </div>
         </div>
-            <div class="col-md-5 col-8 section-profil-bebe d-flex">
+            
                 {% if app.user %}
                     {{ render(controller('App\\Controller\\BebeLayoutController::infoBebe')) }}
                 {% endif %}
-            </div>
+           
         
     {# end row #}
     </div> 

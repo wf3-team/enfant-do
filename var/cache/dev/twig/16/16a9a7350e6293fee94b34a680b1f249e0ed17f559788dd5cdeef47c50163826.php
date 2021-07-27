@@ -202,7 +202,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
                 <p>Conseils</p>
             </div>
         </div>
-            <div class=\"col-md-5 col-8 section-profil-bebe d-flex\">
+            
                 ";
         // line 92
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 92, $this->source); })()), "user", [], "any", false, false, false, 92)) {
@@ -213,7 +213,7 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
                 ";
         }
         // line 95
-        echo "            </div>
+        echo "           
         
     ";
         // line 98
@@ -399,11 +399,11 @@ class __TwigTemplate_1439930e89023fcd122df0a048489422863d1af72f7455161d2c0c2ad81
                 <p>Conseils</p>
             </div>
         </div>
-            <div class=\"col-md-5 col-8 section-profil-bebe d-flex\">
+            
                 {% if app.user %}
                     {{ render(controller('App\\\\Controller\\\\BebeLayoutController::infoBebe')) }}
                 {% endif %}
-            </div>
+           
         
     {# end row #}
     </div> 

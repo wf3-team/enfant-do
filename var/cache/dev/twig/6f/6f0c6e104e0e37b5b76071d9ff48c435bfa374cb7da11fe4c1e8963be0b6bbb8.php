@@ -101,31 +101,28 @@ class __TwigTemplate_bca4f8f35f3a93ffaf6df12a22d1b6301b8049f59c27b89d9329f44aac6
             echo "        ";
             // line 12
             echo "        
-        <div class=\"card\">
+        <div class=\"card mb-4\">
             <div class=\"card-body\">
                 <p><strong>";
             // line 15
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "fields", [], "any", false, false, false, 15), "type_etablissement", [], "array", false, false, false, 15), "html", null, true);
             echo "</strong></p>
-                ";
-            // line 17
-            echo "                <p>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "fields", [], "any", false, false, false, 17), "cp_ville", [], "array", false, false, false, 17), "html", null, true);
+                <p>";
+            // line 16
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "fields", [], "any", false, false, false, 16), "cp_ville", [], "array", false, false, false, 16), "html", null, true);
             echo "</p>
                 <p>";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "fields", [], "any", false, false, false, 18), "dept", [], "array", false, false, false, 18), "html", null, true);
+            // line 17
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "fields", [], "any", false, false, false, 17), "dept", [], "array", false, false, false, 17), "html", null, true);
             echo "</p>
-                ";
-            // line 20
-            echo "            </div>
+            </div>
         </div>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 23
+        // line 21
         echo "
  
 
@@ -150,7 +147,7 @@ class __TwigTemplate_bca4f8f35f3a93ffaf6df12a22d1b6301b8049f59c27b89d9329f44aac6
 
     public function getDebugInfo()
     {
-        return array (  129 => 23,  121 => 20,  117 => 18,  112 => 17,  108 => 15,  103 => 12,  101 => 11,  97 => 10,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  126 => 21,  116 => 17,  112 => 16,  108 => 15,  103 => 12,  101 => 11,  97 => 10,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -167,13 +164,11 @@ class __TwigTemplate_bca4f8f35f3a93ffaf6df12a22d1b6301b8049f59c27b89d9329f44aac6
     {% for item in data %}
         {# {{dump(item)}} #}
         
-        <div class=\"card\">
+        <div class=\"card mb-4\">
             <div class=\"card-body\">
                 <p><strong>{{item.fields['type_etablissement']}}</strong></p>
-                {# <p>{{item.fields['num_tel']}}</p> #}
                 <p>{{item.fields['cp_ville']}}</p>
                 <p>{{item.fields['dept']}}</p>
-                {# <p>{{item.fields['adresse_complete']}}</p> #}
             </div>
         </div>
     {% endfor %}
