@@ -494,11 +494,13 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 161), "bain", 
         }
         // line 221
         echo "
-     <div class=\"mb-5\">
+    ";
+        // line 223
+        echo "     <div class=\"mb-5\">
         <h2>Une urgence ?</h2>
         <p>Vous avez un doute sur le comportement de bébé. Ne cherchez pas suivez le lien pour voir la liste des hopitaux :</p>
         <a href=\"";
-        // line 225
+        // line 226
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("soin_liste");
         echo "\">Voir la liste des hopitaux</a>
     </div>
@@ -506,35 +508,35 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 161), "bain", 
     
 
     ";
-        // line 231
+        // line 232
         echo "    <h2>Conseils autour de bébé</h2>
     <div class=\"section-info row d-flex pt-4 pb-4 mb-5\">
         <div class=\"col-md-3 col-3\">
             <img class=\"me-2\" src=\"";
-        // line 234
+        // line 235
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/dodo/photo-dodo2.jpg"), "html", null, true);
         echo "\" alt=\"rust-texture\">
         </div>
         <div class=\"col-md-9 col-12\">
         ";
-        // line 237
+        // line 238
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["conseils"]) || array_key_exists("conseils", $context) ? $context["conseils"] : (function () { throw new RuntimeError('Variable "conseils" does not exist.', 237, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["conseils"]) || array_key_exists("conseils", $context) ? $context["conseils"] : (function () { throw new RuntimeError('Variable "conseils" does not exist.', 238, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["conseil"]) {
-            // line 238
+            // line 239
             echo "            <h4>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "nom", [], "any", false, false, false, 238), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "nom", [], "any", false, false, false, 239), "html", null, true);
             echo "</h4>
             <p>";
-            // line 239
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "description", [], "any", false, false, false, 239), "html", null, true);
+            // line 240
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["conseil"], "description", [], "any", false, false, false, 240), "html", null, true);
             echo "</p>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['conseil'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 241
+        // line 242
         echo "        </div>
     </div>
              
@@ -543,7 +545,7 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 161), "bain", 
 
     
                     ";
-        // line 250
+        // line 251
         echo "           
 
     ";
@@ -567,7 +569,7 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 161), "bain", 
 
     public function getDebugInfo()
     {
-        return array (  547 => 250,  538 => 241,  530 => 239,  525 => 238,  521 => 237,  515 => 234,  510 => 231,  502 => 225,  496 => 221,  490 => 218,  486 => 217,  482 => 215,  477 => 212,  471 => 207,  465 => 206,  459 => 203,  456 => 202,  452 => 200,  446 => 198,  444 => 197,  440 => 195,  436 => 193,  432 => 191,  430 => 190,  423 => 187,  419 => 186,  406 => 175,  401 => 171,  395 => 170,  389 => 166,  385 => 165,  380 => 162,  378 => 161,  375 => 160,  373 => 159,  366 => 156,  362 => 155,  351 => 146,  346 => 142,  340 => 141,  334 => 137,  330 => 136,  326 => 134,  324 => 133,  321 => 132,  319 => 131,  316 => 130,  314 => 129,  307 => 126,  303 => 125,  292 => 116,  287 => 112,  281 => 111,  276 => 108,  272 => 106,  266 => 104,  264 => 103,  261 => 102,  259 => 101,  255 => 99,  251 => 97,  247 => 95,  245 => 94,  242 => 93,  240 => 92,  237 => 91,  235 => 90,  232 => 89,  230 => 88,  223 => 85,  219 => 84,  207 => 74,  201 => 69,  195 => 68,  189 => 64,  183 => 62,  179 => 60,  177 => 59,  170 => 56,  166 => 55,  155 => 46,  153 => 45,  146 => 39,  140 => 38,  134 => 35,  128 => 33,  124 => 32,  113 => 23,  109 => 20,  105 => 17,  103 => 16,  97 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  549 => 251,  540 => 242,  532 => 240,  527 => 239,  523 => 238,  517 => 235,  512 => 232,  504 => 226,  499 => 223,  496 => 221,  490 => 218,  486 => 217,  482 => 215,  477 => 212,  471 => 207,  465 => 206,  459 => 203,  456 => 202,  452 => 200,  446 => 198,  444 => 197,  440 => 195,  436 => 193,  432 => 191,  430 => 190,  423 => 187,  419 => 186,  406 => 175,  401 => 171,  395 => 170,  389 => 166,  385 => 165,  380 => 162,  378 => 161,  375 => 160,  373 => 159,  366 => 156,  362 => 155,  351 => 146,  346 => 142,  340 => 141,  334 => 137,  330 => 136,  326 => 134,  324 => 133,  321 => 132,  319 => 131,  316 => 130,  314 => 129,  307 => 126,  303 => 125,  292 => 116,  287 => 112,  281 => 111,  276 => 108,  272 => 106,  266 => 104,  264 => 103,  261 => 102,  259 => 101,  255 => 99,  251 => 97,  247 => 95,  245 => 94,  242 => 93,  240 => 92,  237 => 91,  235 => 90,  232 => 89,  230 => 88,  223 => 85,  219 => 84,  207 => 74,  201 => 69,  195 => 68,  189 => 64,  183 => 62,  179 => 60,  177 => 59,  170 => 56,  166 => 55,  155 => 46,  153 => 45,  146 => 39,  140 => 38,  134 => 35,  128 => 33,  124 => 32,  113 => 23,  109 => 20,  105 => 17,  103 => 16,  97 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -793,6 +795,7 @@ $context["evenement"], "hygiene", [], "any", false, false, false, 161), "bain", 
    </div>
 {% endif %}
 
+    {# urgence #}
      <div class=\"mb-5\">
         <h2>Une urgence ?</h2>
         <p>Vous avez un doute sur le comportement de bébé. Ne cherchez pas suivez le lien pour voir la liste des hopitaux :</p>
